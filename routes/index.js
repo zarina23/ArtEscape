@@ -20,16 +20,26 @@ router.get("/artists/:artist_name", async function (req, res, next) {
       axios.get(`https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=${artist_name}&json=2`)
     ]);
 
-    const artistData = response1.data;
-    if (response1.status !== 200) throw new Error(artistData.message);
+    const artistDataFull = response1.data;
+    if (response1.status !== 200) throw new Error(artistDataFull.message);
 
-    const paintingsData = response2.data;
-    if (response2.status !== 200) throw new Error(paintingsData.message);
+    const paintingsDataFull = response2.data;
+    if (response2.status !== 200) throw new Error(paintingsDataFull.message);
 
     // Process the data and send the response
+
+    //Clean artist bio data
+    const { OriginalArtistName, birthDayAsString, deathDayAsString, biography, wikipediaUrl } = artistDataFull;
+
+    let artistDataCleaned = { OriginalArtistName, birthDayAsString, deathDayAsString, biography, wikipediaUrl };
+
+    artistDataCleaned = { ...artistDataCleaned, artistId: artistDataFull.contentId };
+
+
+
     const artistAndPaintingsData = {
-      artist: artistData,
-      paintings: paintingsData
+      artist: artistDataCleaned,
+      paintings: paintingsDataFull
     };
 
     // Send response
