@@ -1,3 +1,7 @@
 export function ArtistsListQuiz() {
-  return;
+  return (
+    <>
+      <h3>Artists Quiz</h3>
+    </>
+  );
 }

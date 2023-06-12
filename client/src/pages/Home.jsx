@@ -9,8 +9,11 @@ export function Home() {
   return (
     <>
       <h1>ArtEscape</h1>
+      <Button variant="contained">Get started - Hook Quiz</Button>
+      <br />
+      <br />
       <Button onClick={handleClick} variant="contained">
-        Get started!
+        Go to lectures
       </Button>
     </>
   );
