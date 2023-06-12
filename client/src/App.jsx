@@ -1,27 +1,24 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { HookQuiz } from "./pages/HookQuiz";
+import { Lectures } from "./pages/Lectures";
+import { ArtistsList } from "./pages/ArtistsList";
+import { ArtistsListQuiz } from "./pages/ArtistsListQuiz";
+import { Artist } from "./pages/Artist";
+import { ArtistQuiz } from "./pages/ArtistQuiz";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" index element={<Home />} />
-        <Route path="/hookQuiz" element={<HookQuiz />} />
-        <Route path="/hookQuiz" element={<HookQuizFeedback />} />
-        <Route path="/lectures" element={<Lectures />} />
-        <Route path="/lectures/artists" element={<ArtistsList />} />
-        <Route path="/lectures/artists/quiz" element={<ArtistsListQuiz />} />
-        <Route
-          path="/lectures/artists/quizFeedback"
-          element={<ArtistsListQuizFeedback />}
-        />
-        <Route path="/lectures/artists/:id" element={<Artist />} />
-        <Route path="/lectures/artists/:id/quiz" element={<ArtistQuiz />} />
-        <Route
-          path="/lectures/artists/:id/quizFeedback"
-          element={<ArtistQuizFeedback />}
-        />
+        <Route path="hookQuiz" element={<HookQuiz />} />
+        <Route path="lectures" element={<Lectures />} />
+        <Route path="lectures/artists" element={<ArtistsList />} />
+        <Route path="lectures/artists/quiz" element={<ArtistsListQuiz />} />
+        <Route path="lectures/artists/:id" element={<Artist />} />
+        <Route path="lectures/artists/:id/quiz" element={<ArtistQuiz />} />
       </Routes>
     </>
   );
