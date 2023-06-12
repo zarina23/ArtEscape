@@ -1,3 +1,7 @@
 export function ArtistsList() {
-  return;
+  return (
+    <>
+      <h3>Artists List</h3>
+    </>
+  );
 }
