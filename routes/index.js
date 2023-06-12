@@ -8,21 +8,32 @@ router.get("/", function (req, res, next) {
 });
 
 
+router.get("/artists/:artist_name", async function (req, res, next) {
 
-router.get("/artist", async function (req, res, next) {
+  const { artist_name } = req.params;
+
+  // Call WikiArt API with axios (no need to json)
   try {
-    // Call WikiArt API with axios (no need to json)
-    const response = await axios.get(
-      `https://www.wikiart.org/en/pieter-bruegel-the-elder?json=2`
-    );
+    // Make both axios requests simultaneously
+    const [response1, response2] = await Promise.all([
+      axios.get(`https://www.wikiart.org/en/${artist_name}?json=2`),
+      axios.get(`https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=${artist_name}&json=2`)
+    ]);
 
-    //save response (data) in a var
-    const artistData = response.data;
-    // Send the error message if exists
-    if (response.status !== 200) throw new Error(artistData.message); // When the error code was not 200
+    const artistData = response1.data;
+    if (response1.status !== 200) throw new Error(artistData.message);
+
+    const paintingsData = response2.data;
+    if (response2.status !== 200) throw new Error(paintingsData.message);
+
+    // Process the data and send the response
+    const artistAndPaintingsData = {
+      artist: artistData,
+      paintings: paintingsData
+    };
 
     // Send response
-    res.send(artistData)
+    res.send(artistAndPaintingsData);
   } catch (err) {
     res.status(500).send(err);
   }
