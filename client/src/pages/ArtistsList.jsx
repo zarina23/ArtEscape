@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-// import { ArtistCard } from "../components/ArtistCard";
+import { ArtistCard } from "../components/ArtistCard";
 import { useState } from "react";
 
 export function ArtistsList() {
@@ -34,9 +34,9 @@ export function ArtistsList() {
       <h3>Welcome to the Artists Route!</h3>
       <Button onClick={handleQuizClick}>Go to quiz</Button>
       <div>
-        {artists.map((artist) => {
-          <div>{artist.artistName}</div>;
-        })}
+        {artists.map((artist, id) => (
+          <ArtistCard key={id} artistName={artist.artistName}></ArtistCard>
+        ))}
       </div>
     </>
   );
