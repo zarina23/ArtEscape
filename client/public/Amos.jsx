@@ -22,7 +22,8 @@ const amos2 = {
 
 const amos3 = {
   title: Question3,
-  questionText: "For which famous magazine did Amos used to do illustrations?",
+  questionText:
+    "For which famous magazine did Amos used to work doing illustrations?",
   answer: "Sesame Street Magazine",
   option1: "Vogue",
   option2: "Teenage Mutant Ninja Turtles",

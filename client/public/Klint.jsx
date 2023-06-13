@@ -12,7 +12,7 @@ const klint1 = {
 const klint2 = {
   title: Question2,
   questionText:
-    "Which one of this paitings is 'What a Human Being Is' by af Klimt?",
+    "Which one of this paitings is called 'What a Human Being Is' by af Klimt?",
   answer:
     "https://uploads3.wikiart.org/images/hilma-af-klint/what-a-human-being-is-1910.jpg",
   option1:

@@ -12,7 +12,7 @@ const cassatt1 = {
 const cassatt2 = {
   title: Question2,
   questionText:
-    "Which of the following paitings is 'At the Theater' by Cassatt?",
+    "Which of the following paitings is called 'At the Theater' by Cassatt?",
   answer:
     "https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg",
   option1:
