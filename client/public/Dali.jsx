@@ -27,7 +27,7 @@ const dali3 = {
   title: "Question 3",
   questionText: "What is the birth place of Salvador Dali?",
   answer: "Figueras, Spain",
-  option1: "Leon, France",
+  option1: "Lyon, France",
   option2: "Malaga, Spain",
   option3: "Verona, Italy",
 };

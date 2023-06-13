@@ -1,5 +1,5 @@
 const cassatt1 = {
-  title: Question1,
+  title: "Question1",
   questionText: "What is the name of this paiting?",
   questionImage:
     "https://uploads6.wikiart.org/images/mary-cassatt/the-flirtation-a-balcony-in-seville-1872.jpg!Large.jpg",
@@ -10,7 +10,7 @@ const cassatt1 = {
 }(edited);
 
 const cassatt2 = {
-  title: Question2,
+  title: "Question2",
   questionText:
     "Which of the following paitings is called 'At the Theater' by Cassatt?",
   answer:
@@ -24,7 +24,7 @@ const cassatt2 = {
 };
 
 const cassatt3 = {
-  title: Question3,
+  title: "Question3",
   questionText: "Which art movement best describes Cassatt's work?",
   answer: "Impressionism",
   option1: "Baroque",

@@ -1,32 +1,38 @@
 const kandinsky1 = {
-  title: "Question 1",
-  image:
+  quiz_type: "individual_artist",
+  artist_name_key: "wassily-kandinsky",
+  question_type: "questionImage_answersText",
+  question_image_url:
     "https://uploads7.wikiart.org/images/wassily-kandinsky/blue-mountain-1908.jpg!Large.jpg",
-  questionText: "What is the name of this painting?",
-  answer: "Blue mountain",
-  option1: "A mountain",
-  option2: "Horses",
-  option2: "Park of St. Cloud with horseman",
+  question_text: "What is the name of this painting?",
+  option0_text: "Blue mountain",
+  option1_text: "A mountain",
+  option2_text: "Horses",
+  option3_text: "Park of St. Cloud with horseman",
 };
 
 const kandinsky2 = {
-  title: "Question 2",
-  questionText: "Which of this paintings is work of Wassily Kandinsky?",
-  answer:
+  quiz_type: "individual_artist",
+  artist_name_key: "wassily-kandinsky",
+  question_type: "questionText_answersImage",
+  question_text: "Which of this paintings is work of Wassily Kandinsky?",
+  option0_image_url:
     "https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg", //Several Circles
-  option1:
+  option1_image_url:
     "https://uploads5.wikiart.org/images/hilma-af-klint/atom-series-no-8-atom-on-the-ether-plane-is-in-constant-change-between-rest-and-activity-at-the-1917.jpg",
-  option2:
+  option2_image_url:
     "https://uploads4.wikiart.org/images/tamara-de-lempicka/the-model-1925.jpg!Large.jpg",
-  option3:
+  option3_image_url:
     "https://uploads5.wikiart.org/images/mary-cassatt/mary-ellison-embroidering-1877.jpg!Large.jpg",
 };
 
 const kandinsky3 = {
-  title: "Question 3",
-  questionText: "Where is Wassily Kandinsky from?",
-  answer: "Russia",
-  option1: "Ukraine",
-  option2: "Poland",
-  option3: "Bulgaria",
+  quiz_type: "individual_artist",
+  artist_name_key: "wassily-kandinsky",
+  question_type: "questionText_answersText",
+  question_text: "Where is Wassily Kandinsky from?",
+  option0_text: "Russia",
+  option1_text: "Ukraine",
+  option2_text: "Poland",
+  option3_text: "Bulgaria",
 };
