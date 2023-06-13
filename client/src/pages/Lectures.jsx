@@ -9,9 +9,10 @@ export function Lectures() {
   };
   return (
     <>
-      <Box>
+      <br />
+      <Box sx={{ alignItems: "center" }}>
         <Button
-          sx={{ maxWidth: "100px" }}
+          sx={{ maxWidth: "200px", minWidth: "200px" }}
           variant="contained"
           onClick={handleByArtistsClick}
         >
@@ -20,13 +21,19 @@ export function Lectures() {
       </Box>
       <br />
       <Box>
-        <Button sx={{ maxWidth: "100px" }} variant="contained">
+        <Button
+          sx={{ maxWidth: "200px", minWidth: "200px" }}
+          variant="contained"
+        >
           By Paintings
         </Button>
       </Box>
       <br />
       <Box>
-        <Button sx={{ maxWidth: "100px" }} variant="contained">
+        <Button
+          sx={{ maxWidth: "200px", minWidth: "200px" }}
+          variant="contained"
+        >
           By Periods
         </Button>
       </Box>

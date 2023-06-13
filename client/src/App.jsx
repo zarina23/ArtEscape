@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
@@ -13,10 +12,9 @@ import { Layout } from "./components/Layout";
 function App() {
   return (
     <>
-
       <Routes>
+        <Route path="/" index element={<Home />} />
         <Route path="/" element={<Layout />}>
-          <Route path="/" index element={<Home />} />
           <Route path="hookQuiz" element={<HookQuiz />} />
           <Route path="lectures" element={<Lectures />} />
           <Route path="lectures/artists" element={<ArtistsList />} />
@@ -25,7 +23,6 @@ function App() {
           <Route path="lectures/artists/:id/quiz" element={<ArtistQuiz />} />
         </Route>
       </Routes>
-
     </>
   );
 }
