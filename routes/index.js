@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const axios = require("axios");
 
-router.get("/api/artists", function (req, res, next) {
+router.get("/artists", function (req, res, next) {
   const artistsResponse = [
     {
       key: "frida-kahlo",
@@ -68,7 +68,7 @@ router.get("/api/artists", function (req, res, next) {
   res.send(artistsResponse);
 });
 
-router.get("/api/artists/:artist_name", async function (req, res, next) {
+router.get("/artists/:artist_name", async function (req, res, next) {
   const { artist_name } = req.params;
 
   // Call WikiArt API with axios (no need to json)
@@ -93,6 +93,7 @@ router.get("/api/artists/:artist_name", async function (req, res, next) {
     const {
       OriginalArtistName,
       artistName,
+      image,
       birthDayAsString,
       deathDayAsString,
       biography,
@@ -102,6 +103,7 @@ router.get("/api/artists/:artist_name", async function (req, res, next) {
     let artistDataCleaned = {
       OriginalArtistName,
       artistName,
+      image,
       birthDayAsString,
       deathDayAsString,
       biography,
