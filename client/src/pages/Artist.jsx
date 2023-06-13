@@ -15,10 +15,10 @@ export function Artist() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    getArtistDetails(id);
+    getArtistAndPaintingsDetails(id);
   }, [id]);
 
-  const getArtistDetails = async (id) => {
+  const getArtistAndPaintingsDetails = async (id) => {
     setLoading(true);
     try {
       const response = await fetch(`/api/artists/${id}`, {
@@ -26,19 +26,8 @@ export function Artist() {
       });
       const data = await response.json();
       setArtist(data.artist);
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getArtistPaintings = async (id) => {
-    try {
-      const response = await fetch(`/api/artists/${id}`, {
-        method: "GET",
-      });
-      const data = await response.json();
       setPaintings(data.paintings);
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
@@ -58,7 +47,7 @@ export function Artist() {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            // backgroundImage: `url(${post.image})`,
+            backgroundImage: `url(${paintings?.[0]?.image})`,
           }}
         >
           <Box

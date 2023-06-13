@@ -2,11 +2,6 @@ var express = require("express");
 var router = express.Router();
 const axios = require("axios");
 
-/* GET home page. */
-router.get("/api", function (req, res, next) {
-  res.send({ title: "Express" });
-});
-
 router.get("/api/artists", function (req, res, next) {
   const artistsResponse = [
     {
@@ -28,8 +23,8 @@ router.get("/api/artists", function (req, res, next) {
         "https://uploads1.wikiart.org/00335/images//photo-becket-logan.jpg!Portrait.jpg",
     },
     {
-      key: "mary-cassat",
-      name: "Mary Cassat",
+      key: "mary-cassatt",
+      name: "Mary Cassatt",
       image:
         "https://uploads4.wikiart.org/images/mary-cassatt.jpg!Portrait.jpg",
     },
@@ -37,7 +32,7 @@ router.get("/api/artists", function (req, res, next) {
       key: "hilma-af-klint",
       name: "Hilma Af Klint",
       image:
-        "https://uploads8.wikiart.org/temp/c5de8e4a-1cb2-4e2f-b31a-72406334ad13.jpg!Portrait.jpg",
+        "https://uploads8.wikiart.org/temp/c5de8e4a-1cb2-4e2f-b31a-72406334ad13.jpg",
     },
     {
       key: "pablo-picasso",
