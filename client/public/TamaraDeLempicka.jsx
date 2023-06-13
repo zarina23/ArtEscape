@@ -10,7 +10,7 @@ export const TamaraQuestion1 = {
     "Women's liberation with aggressive confindence and luxury elegance",
   option1_text: "Aristocratic lifestyle and luxury elegance",
   option2_text: "Fashion style in the modernism of the 1920s",
-  option3_text: "Femenine beauty and the power of nature",
+  option3_text: "Feminine beauty and the power of nature",
 };
 
 const TamaraQuestion2 = {
@@ -34,7 +34,7 @@ const TamaraQuestion3 = {
   artist_name_key: "tamara-de-lempicka",
   question_type: "questionText_answersText",
   question_text:
-    "What was the predominant technique and pictorical style that Tamara de Lemppicka was acclaimed for?",
+    "What was the predominant technique and pictorical style that Tamara de Lempicka was acclaimed for?",
   option0_text: "Art Deco style with blended cubism and neoclassicism",
   option1_text: "Cubism",
   option2_text: "Neorealism",

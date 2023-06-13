@@ -2,9 +2,9 @@ const kandinsky1 = {
   quiz_type: "individual_artist",
   artist_name_key: "wassily-kandinsky",
   question_type: "questionImage_answersText",
+  question_text: "What is the name of this painting?",
   question_image_url:
     "https://uploads7.wikiart.org/images/wassily-kandinsky/blue-mountain-1908.jpg!Large.jpg",
-  question_text: "What is the name of this painting?",
   option0_text: "Blue mountain",
   option1_text: "A mountain",
   option2_text: "Horses",

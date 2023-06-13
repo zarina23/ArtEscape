@@ -3,7 +3,7 @@ export const FridaQuestion1 = {
   artist_name_key: "frida-kahlo",
   question_type: "questionImage_answersText",
   question_text:
-    "As one of the last and most famous works of Frida Kahlo, this painting captures her fundamental values, what do you think it represents?",
+    "As one of the last and most famous works of Frida Kahlo, this painting captures her fundamental values. How is it called?",
   question_image_url:
     "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/marxism-will-give-health-to-the-sick-1954.jpg!Large.jpg",
   option0_text: "Marxism will give health to the sick",
@@ -17,7 +17,7 @@ const FridaQuestion2 = {
   artist_name_key: "frida-kahlo",
   question_type: "questionText_answersImage",
   question_text:
-    "What painting was a tribute for Frida's father and was painted after his death?",
+    "What painting was a tribute to Frida's father and was painted after his death?",
   option0_image_url:
     "https://uploads8.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/me-and-my-parrots-1941.jpg!Large.jpg",
   option1_image_url:

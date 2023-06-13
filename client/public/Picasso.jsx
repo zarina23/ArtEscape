@@ -2,9 +2,9 @@ const picasso1 = {
   quiz_type: "individual_artist",
   artist_name_key: "pablo-picasso",
   question_type: "questionImage_answersText",
+  question_text: "What is the name of this painting?",
   question_image_url:
     "https://uploads0.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg",
-  question_text: "What is the name of this painting?",
   option0_text: "Guernica",
   option1_text: "Dream and Lie of Franco",
   option2_text: "Minotaur is wounded",
@@ -15,7 +15,8 @@ const picasso2 = {
   quiz_type: "individual_artist",
   artist_name_key: "pablo-picasso",
   question_type: "questionText_answersImage",
-  question_text: "Which of this paintings is Weeping Woman painted in 1937?",
+  question_text:
+    "Which of this paintings is 'The Weeping Woman' painted in 1937?",
   option0_image_url:
     "https://uploads4.wikiart.org/images/pablo-picasso/crying-woman-1937-1.jpg!Large.jpg",
   option1_image_url:
