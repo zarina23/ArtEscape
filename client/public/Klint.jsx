@@ -16,7 +16,7 @@ const klint2 = {
   artist_name_key: "hilma-af-klint",
   question_type: "questionText_answersImage",
   question_text:
-    "Which one of this paitings is called 'What a Human Being Is' by af Klimt?",
+    "Which one of this paitings is called What A Human Being Is by af Klimt?",
   option0_image_url:
     "https://uploads3.wikiart.org/images/hilma-af-klint/what-a-human-being-is-1910.jpg",
   option1_image_url:
@@ -31,7 +31,7 @@ const klint3 = {
   quiz_type: "individual_artist",
   artist_name_key: "hilma-af-klint",
   question_type: "questionText_answersText",
-  question_text: "What kind of work characterizes af Klint and 'The Five'?",
+  question_text: "What kind of work characterizes af Klint and The Five?",
   option0_text:
     "Inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds.",
   option1_text: "A chain of fast food restaurants.",
