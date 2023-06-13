@@ -1,40 +1,42 @@
 export const DaVinciQuestions = [
   {
-    title: "Question 1",
-    questionText:
-      "What is the name of the painting that Leonardo Da Vinci was persuaded to paint twice for the Confraternity of the Immaculate Conception in Milan?",
-    questionImage:
+    quiz_type: "individual_artist",
+    artist_name_key: "leonardo-da-vinci",
+    question_type: "questionImage_answersText",
+    question_text:
+      "What is the name of the painting that Leonardo Da Vinci was persuaded to paint not once, but twice for the Confraternity of the Immaculate Conception in Milan?",
+    question_image_url:
       "https://uploads2.wikiart.org/00339/images/leonardo-da-vinci/virgin-of-the-rocks-between-1483-and-1486.jpg",
-    //"https://uploads3.wikiart.org/00142/images/57726d85edc2cb3880b48ccd/leonardo-da-vinci-virgin-of-the-rocks-national-gallery-london.jpg",
-    answer: "The Virgin of The Rocks",
-    option1: "The Madonna of the Carnation",
-    option2: "The Virgin and Child with Saint Anne and Saint John the Baptist",
-    option3: "Leda",
+    option0_text: "The Virgin of The Rocks",
+    option1_text: "The Madonna of the Carnation",
+    option2_text: "The Virgin and Child with Saint Anne and Saint John the Baptist",
+    option3_text: "Leda",
   },
 
   {
-    title: "Question 2",
-    questionText: "What work of art did Leonardo da Vinci NOT create?",
-    questionImage: "",
-    answer:
+    quiz_type: "individual_artist",
+    artist_name_key: "leonardo-da-vinci",
+    question_type: "questionText_answersImage",
+    question_text: "Which of the below works is NOT a creation of Leonardo Da Vinci?",
+    option0_image_url:
       "https://uploads7.wikiart.org/images/michelangelo/the-last-judgement-1541.jpg", // "The Last Judgement"
-    option1:
+    option1_image_url:
       "https://uploads1.wikiart.org/images/leonardo-da-vinci/bird-s-eye-view-of-a-landscape.jpg", // "Bird's Eye View of a Landscape"
-    option2:
+    option2_image_url:
       "https://uploads4.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg", // "The Last Supper"
-    option3:
+    option3_image_url:
       "https://uploads1.wikiart.org/00226/images/leonardo-da-vinci/1503990074029518-568314.jpg", // "Annunciation"
   },
 
   {
-    title: "Question 3",
-    questionText:
-      "In his final years in France, Leonardo Da Vinci did little painting and mainly worked on his scientific studies. Which is one of his greatest interests evidenced in the pieces of art below?",
-    questionImage:
-      "https://uploads4.wikiart.org/images/leonardo-da-vinci/anatomy-of-the-neck-1515.jpg",
-    answer: "Anatomy",
-    option1: "Genetics",
-    option2: "Zoology",
-    option3: "Diagnosis",
+    quiz_type: "individual_artist",
+    artist_name_key: "leonardo-da-vinci",
+    question_type: "questionText_answersText",
+    question_text:
+      "Leonardo Da Vinci\'s interests were largely focused on scientific studies. Which one of his greatest interests is evidenced in his work The Vitruvian Man?",
+    option0_text: "Anatomy",
+    option1_text: "Genetics",
+    option2_text: "Zoology",
+    option3_text: "Diagnosis",
   },
 ];
