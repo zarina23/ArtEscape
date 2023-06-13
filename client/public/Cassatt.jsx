@@ -1,4 +1,5 @@
 const cassatt1 = {
+
   quiz_type: "individual_artist",
   artist_name_key: "mary-cassatt",
   question_type: "questionImage_answersText",
