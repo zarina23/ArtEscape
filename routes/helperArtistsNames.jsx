@@ -1,4 +1,4 @@
-const listOfArtists = {
+const listOfArtists1 = {
   FridaKahlo: "https://www.wikiart.org/en/frida-kahlo?json=2", // missing periodsOfWork
   TamaraDeLempicka: "https://www.wikiart.org/en/tamara-de-lempicka?json=2", // missing periodsOfWork
   RemediosVaro: "https://www.wikiart.org/en/remedios-varo?json=2", // missing periodsOfWork
@@ -11,8 +11,8 @@ const listOfArtists = {
   IvanAivazovsky: "https://www.wikiart.org/en/ivan-aivazovsky?json=2", // missing periodsOfWork
 };
 
-const listOfArtists = {
-  FridaKahlo: "frida-kahlo"// missing periodsOfWork
+const listOfArtists2 = {
+  FridaKahlo: "frida-kahlo", // missing periodsOfWork
   TamaraDeLempicka: "tamara-de-lempicka", // missing periodsOfWork
   RemediosVaro: "remedios-varo", // missing periodsOfWork
   MaryCassatt: "mary-cassatt", // missing periodsOfWork

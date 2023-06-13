@@ -1,15 +1,79 @@
 var express = require("express");
 var router = express.Router();
-const axios = require('axios');
+const axios = require("axios");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/api", function (req, res, next) {
   res.send({ title: "Express" });
 });
 
+router.get("/api/artists", function (req, res, next) {
+  const artistsResponse = [
+    {
+      key: "frida-kahlo",
+      name: "Frida Kahlo",
+      image:
+        "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/self-portrait-with-necklace-of-thorns-1940.jpg!Portrait.jpg",
+    },
+    {
+      key: "tamara-de-lempicka",
+      name: "Tamara de Lempicka",
+      image:
+        "https://uploads8.wikiart.org/00109/images/tamara-de-lempicka/1.jpg!Portrait.jpg",
+    },
+    {
+      key: "emma-amos",
+      name: "Emma Amos",
+      image:
+        "https://uploads1.wikiart.org/00335/images//photo-becket-logan.jpg!Portrait.jpg",
+    },
+    {
+      key: "mary-cassat",
+      name: "Mary Cassat",
+      image:
+        "https://uploads4.wikiart.org/images/mary-cassatt.jpg!Portrait.jpg",
+    },
+    {
+      key: "hilma-af-klint",
+      name: "Hilma Af Klint",
+      image:
+        "https://uploads8.wikiart.org/temp/c5de8e4a-1cb2-4e2f-b31a-72406334ad13.jpg!Portrait.jpg",
+    },
+    {
+      key: "pablo-picasso",
+      name: "Pablo Picasso",
+      image:
+        "https://uploads4.wikiart.org/00115/images/pablo-picasso/iuyqtex0.jpeg!Portrait.jpeg",
+    },
+    {
+      key: "salvador-dali",
+      name: "Salvador Dalí",
+      image:
+        "https://uploads5.wikiart.org/images/salvador-dali.jpg!Portrait.jpg",
+    },
+    {
+      key: "wassily-kandinsky",
+      name: "Wassily Kandinsky",
+      image:
+        "https://uploads0.wikiart.org/images/wassily-kandinsky.jpg!Portrait.jpg",
+    },
+    {
+      key: "leonardo-da-vinci",
+      name: "Leonardo da Vinci",
+      image:
+        "https://uploads0.wikiart.org/images/leonardo-da-vinci.jpg!Portrait.jpg",
+    },
+    {
+      key: "ivan-aivazovsky",
+      name: "Ivan Aivazovsky",
+      image:
+        "https://uploads7.wikiart.org/00340/images/ivan-aivazovsky/440px-aivazovsky-self-portrait-1874.jpg!Portrait.jpg",
+    },
+  ];
+  res.send(artistsResponse);
+});
 
-router.get("/artists/:artist_name", async function (req, res, next) {
-
+router.get("/api/artists/:artist_name", async function (req, res, next) {
   const { artist_name } = req.params;
 
   // Call WikiArt API with axios (no need to json)
@@ -17,7 +81,9 @@ router.get("/artists/:artist_name", async function (req, res, next) {
     // Make both axios requests simultaneously
     const [response1, response2] = await Promise.all([
       axios.get(`https://www.wikiart.org/en/${artist_name}?json=2`),
-      axios.get(`https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=${artist_name}&json=2`)
+      axios.get(
+        `https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=${artist_name}&json=2`
+      ),
     ]);
 
     const artistDataFull = response1.data;
@@ -29,17 +95,32 @@ router.get("/artists/:artist_name", async function (req, res, next) {
     // Process the data and send the response
 
     //Clean artist bio data
-    const { OriginalArtistName, birthDayAsString, deathDayAsString, biography, wikipediaUrl } = artistDataFull;
+    const {
+      OriginalArtistName,
+      artistName,
+      birthDayAsString,
+      deathDayAsString,
+      biography,
+      wikipediaUrl,
+    } = artistDataFull;
 
-    let artistDataCleaned = { OriginalArtistName, birthDayAsString, deathDayAsString, biography, wikipediaUrl };
+    let artistDataCleaned = {
+      OriginalArtistName,
+      artistName,
+      birthDayAsString,
+      deathDayAsString,
+      biography,
+      wikipediaUrl,
+    };
 
-    artistDataCleaned = { ...artistDataCleaned, artistId: artistDataFull.contentId };
-
-
+    artistDataCleaned = {
+      ...artistDataCleaned,
+      artistId: artistDataFull.contentId,
+    };
 
     const artistAndPaintingsData = {
       artist: artistDataCleaned,
-      paintings: paintingsDataFull
+      paintings: paintingsDataFull,
     };
 
     // Send response
@@ -48,6 +129,5 @@ router.get("/artists/:artist_name", async function (req, res, next) {
     res.status(500).send(err);
   }
 });
-
 
 module.exports = router;
