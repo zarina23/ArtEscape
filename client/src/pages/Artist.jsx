@@ -5,20 +5,41 @@ import PropTypes from "prop-types";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import { Loading } from "../components/Loading";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import { useTheme } from "@mui/material/styles";
+import PaintingsCarousel from "../components/PaintingsCarousel";
+import { autoPlay } from "react-swipeable-views-utils";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
-  const [paintings, setPaintings] = useState({});
+  const [paintings, setPaintings] = useState([]);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState(0);
+
+  const paintingsSelection = [
+    {
+      artist: "frida-kahlo",
+      selectedPaintings: [
+        { contentId: 184936 },
+        { contentId: 184938 },
+        { contentId: 185011 },
+        { contentId: 184943 },
+        { contentId: 184989 },
+        { contentId: 185009 },
+        { contentId: 185005 },
+        { contentId: 184935 },
+        { contentId: 185000 },
+        { contentId: 185006 },
+      ],
+    },
+    
+  ];
 
   const Item = styled(Box)(({ theme }) => ({
     padding: theme.spacing(2),
@@ -43,6 +64,26 @@ export function Artist() {
       console.log(err);
     }
   };
+
+  console.log(paintings);
+
+  const gallerySelection = paintingsSelection.filter(
+    (selection) => selection.artist === id
+  );
+  const selectedPaintings = gallerySelection[0].selectedPaintings;
+
+  console.log(selectedPaintings);
+
+  const selectedGalleryImages = [];
+
+  paintings.forEach((painting) => {
+    selectedPaintings.forEach((selectedPainting) => {
+      painting.contentId === selectedPainting.contentId &&
+        selectedGalleryImages.push(painting);
+    });
+  });
+
+  console.log(selectedGalleryImages);
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -130,9 +171,7 @@ export function Artist() {
                 {/* <Typography variant="h5" color="inherit" paragraph>
                   {`${artist.birthDayAsString} - ${artist.deathDayAsString}`}
                 </Typography> */}
-                <Typography variant="h5" color="inherit" paragraph>
-                  {console.log(paintings)}
-                </Typography>
+                <Typography variant="h5" color="inherit" paragraph></Typography>
               </Box>
             </Grid>
           </Grid>
@@ -187,7 +226,7 @@ export function Artist() {
           </Paper>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          PAINTINGS
+          <PaintingsCarousel paintings={selectedGalleryImages} />
         </TabPanel>
       </Box>
     </>
