@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const axios = require("axios");
+const db = require("../model/helper");
 
 router.get("/artists", function (req, res, next) {
   const artistsResponse = [
@@ -124,6 +125,23 @@ router.get("/artists/:artist_name", async function (req, res, next) {
     res.send(artistAndPaintingsData);
   } catch (err) {
     res.status(500).send(err);
+  }
+});
+
+// Route for quiz "individual artist"
+
+router.get("/artists/:artist_name/quiz", async function (req, res, next) {
+  const { artist_name } = req.params;
+
+  // call to DB table questions
+
+  try {
+    const results = await db(
+      `SELECT * FROM questions WHERE artist_name_key = "${artist_name}";`
+    );
+    res.send(results.data);
+  } catch (err) {
+    res.status(500).send({ message: err });
   }
 });
 
