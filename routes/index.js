@@ -148,44 +148,67 @@ router.get("/artists", function (req, res, next) {
       name: "Mary Cassatt",
       profileImage:
         "https://uploads4.wikiart.org/images/mary-cassatt.jpg!Portrait.jpg",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      coverImage:
+        "https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg",
+      style: "Impressionism",
+      nationality: "American",
       mainFacts: [],
-      bio: "",
+      bio: `An American painter and printmaker, Mary Cassatt was an impressionist painter, who depicted the lives of women, especially the special bond between mother and child. She traveled extensively as a child, and was probably exposed to the works of the great masters at the World's fair in Paris in 1855. Other artist's, such as Degas and Pissarro, would later become her mentors and fellow painters. She began studying art seriously at the age of 15, at a time when only around twenty percent of all arts students were female. Unlike many of the other female students, she was determined to make art her career, rather than just a social skill. She was disappointed at her art education in the United States, and moved to Paris to study art under private tutors in Paris. Her mother and family friends traveled with her to France, acting as chaperones.
+
+      She continued her art education in France, and her first work was accepted into the Paris Salon in 1868. At the outbreak of the Franco-Prussian War in 1870, however, she returned to the United States to live with her family. Her father, who did not approve of her chosen vocation as an artist, paid for her living expenses, but refused to pay for her art supplies. During her stay in the United States, Cassatt was miserable. She exhibited some paintings but found no buyers, and upset at the lack of art to study, she quit painting and almost gave up the craft. After a trip to Chicago, her work was noticed by the Archbishop of Pittsburgh, who commissioned from her a copy of two of Correggio's paintings in Italy. He offered to pay for her travel expenses and she immediately left the United States.
+      
+      In Europe, Cassatt's paintings were better received, increasing her prospects, and exhibited in the Salon of 1872, selling a painting. She exhibited every year at the Paris Salon until 1877, when all her works were rejected. Distraught at her rejection, she turned to the Impressionists, who welcomed her with welcome arms.
+      
+      Deciding early in her career that marriage was not an option, Cassatt never married, and spent much of her time with her sister Lydia, until her death in 1882, which left Mary unable to work for a short time. As her career progressed, her critical reputation grew, and she was often touted, along with Degas, as the one of the best exhibitors at the Impressionist Salon. She was awarded the French Legion of Honor in 1906.
+      
+      In her later life, she was diagnosed with rheumatism, neuralgia, diabetes, and cataracts, although her spirit was never crushed. She continued to fight for the cause of women's suffrage after she went almost blind in 1914. She died twelve years later. He works have since been printed on United States postage stamps and her works have sold for as much as $2.9 million at auction.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "At the Theater - 1879" },
+        { title: "The Flirtation A Balcony in Seville - 1872" },
+        { title: "Maternity - 1897" },
+        { title: "Susan Comforting the Baby (no.1) - c.1881" },
+        { title: "Young Woman Sewing in the Garden - 1886" },
+        { title: "Baby in His Mother's arms, sucking his finger - 1889" },
+        { title: "Mother And Child - c.1890" },
+        { title: "Mother Holding a Child in Her arms - c.1890" },
+        { title: "Baby's First Caress - 1891" },
+        { title: "Mothers Kiss - 1891" },
       ],
     },
     {
       key: "hilma-af-klint",
       name: "Hilma Af Klint",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://uploads4.wikiart.org/temp/c5de8e4a-1cb2-4e2f-b31a-72406334ad13.jpg",
+      coverImage:
+        "https://uploads7.wikiart.org/00140/images/hilma-af-klint/hilma-af-klint-svanen.jpg!Large.jpg",
+      style: " Naïve Art (Primitivism), Abstract Art, Modernism",
+      nationality: "Swedish",
       mainFacts: [],
-      bio: "",
+      bio: `Hilma af Klint was a Swedish artist and mystic whose paintings were amongst the first abstract art. She belonged to a group called 'The Five' and the paintings or diagrams were a visual representation of complex philosophical ideas.
+
+      The fourth child of Captain Victor af Klint, a Swedish naval commander, and Mathilda af Klint (née Sonntag), Hilma af Klint spent summers with her family at their farm Hammora on the island of Adelsö in Lake Mälaren. In these idylic surroundings Hilma came into contact with nature at an early stage in her life and this deep association with natural forms was to be an inspiration in her work. From her father she adopted an interest in mathematics.
+      
+      In 1880 her younger sister Hermina died and it was at this time that the spiritual dimension of her life began to develop.
+      
+      She showed an early ability in visual art and after the family had moved to Stockholm she studied at the Academy of Fine Arts for five years during which time she learned portraiture and landscape painting . Here she met Anna Cassel, the first of the four women with whom she later worked in 'The Five' (de fem), a group of artists who shared her ideas. Her more conventional painting became the source of her financial income while the 'life's work' remained a quite separate practice.
+      
+      The project on which "the Five" were engaged involved, in 1892, recording in a book a completely new system of mystical thought in the form of messages from higher spirits. One, Gregor, spoke thus: "all the knowledge that is not of the senses, not of the intellect, not of the heart but is the property that exclusively belongs to the deepest aspect of your being...the knowledge of your spirit".
+      
+      It is interesting to note that af Klint's work ran parallel to the development of abstract art by other artists such as Mondrian, Malevich and Kandinsky who were, like af Klint, inspired by the Theosophical Movement founded by Madame Blavatsky. Af Klint's work can also be seen in the wider context of the modernist search for new forms in artistic, spiritual, political and scientific systems in the beginnings of the 20th century.
+      
+      Through her work with the group 'the Five' af Klint created experimental automatic drawing as early as 1896, leading her towards an inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds. Quite apart from their diagrammatic purpose the paintings have a freshness and a modern aesthetic of tentative line and hastily captured image: a segmented circle, a helix bisected and divided into a spectrum of lightly painted colours. She continued prolifically to add to the body of work amounting to over 1000 pieces until 1941. She requested that it should not be shown until 20 years after the end of her life.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "The Large Figure Paintings, No.5 - 1907" },
+        { title: "They tens mainstay IV - 1907" },
+        { title: "De tio största, No.2 Barnaaldern - 1907" },
+        { title: "Tree of Knowledge No.2 - 1913" },
+        { title: "The Ten Largest - 1907" },
+        { title: "Svanen - 1914" },
+        { title: "Wheat and Wormwood - 1922" },
+        { title: "Group VI, Evolution, No.15 - 1908" },
+        { title: "Tree of Knowledge - 1913" },
+        { title: "The Swan, No.17 - 1915" },
       ],
     },
     {
