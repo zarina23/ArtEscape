@@ -45,7 +45,7 @@ export function Artist() {
         },
         {
           image:
-            "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/magnolias-1945.jpg!Large.jpg",
+            "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calder%C3%B3n-de-rivera/moses-1945.jpg!Large.jpg",
         },
         {
           image:
@@ -254,7 +254,7 @@ export function Artist() {
       selectedPaintings: [
         {
           image:
-            "https://uploads7.wikiart.org/images/pablo-picasso/the-soup-1903.jpg!Large.jpg",
+            "https://cdn.shopify.com/s/files/1/0849/4704/files/guernica_sartle.jpg?v=1582528493",
         },
         {
           image:
