@@ -129,7 +129,13 @@ router.get("/artists", function (req, res, next) {
       style: "Contemporary",
       nationality: "American",
       mainFacts: [],
-      bio: "Painter, printmaker, and weaver Emma Amos was born in 1937 and grew up in Atlanta, Georgia. She began painting and drawing when she was six. At age sixteen, after attending segregated public schools in Atlanta, she entered the five-year program at Antioch University in Yellow Springs, Ohio.Amos's first solo exhibition was in an Atlanta galery in 1960. In that same year she moved to New York, where she taught as an assistant at the Dalton School and continued her work as an artist by making prints. In 1961 she was hired by Dorothy Liebes as a designer/weaver, creating rugs for a major textile manufacturer. In 1964 she entered a master's program in Art Education at New York University. During this time Hale Woodruff invited her to become a member of Spiral, a group of black artists that included Romare Bearden, Norman Lewis, and Charles Alston. She was the group's youngest and only female member. She married Bobby Levine in 1965 and received her MA in 1966. She had a son, Nicholas, in 1967, and her daughter, India, followed three years later. While the children were small, Amos focused on sewing, weaving, quilting, and doing illustrations for Sesame Street magazine. In 1974 she began teaching at the Newark School of Fine and Industrial Arts, and in 1977 she developed and cohosted (with Beth Gutcheon) Show of Hands, a crafts show for WGBH Educational TV in Boston, which ran for two years. In 1980, Amos was hired as an assistant professor at the Mason Gross School of Art, Rutgers University. She continued teaching there until she retired in June 2008.",
+      bio: `Painter, printmaker, and weaver Emma Amos was born in 1937 and grew up in Atlanta, Georgia. She began painting and drawing when she was six. At age sixteen, after attending segregated public schools in Atlanta, she entered the five-year program at Antioch University in Yellow Springs, Ohio.
+
+      Amos's first solo exhibition was in an Atlanta galery in 1960. In that same year she moved to New York, where she taught as an assistant at the Dalton School and continued her work as an artist by making prints. In 1961 she was hired by Dorothy Liebes as a designer/weaver, creating rugs for a major textile manufacturer. In 1964 she entered a master's program in Art Education at New York University. During this time Hale Woodruff invited her to become a member of Spiral, a group of black artists that included Romare Bearden, Norman Lewis, and Charles Alston. She was the group's youngest and only female member. 
+      
+      She married Bobby Levine in 1965 and received her MA in 1966. She had a son, Nicholas, in 1967, and her daughter, India, followed three years later. While the children were small, Amos focused on sewing, weaving, quilting, and doing illustrations for Sesame Street magazine. In 1974 she began teaching at the Newark School of Fine and Industrial Arts, and in 1977 she developed and cohosted (with Beth Gutcheon) Show of Hands, a crafts show for WGBH Educational TV in Boston, which ran for two years. 
+      
+      In 1980, Amos was hired as an assistant professor at the Mason Gross School of Art, Rutgers University. She continued teaching there until she retired in June 2008.`,
       selectedPaintings: [
         { title: "Three Figures" },
         { title: "Fanny Mae" },
@@ -283,67 +289,94 @@ router.get("/artists", function (req, res, next) {
     {
       key: "wassily-kandinsky",
       name: "Wassily Kandinsky",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://uploads0.wikiart.org/images/wassily-kandinsky.jpg!Portrait.jpg",
+      coverImage:
+        "https://uploads1.wikiart.org/00280/images/wassily-kandinsky/37-262-ph-web-1-1.jpg!Large.jpg",
+      style: "Expressionism, Abstract Art",
+      nationality: "Russian",
       mainFacts: [],
-      bio: "",
+      bio: `The creator of the first modern abstract paintings, Wassily Kandinsky was an influential Russian painter and art theorist. In his youth, he studied law and economics at the University of Moscow, and was later hired as a professor of Roman law at the University of Dorpat in Estonia. He was 30 years old when he began his studies in painting, focusing on life drawing, sketching, and anatomy, at the University of Munich.
+
+      He was not immediately accepted into the school as an art student, and so in the meantime he began learning art by himself, gaining artistic insight from Monet's Haystacks and Richard Wagner's composition Lohengrin. He was also influenced by the teachings of anthroposophy, as such, his abstract works were a creation of his intense philosophical beliefs, based on his own personal experiences with art. The devotion to inner beauty remained a central theme in his art.
+      
+      In 1914, after the beginning of World War I, Kandinsky returned to Moscow, where he did not find much inspiration in the art world. In 1921, he returned to Munich, where he taught at the Bauhaus school of architecture, until it was closed by the Nazis in 1933. He was an active art theorist, publishing a number of books on art theory, and developing a complex and deeply emotional theory about the ability of colors and shapes to represent sound and evince human emotion. He eventually traveled to the United States to lecture on the topic.
+      
+      After the Bauhaus was closed, Kandinsky moved to Paris, where he was mostly isolated from the other Impressionist or Cubist painters. He later became a French citizen, and lived the rest of his days there. His legacy lives on in the newly created Kandinsky Award, which rewards a promising young Russian artist a 55,000 euro prize, and attempts to elevate the status of contemporary Russian art.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "Moscow I - 1916" },
+        { title: "Blue Mountain - 1908" },
+        { title: "To the Unknown Voice - 1916" },
+        { title: "Red Oval - 1920" },
+        { title: "Small Worlds II - 1922" },
+        { title: "Composition 8 - 1923" },
+        { title: "Small Dream in Red - 1925" },
+        { title: "Several Circles - 1926" },
+        { title: "Accent on Rose - 1926" },
+        { title: "Succession - 1935" },
       ],
     },
     {
       key: "leonardo-da-vinci",
       name: "Leonardo da Vinci",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://uploads0.wikiart.org/images/leonardo-da-vinci.jpg!Portrait.jpg",
+      coverImage:
+        "https://uploads4.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg!Large.jpg",
+      style: "High Renaissance",
+      nationality: "Italian",
       mainFacts: [],
-      bio: "",
+      bio: `One of the most important and influential figures of the Renaissance was the painter, sculptor, architect and engineer, Leonardo Da Vinci - a man that epitomized the Renaissance humanist ideal. Born in 1452 in the town of Vinci, Leonardo began his early artistic training in Florence, working at the workshop of the sculptor Andrea Verrocchio. There, he received a multifaceted training in painting, sculpture and the technical-mechanical arts. Leonardo left Verrocchio's workshop in 1476, and worked independently in Florence until 1481.
+
+      Feeling stifled and dissatisfied in Florence, Leonardo decided to seek new challenges, and in 1482, he moved to Milan, where he would spend the next 17 years. One of his early commissions was the altar painting The Virgin of the Rocks (1483-1486) for the Confraternity of the Immaculate Conception. However, the parties got into a dispute over payment, and Leonardo sold the painting to someone else. After ten years of litigation, the confraternity persuaded Leonardo to paint a second version, The Virgin of the Rocks (1495-1508). During this first Milanese period (1482-1499), Leonardo completed six paintings, including the masterpiece, The Last Supper (1495), at the monastery of Santa Maria delle Grazie in Milan. He also worked for the Sforza family (the ruling family in Milan) on a monumental sculptural project: a huge equestrian monument honoring the founder of the Sforza dynasty, Francesco Sforza. Leonardo devoted 12 years to the project, creating a clay model of the horse and preparing to cast the 5-meter high figure. However, this great undertaking was never realized: in 1499 the French army invaded Milan and the Sforza family fell from power sealing the fate of the monument (the clay model made by Leonardo was destroyed during the war).
+      
+      With the political shift in Milan, Leonardo travelled around Italy before resettling in Florence. During his second period in Florence (1500-1508), he painted his most famous work, the Mona Lisa (ca. 1503-1519). By 1508, Leonardo returned to Milan, working for the French rulers of the city. In this period, he painted very little and instead focused on his scientific activity, specifically his study of anatomy. In 1513, the French were expelled from Milan, and forced to move, Leonardo went to Rome, where he spent the next three years. While in Rome, he received an invitation from French King, Francis I to enter his service in France. At 65, Leonardo accepted and bore the title of First painter, architect and engineer to the King.
+      
+      In his final years in France, he did little painting and mainly worked on his scientific studies and his treatise on painting. Leonardo Da Vinci died in 1519 in Cloux in France. Leonardo, one of the most revered painters of his time, remains among the most important figures in art history. However, it is important to note that his influence goes far beyond - from the drawings, scientific diagrams, and technical studies in his notebooks it is known that his scientific writings and mechanical inventions were centuries ahead of their time.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "Madonna and Child - c.1490" },
+        { title: "Virgin of the Rocks - 1491 and 1508" },
+        { title: "The Baptism of Christ - c.1475" },
+        { title: "Mona Lisa - c.1503-1519" },
+        { title: "Head of a Young Woman with Tousled Hair (Leda) - c.1508" },
+        {
+          title: "La Bella Principessa - Portrait of Bianca Sforza - 1495-1498",
+        },
+        { title: "The Last Supper (La ultima cena) - 1495-1498" },
+        { title: "Heads of an old man and a youth - c.1495" },
+        { title: "Leda and the Swan - 1503" },
+        { title: "Allegory of Boat, Wolf, and Eagle - 1516" },
       ],
     },
     {
       key: "ivan-aivazovsky",
       name: "Ivan Aivazovsky",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://uploads7.wikiart.org/00340/images/ivan-aivazovsky/440px-aivazovsky-self-portrait-1874.jpg!Portrait.jpg",
+      coverImage:
+        "https://uploads2.wikiart.org/00342/images/ivan-aivazovsky/aivazovsky-view-of-constantinople-and-the-bosphorus.jpg!Large.jpg",
+      style: "Romanticism",
+      nationality: "Russian, Armenian",
       mainFacts: [],
-      bio: "",
+      bio: `Throughout his lifetime, Aivazovsky contributed over 6,000 paintings to the art world, ranging from his early landscapes of the Crimean countryside to the seascapes and coastal scenes for which he is most famous. Aivazovsky was especially effective at developing the play of light in his paintings, sometimes applying layers of color to create a transparent quality, a technique for which they are highly admired.
+
+      Although he produced many portraits and landscapes, over half of all of Aivazovsky's paintings are realistic depictions of coastal scenes and seascapes. He is most remembered for his beautifully melodramatic renditions of the seascapes of which he painted the most. Many of his later works depict the painful heartbreak of soldiers at battle or lost at sea, with a soft celestial body taunting of hope from behind the clouds. His artistic technique centers on his ability to render the realistic shimmer of the water against the light of the subject in the painting, be it the full moon, the sunrise, or battleships in flames. Many of his paintings also illustrate his adeptness at filling the sky with light, be it the diffuse light of a full moon through fog, or the orange glow of the sun gleaming through the clouds.
+      
+      In addition to being the most prolific of Russian Armenian painters, Aivazovsky founded an art school and gallery to engage and educate other artists of the day. He also and built a historical museum in his hometown on Feodosia, Crimea, in addition to beginning the first archaeological expeditions of the same region.
+      
+      Today, Aivazovsky's paintings have been auctioned off for millions of dollars and have been printed on postage stamps for Russia, Ukraine, and Armenia. Perhaps it is also to his
+      lasting legacy that he is said to be one of the most forged of all Russian artists.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "The Ninth Wave - 1850" },
+        { title: "Lunar Night on the Black Sea - 1859" },
+        { title: "View of Constantinople - 1849" },
+        { title: "Ships at Anchor - 1851" },
+        { title: "View of Constantinople - 1851" },
+        { title: "Fishermen on the Coast of the Sea - 1852" },
+        { title: "After the storm - 1854 " },
+        { title: "View of Constantinople and the Bosphorus - 1856" },
+        { title: "Sunset at Sea - 1856" },
+        { title: "Winter Caravan on Road - 1857" },
       ],
     },
   ];
