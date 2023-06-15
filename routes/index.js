@@ -145,4 +145,20 @@ router.get("/artists/:artist_name/quiz", async function (req, res, next) {
   }
 });
 
+// Route for final quiz
+
+// router.get("artists/final_quiz" does not work!
+
+router.get("/final_quiz", async function (req, res, next) {
+  // call to DB table questions
+  try {
+    const results = await db(
+      `SELECT * FROM questions WHERE quiz_type = 'artists_final';`
+    );
+    res.send(results.data);
+  } catch (err) {
+    res.status(500).send({ message: err });
+  }
+});
+
 module.exports = router;
