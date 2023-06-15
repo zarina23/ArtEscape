@@ -11,7 +11,7 @@ router.get("/artists", function (req, res, next) {
       profileImage:
         "https://uploads.wikiart.org/Content/images/ARTIST-480x600.jpg",
       coverImage:
-        "https://uploads7.wikiart.org/00335/images/emma-amos/seated-figure-and-nude-1966.png",
+        "https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-grandparents-my-parents-and-me-1936.jpg!Large.jpg",
       style: "Naïve Art (Primitivism), Surrealism, Indigenism, Magic Realism",
       nationality: "Mexican",
       mainFacts: [],
@@ -73,8 +73,51 @@ router.get("/artists", function (req, res, next) {
     {
       key: "tamara-de-lempicka",
       name: "Tamara de Lempicka",
-      image:
-        "https://uploads8.wikiart.org/00109/images/tamara-de-lempicka/1.jpg!Portrait.jpg",
+      profileImage:
+        "https://ic.pics.livejournal.com/tanjand/44781189/71030736/71030736_original.jpg",
+      coverImage:
+        "https://uploads6.wikiart.org/images/tamara-de-lempicka/portrait-in-the-green-bugatti-1925.jpg!Large.jpg",
+      style: "Art Deco",
+      nationality: "Polish, Russian, French",
+      mainFacts: [],
+      bio: `Tamara de Lempicka was the lone traditional easel painter in the entirety of the Art Deco style. Her sources of inspiration ranged dramatically: she adored Italian Renaissance painting; she was characterized by critics as a sort of modern-day Ingres, although the comparisons were more often not intended to flatter; she absorbed the avant-garde art of the era - particularly post-cubist abstraction but of a "softened" style. Perhaps most influential was Lempicka's desire to capitalize on her social connections to create a niche for her portraiture, which most often featured well-to-do, cosmopolitan types. The Art Deco style, lavish in a less visually complex way than its predecessor, Art Nouveau, was probably the ideal vehicle for her trendy style. Most notably, despite its decorative quality, her work provided her with an outlet for unconventional self-expression: truly a product of her era, the libertine golden age between the two world wars, Lempicka, a bisexual, made bold, liberated female sexuality the linchpin of her art.
+
+      Tamara de Lempicka was born in Warsaw (then part of Russian Empire). Her father was a Russian-Jewish lawyer and her mother was a Polish socialite. As a child of a well-off family, she went to boarding school in Lausanne, Switzerland. In 1911, she spent the summer with her grandmother in Italy, where she was introduced to the work of the great Italian painters, sparking a love of art that would inform the rest of her life. The following year, her parents divorced and she was sent to live with her aunt in St. Petersburg. Her aunt was very wealthy, which provided her niece with a taste of the life of luxury enjoyed by the rich elite. When she was 15, Maria Gorska attended an opera, where she encountered the dashing Tadeusz Lempicki, whom she determined to marry. The gregarious and self-confident Maria convinced her uncle to make the introduction and, three years later, she and Lempicki were married.
+      
+      The following year, in 1917 the Russian Revolution began and her husband was arrested by the Bolsheviks. After weeks of trying to locate her husband in prison by exploiting her social connections, charm, and attractive appearance, Maria found Tadeusz and managed to arrange for his release (supposedly, Lempicka seduced a person of power to get her husband out). Shortly afterward, the couple left the country and eventually settled in Paris where her family had also taken refuge.
+      
+      In Paris, she reinvented herself as Tamara de Lempicka, a name that had direct aristocratic pretensions. Ironically, her financial circumstances were somewhat dire as a result of her refugee status, so she determined to make money from her art. Tamara began studying diligently, enrolling at the Académie de la Grande Chaumière where she was taught by the Nabis painter, Maurice Denis, and the Cubist André Lhote. Denis encouraged her to take inspiration from the graphic arts, an engagement that was to play a key role in the development of her signature style. Lhote was arguably her most influential mentor. Lhote's brand of Cubism - less flattened, angular version to which he referred as "soft Cubism," - is immediately detectable in Lempicka's style.
+      
+      Lempicka established herself fairly rapidly in the sophisticated, lively atmosphere of roaring '20s Paris in both social and artistic terms. She began showing her work in smaller galleries in the French capital and, in 1925, had her first solo exhibition in Milan. The show was sponsored by Count Emmanuele Castelbarco, a member of Italian high society and chic, continental artistic circles. In preparation for the show, Lempicka painted an astonishing 28 new pieces in a mere six months.
+      
+      Tamara de Lempicka was well suited to the prosperous golden age of the post-war period of the 1920s. Devoted to social ascendance but also enthralled with the bohemian lifestyles of the Parisian avant-garde, Lempicka found her place as a portraitist of some of the era's beautiful people. She mingled in circles with bright personalities such as André Gide, Pablo Picasso, Colette, and Jean Cocteau. Although married and the mother of a young daughter named Kizette, Tamara, who fashioned herself part-free spirit, part-femme fatale, engaged openly in romantic and sexual involvements with both men and women, a good number of whom were her patrons and models. She mixed with groups of lesbian and bisexual women artists and writers, attending Natalie Barney's "women only" afternoons and becoming friendly with figures such as Vita Sackville-West. Among her infamous entanglements was Lempicka's affair with a Parisian nightclub singer, Suzy Solidor, and her correspondence with the distinguished Italian poet, Gabriel d'Annunzio, whom she visited on two different occasions at his villa in Italy on Lake Garda. During the second visit, when she resisted his amorous advances, Annunzio withdrew his permission for Tamara to paint his portrait and the relationship ended before it had really begun.
+      
+      In 1927, Lempicka received first prize at the Exposition Internationale des Beaux-Arts for the painting Kizette on the Balcony (1927) - a striking portrait of her daughter, whom she saw very rarely. The following year, she and her husband divorced. Subsequently, her patron, Baron Raoul Kuffner con Dioszeg, commissioned her to paint a portrait of his mistress. However, in the process of painting the portrait, Lempicka developed a romantic relationship with the Baron, replacing his mistress and eventually marrying him in 1934 following the death of his wife.
+      
+      Lempicka, who had experienced the turbulent run-up to the Russian Revolution and then the catastrophic First World War, recognized early on the signs of a second impending world war and encouraged her husband to shore up his finances. In 1939, when war seemed inevitable, the couple left Paris and moved to Hollywood, California. They lived in the former house of the well-known film director, King Vidor, and Tamara soon became a favorite artist of the stars of Hollywood's silver screen.
+      
+      Lempicka busied herself with war relief work and after an extended struggle, managed to rescue her daughter Kizette from Nazi-occupied Paris in 1941. In 1943, the Baron and Baroness, as Lempicka was now known, moved to New York City, where they continued to socialize as frequently as ever, although de Lempicka's art took something of a back seat compared to her prolific output in Paris. The distinctive style in which she painted had by the mid-1940s become somewhat passe and therefore her work was less in demand.
+      When her husband, the Baron, died in 1961, Tamara sold many of her belongings and embarked on three around-the-world voyages by ship. Afterward, she moved to Houston, Texas to be closer to her daughter. Around that time, she began producing abstract paintings in an effort to remain more in-step with current artistic trends. However, when she exhibited her work in 1962, it was poorly received by critics and the aging Lempicka made the decision to retire from public life as a painter and to never again exhibit her work.
+      
+      Ironically, around the time Tamara had forsaken art, there was a renewed interest in the Art Deco style. In 1966, an exhibition devoted completely to the Art Deco movement was held in the Musée des Arts Decoratifs in Paris, reigniting interest in Lempicka's work. In 1972, the Galerie du Luxembourg presented a major retrospective of her work, thus restoring interest both in Lempicka and her work.
+      
+      The intelligent, self-determined Lempicka was reportedly very temperamental in her old age, including being notoriously difficult with everyone - her daughter included - who proposed to exhibit her work. In 1978, she moved to Cuernavaca in Mexico, where she bought a unique architect-designed house. After she died in 1980, her ashes were scattered on top of Popocatepetl, a volcano in Mexico.
+      
+      In both her life and her art, Tamara de Lempicka offered a new image of the modern woman: part jazz-age femme fatale, libertine, and social climber, and part canny self-promoter, self-styled experimental artist and astute cultural and historical prognosticator. In many ways, Lempicka's artistic output has been assessed as inseparable from her larger-than-life character and, more significantly, her gender. Lempicka's lifestyle, one in which she flouted her sexual freedom, has made her something of a conundrum for feminist art historians. As she frequently depicted her female lovers and other women - often in pairs or groups - as reveling in their sexuality under the gaze of a female painter, it is possible to regard Lempicka as a kind of proto-feminism. Indeed, as a female painter representing the female nude, she subverted the conventional arrangement in which a naked woman is displayed exclusively for the viewing pleasure of the male onlooker. The result is a kind of egalitarian voyeurism. The caveat may be, however, that as a member of the upper class, Lempicka's freedom was more easily attained and forgiven.
+      
+      Her work, while arguably Cubist-inspired to an extent, exudes the lavishness of the decorative, just as do her sitters. Trained by two successful avant-garde artists at the height of post-Cubist experimentation, Lempicka's work is nevertheless most often categorized as Art Deco. While her style incorporates the geometric, faceted forms of Cubism, her emphasis on soft modeling achieved a more sensuous effect. The bodies of her sitters are slightly distorted so that they appear as elegant objets d'art as much as human figures. She incorporated the rich, limited palette of Art Deco - particularly, graphic design - to create polished portraits that seemed more decorative than serious high art. Finding her niche - a comfortable place between traditional easel painting inspired by the likes of Michelangelo, Caravaggio, and Ingres and objects produced solely for decoration - Tamara de Lempicka's Art Deco style has been an inspiration to figures as diverse as the singer and designer Florence Welch and fashion designers Karl Lagerfeld and Louis Vuitton. She was a favorite artist of the rich and socialites of her time, her popularity continues with celebrities such as Madonna, Jack Nicholson, and Barbra Streisand that enjoy her sharp lines and bold statements of a by-gone age.`,
+      selectedPaintings: [
+        { title: "Autoportrait (Tamara in a Green Bugatti) - 1925" },
+        { title: "Portrait du Marquis Sommi - 1925" },
+        { title: "Girl with Gloves - 1929" },
+        { title: "Kizette on the balcony - 1927" },
+        { title: "Double 47 - 1924" },
+        { title: "Andromeda - 1929" },
+        { title: "Portrait Of Ira P. - 1930" },
+        { title: "Nude with Dove - 1928" },
+        { title: "Portrait Of Dr. Boucard - 1929" },
+        { title: "The Marquis D'Afflitto on a Staircase - 1926" },
+      ],
     },
     {
       key: "emma-amos",
@@ -86,7 +129,7 @@ router.get("/artists", function (req, res, next) {
       style: "Contemporary",
       nationality: "American",
       mainFacts: [],
-      bio: "Painter, printmaker, and weaver Emma Amos was born in 1937 and grew up in Atlanta, Georgia. She began painting and drawing when she was six. At age sixteen, after attending segregated public schools in Atlanta, she entered the five-year program at Antioch University in Yellow Springs, Ohio.Amos's first solo exhibition was in an Atlanta gallery in 1960. In that same year she moved to New York, where she taught as an assistant at the Dalton School and continued her work as an artist by making prints. In 1961 she was hired by Dorothy Liebes as a designer/weaver, creating rugs for a major textile manufacturer. In 1964 she entered a master's program in Art Education at New York University. During this time Hale Woodruff invited her to become a member of Spiral, a group of black artists that included Romare Bearden, Norman Lewis, and Charles Alston. She was the group's youngest and only female member. She married Bobby Levine in 1965 and received her MA in 1966. She had a son, Nicholas, in 1967, and her daughter, India, followed three years later. While the children were small, Amos focused on sewing, weaving, quilting, and doing illustrations for Sesame Street magazine. In 1974 she began teaching at the Newark School of Fine and Industrial Arts, and in 1977 she developed and cohosted (with Beth Gutcheon) Show of Hands, a crafts show for WGBH Educational TV in Boston, which ran for two years. In 1980, Amos was hired as an assistant professor at the Mason Gross School of Art, Rutgers University. She continued teaching there until she retired in June 2008.",
+      bio: "Painter, printmaker, and weaver Emma Amos was born in 1937 and grew up in Atlanta, Georgia. She began painting and drawing when she was six. At age sixteen, after attending segregated public schools in Atlanta, she entered the five-year program at Antioch University in Yellow Springs, Ohio.Amos's first solo exhibition was in an Atlanta galery in 1960. In that same year she moved to New York, where she taught as an assistant at the Dalton School and continued her work as an artist by making prints. In 1961 she was hired by Dorothy Liebes as a designer/weaver, creating rugs for a major textile manufacturer. In 1964 she entered a master's program in Art Education at New York University. During this time Hale Woodruff invited her to become a member of Spiral, a group of black artists that included Romare Bearden, Norman Lewis, and Charles Alston. She was the group's youngest and only female member. She married Bobby Levine in 1965 and received her MA in 1966. She had a son, Nicholas, in 1967, and her daughter, India, followed three years later. While the children were small, Amos focused on sewing, weaving, quilting, and doing illustrations for Sesame Street magazine. In 1974 she began teaching at the Newark School of Fine and Industrial Arts, and in 1977 she developed and cohosted (with Beth Gutcheon) Show of Hands, a crafts show for WGBH Educational TV in Boston, which ran for two years. In 1980, Amos was hired as an assistant professor at the Mason Gross School of Art, Rutgers University. She continued teaching there until she retired in June 2008.",
       selectedPaintings: [
         { title: "Three Figures" },
         { title: "Fanny Mae" },
@@ -103,44 +146,157 @@ router.get("/artists", function (req, res, next) {
     {
       key: "mary-cassatt",
       name: "Mary Cassatt",
-      image:
+      profileImage:
         "https://uploads4.wikiart.org/images/mary-cassatt.jpg!Portrait.jpg",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "hilma-af-klint",
       name: "Hilma Af Klint",
-      image:
-        "https://uploads8.wikiart.org/temp/c5de8e4a-1cb2-4e2f-b31a-72406334ad13.jpg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "pablo-picasso",
       name: "Pablo Picasso",
-      image:
-        "https://uploads4.wikiart.org/00115/images/pablo-picasso/iuyqtex0.jpeg!Portrait.jpeg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "salvador-dali",
       name: "Salvador Dalí",
-      image:
-        "https://uploads5.wikiart.org/images/salvador-dali.jpg!Portrait.jpg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "wassily-kandinsky",
       name: "Wassily Kandinsky",
-      image:
-        "https://uploads0.wikiart.org/images/wassily-kandinsky.jpg!Portrait.jpg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "leonardo-da-vinci",
       name: "Leonardo da Vinci",
-      image:
-        "https://uploads0.wikiart.org/images/leonardo-da-vinci.jpg!Portrait.jpg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
     {
       key: "ivan-aivazovsky",
       name: "Ivan Aivazovsky",
-      image:
-        "https://uploads7.wikiart.org/00340/images/ivan-aivazovsky/440px-aivazovsky-self-portrait-1874.jpg!Portrait.jpg",
+      profileImage: "",
+      coverImage: "",
+      style: "",
+      nationality: "",
+      mainFacts: [],
+      bio: "",
+      selectedPaintings: [
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+        { title: "" },
+      ],
     },
   ];
   res.send(artistsResponse);
