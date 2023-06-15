@@ -253,7 +253,7 @@ export function Artist() {
       selectedPaintings: [
         {
           image:
-            "https://uploads7.wikiart.org/images/pablo-picasso/the-soup-1903.jpg!Large.jpg",
+            "https://cdn.shopify.com/s/files/1/0849/4704/files/guernica_sartle.jpg?v=1582528493",
         },
         {
           image:

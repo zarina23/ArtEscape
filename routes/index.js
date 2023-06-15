@@ -214,45 +214,70 @@ router.get("/artists", function (req, res, next) {
     {
       key: "pablo-picasso",
       name: "Pablo Picasso",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFcRzX6_Vq6RHOQ7mjrTkbzrfKb9eAi7Ug57nXBrRxVQUBXvZWTRYTJ5gFrcRwZf42Y4Nloz7WLgbkCXu-A9LvS8sYW6i55ao9Z5ReZGset3nlGuoqZ5yyX-kH9CCqTk_t04bHnzF-cXfx7LYmFFg-E3OPh2DyT1iQX0p8LZD310HjKC9dBCBRklcy/s1600/picasso_3358.jpg",
+      coverImage:
+        "https://cdn.shopify.com/s/files/1/0849/4704/files/guernica_sartle.jpg?v=1582528493",
+      style: "Cubism, Post-Impressionism, Surrealism",
+      nationality: "Spanish",
       mainFacts: [],
-      bio: "",
+      bio: `Pablo Picasso was the most dominant and influential artist of the 1st half of the 20th century. Associated most of all with pioneering Cubism, he also invented collage and made major contribution to Surrealism. He saw himself above all as a painter, yet his sculpture was greatly influential, and he also explored areas as diverse as printmaking and ceramics. Finally, he was a famously charismatic personality, the leading figure in the Ecole de Paris. His many relationships with women not only filtered into his art but also may have directed its course, and his behavior has come to embody that of the bohemian modern artist in the popular imagination.
+
+      Picasso rejected Matisse's view of the primary importance and role of colour, and focused instead on new pictorial ways of representing form and space. Influenced by novelties of Cézanne, and also by African sculpture and ancient Iberian art, he started to lend his figures more structure, and to deconstruct the conventions of perspective that had dominated painting since the Renaissance. This led him (alongside with Georges Braque) to evolve an entirely new Cubist movement, which rapidly became the cutting edge of modern art. At the same time, Picasso himself rejected the label "Cubism," especially when critics began to differentiate between the two key approaches he pursued - Analytic and Synthetic.
+      
+      In the 1920s and 1930s Picasso adopted a neoclassical figurative style. As he matured he worked on his own versions of canonical masterpieces by artists such as Poussin, Ingres, Velazquez, Goya, Rembrandt, and El Greco.
+      
+      Picasso's influence was profound and far-reaching for most of his life. His work in pioneering Cubism established a set of pictorial problems, devices, and approaches, which remained important well into the 1950s. The Museum of Modern Art in New York (MoMA) has been called "the house that Pablo built," because it has so widely exhibited the artist's work. Picasso created some of the greatest 20th century paintings, several of which have achieved iconic status (Les Demoiselles d'Avignon, Guernica, Weeping Woman).`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "Guernica - 1937" },
+        { title: "Madeleine - 1904" },
+        { title: "Weeping Woman - 1937" },
+        { title: "Sleeping woman (Meditation) - 1904" },
+        { title: "Portrait of Marie-Thérèse Walter - 1937" },
+        { title: "Leaning woman - 1937" },
+        { title: "Portrait of Dora Maar - 1937" },
+        { title: "The Ironer - 1904" },
+        { title: "Woman with raven - 1904" },
+        { title: "A horsewoman - 1905" },
       ],
     },
     {
       key: "salvador-dali",
       name: "Salvador Dalí",
-      profileImage: "",
-      coverImage: "",
-      style: "",
-      nationality: "",
+      profileImage:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Salvador_Dal%C3%AD_1939.jpg/1024px-Salvador_Dal%C3%AD_1939.jpg",
+      coverImage:
+        "https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg",
+      style: "Surrealism",
+      nationality: "Spanish, Catalan",
       mainFacts: [],
-      bio: "",
+      bio: `An author, artist and provocateur, Salvador Dalí was one of the most notable figures of the Surrealist movement. Born in 1904 in Figueras, Catalonia, Dalí studied art in Madrid and Barcelona, where he demonstrated masterful painting skills and experimented with several artistic styles. In the late 1920s, two chief influences emerged that shaped his mature artistic style. The first was the work of psychoanalyst Sigmund Freud that explored the erotic significance of dreams and subconscious imagery. The second was his introduction to the Paris Surrealists, a group of artists and writers who sought to unlock the creative potential of the human unconscious.
+
+      In 1929, Dalí burst onto the art scene with the debut of Un Chien Andalou (An Andalusian Dog) (1929), a short silent surrealist film he made with Spanish director Luis Buñuel. The film propelled the authors to the center of the French surrealist circle led by André Breton. Between 1929 and 1973, Dalí produced some of the most famous surrealist paintings, including his masterpiece, The Persistence of Memory (1931). The painting depicts a dreamworld in which common objects are deformed and displayed bizarrely and irrationally: watches, solid and hard objects appear to be inexplicably limp and melting in the desolate landscape. In the painting, he effortlessly integrates the real and the imaginary in order “to systemize confusion and thus to help discredit completely the world of reality”.
+      
+      Dalí's most important contribution to Surrealism was the paranoiac-critical method, a surrealist technique he developed in the 1930s. The technique required the artist to enter a unique state of mind which he described as a “spontaneous method of irrational knowledge, based on the critical-interpretative association of the phenomena of delirium”. He also published essays in which he discussed and defined the surrealist object, such as Lobster Telephone[/i[/url]] (1936) andMae West Lips Sofa (1937) were usually constructed from found items or readymade materials.
+      
+      In the late 1930s, Dalí began painting in a more academic style influenced by the Renaissance masters. His admiration for Raphael is particularly evident in paintings such as Poetry of America (1943), Raphaelesque Head Exploding (1951), and Maximum Speed of Raphael's Madonna (1954). Throughout the 1930s, Dalí's ambiguous political stance on fascism alienated him from his Surrealist colleagues, which eventually expelled Dalí from the movement.
+      
+      In 1940, during World War II, Dalí and his wife Gala moved to the United States. Henceforth, Dalí worked in a variety of media, designing theatre sets, furniture, jewelry, and even display windows for fashionable shops. In 1942, he published his most intriguing book, the autobiography The Secret Life of Salvador Dali.
+      
+      Dalí and Gala returned to Spain in 1948. The artist continued to be prolific in the late stages of his career, he worked on a variety of projects, while continuing to produce paintings, sculptures, and objects. He was also particularly fond of publicity stunts and was able to intrigue the public for decades with his outrageous behavior. Dalí died of heart failure on January 23, 1989, in Figueres, Spain.`,
       selectedPaintings: [
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
-        { title: "" },
+        { title: "The Discovery of America by Christopher Columbus - 1959" },
+        { title: "The Vertebrated Cavern - Series of Decals - 1936" },
+        { title: "The Persistence of Memory - 1931" },
+        { title: "Space Elephant - 1948 " },
+        { title: "Cygnes Reflétant des Eléphants - 1937" },
+        { title: "The Sublime Moment, 1938" },
+        {
+          title: "Geopolitical Child Watching the Birth of the New Man - 1943",
+        },
+        {
+          title:
+            "Fountain of Milk Spreading Itself Uselessly on Three Shoes - 1945",
+        },
+        { title: "Portrait of Mrs. Mary Sigall - 1948" },
+        { title: "Leda Atomica - 1949" },
       ],
     },
     {
