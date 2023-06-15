@@ -30,12 +30,9 @@ function PaintingsCarousel({ paintings }) {
     setActiveStep(step);
   };
 
-  console.log(images.length);
-
   return (
     <Box
       sx={{
-        maxWidth: 800,
         flexGrow: 1,
         alignContent: "center",
       }}
@@ -46,7 +43,7 @@ function PaintingsCarousel({ paintings }) {
         sx={{
           display: "flex",
           alignItems: "center",
-          height: 50,
+          height: 80,
           pl: 2,
           bgcolor: "background.default",
         }}
@@ -60,12 +57,12 @@ function PaintingsCarousel({ paintings }) {
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={step.contentId}>
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
                 sx={{
-                  height: 655,
+                  height: 600,
                   display: "block",
                   maxWidth: 800,
                   overflow: "hidden",

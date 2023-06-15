@@ -8,19 +8,20 @@ export function Lectures() {
     navigate("/lectures/artists");
   };
   return (
-    <>
-      <br />
-      <Box sx={{ alignItems: "center" }}>
+    <Box sx={{ textAlign: "center", padding: 10 }}>
+      <Box sx={{ padding: 2 }}>
         <Button
-          sx={{ maxWidth: "200px", minWidth: "200px" }}
+          sx={{
+            maxWidth: "200px",
+            minWidth: "200px",
+          }}
           variant="contained"
           onClick={handleByArtistsClick}
         >
           By Artists
         </Button>
       </Box>
-      <br />
-      <Box>
+      <Box sx={{ padding: 2 }}>
         <Button
           sx={{ maxWidth: "200px", minWidth: "200px" }}
           variant="contained"
@@ -28,8 +29,7 @@ export function Lectures() {
           By Paintings
         </Button>
       </Box>
-      <br />
-      <Box>
+      <Box sx={{ padding: 2 }}>
         <Button
           sx={{ maxWidth: "200px", minWidth: "200px" }}
           variant="contained"
@@ -37,6 +37,6 @@ export function Lectures() {
           By Periods
         </Button>
       </Box>
-    </>
+    </Box>
   );
 }
