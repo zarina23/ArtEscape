@@ -30,29 +30,34 @@ export function ArtistsList() {
   };
 
   return (
-    <>
-      <Box sx={{ justifyContent: "center" }}>
-        <br />
+    <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ padding: 5 }}>
         <Typography
           sx={{ textAlign: "center" }}
           variant="h5"
           color="inherit"
           paragraph
         >
-          WELCOME TO THE ARTISTS ROUTE
+          Welcome to the artists route
         </Typography>
-        <Button onClick={handleQuizClick}>Go to quiz</Button>
-        <div className="artistsList">
-          {artists.map((artist, id) => (
-            <ArtistCard
-              key={id}
-              id={artist.key}
-              artistName={artist.name}
-              artistImage={artist.image}
-            ></ArtistCard>
-          ))}
-        </div>
+        <Button
+          sx={{ maxWidth: "200px", minWidth: "200px", mt: 2 }}
+          variant="contained"
+          onClick={handleQuizClick}
+        >
+          GO TO ARTISTS QUIZ
+        </Button>
       </Box>
-    </>
+      <div className="artistsList">
+        {artists.map((artist, id) => (
+          <ArtistCard
+            key={id}
+            id={artist.key}
+            artistName={artist.name}
+            artistImage={artist.image}
+          ></ArtistCard>
+        ))}
+      </div>
+    </Box>
   );
 }

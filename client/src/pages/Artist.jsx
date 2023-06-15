@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import Paper from "@mui/material/Paper";
@@ -11,9 +11,9 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { useTheme } from "@mui/material/styles";
 import PaintingsCarousel from "../components/PaintingsCarousel";
-import { autoPlay } from "react-swipeable-views-utils";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
@@ -21,6 +21,7 @@ export function Artist() {
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState(0);
+  const navigate = useNavigate();
 
   const paintingsSelection = [
     {
@@ -515,14 +516,10 @@ export function Artist() {
     }
   };
 
-  console.log(paintings);
-
   const gallerySelection = paintingsSelection.filter(
     (selection) => selection.artist === id
   );
   const selectedPaintings = gallerySelection[0].selectedPaintings;
-
-  console.log(selectedPaintings);
 
   const selectedGalleryImages = [];
 
@@ -532,8 +529,6 @@ export function Artist() {
         selectedGalleryImages.push(painting);
     });
   });
-
-  console.log(selectedGalleryImages);
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -571,114 +566,134 @@ export function Artist() {
     setValue(newValue);
   };
 
+  const handleQuizClick = () => {
+    navigate(`/lectures/artists/${id}/quiz`);
+  };
+
   return (
     <>
       {loading ? (
         <Loading />
       ) : (
-        <Paper
-          sx={{
-            position: "relative",
-            backgroundColor: "grey.800",
-            color: "#fff",
-            mb: 4,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundImage: `url(${paintings?.[0]?.image})`,
-          }}
-        >
-          <Box
+        <div>
+          <Paper
             sx={{
-              position: "absolute",
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              backgroundColor: "rgba(0,0,0,.6)",
+              position: "relative",
+              backgroundColor: "grey.800",
+              color: "#fff",
+              mb: 4,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundImage: `url(${paintings?.[0]?.image})`,
             }}
-          />
-          <Grid container>
-            <Grid item md={6}>
-              <Box
-                sx={{
-                  position: "relative",
-                  p: { xs: 3, md: 6 },
-                  pr: { md: 0 },
-                }}
-              >
-                <Typography
-                  component="h1"
-                  variant="h3"
-                  color="inherit"
-                  gutterBottom
-                >
-                  {artist.artistName}
-                </Typography>
-                {/* <Typography variant="h6" color="inherit" paragraph>
-                  {artist.OriginalArtistName}
-                </Typography> */}
-                {/* <Typography variant="h5" color="inherit" paragraph>
-                  {`${artist.birthDayAsString} - ${artist.deathDayAsString}`}
-                </Typography> */}
-                <Typography variant="h5" color="inherit" paragraph></Typography>
-              </Box>
-            </Grid>
-          </Grid>
-          <Stack direction="row" spacing={2} sx={{ justifyContent: "center" }}>
-            <Avatar
-              sx={{ width: 200, height: 200, marginBottom: -7 }}
-              alt={artist.artistName}
-              src={artist.image}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                bottom: 0,
+                right: 0,
+                left: 0,
+                backgroundColor: "rgba(0,0,0,.6)",
+              }}
             />
-          </Stack>
-        </Paper>
-      )}
-      <Box sx={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
-            <Tab label="BIO" {...a11yProps(0)} />
-            <Tab label="PAINTINGS" {...a11yProps(1)} />
-          </Tabs>
-        </Box>
-        <TabPanel value={value} index={0}>
-          <Grid
-            container
-            rowSpacing={0}
-            columnSpacing={{ xs: 1, sm: 2, md: 6 }}
-          >
-            <Grid item xs={6}>
-              <Item>{`ORIGINAL NAME: ${artist.OriginalArtistName} `}</Item>
+            <Grid container>
+              <Grid item md={6}>
+                <Box
+                  sx={{
+                    position: "relative",
+                    p: { xs: 3, md: 6 },
+                    pr: { md: 0 },
+                  }}
+                >
+                  <Typography
+                    component="h1"
+                    variant="h3"
+                    color="inherit"
+                    gutterBottom
+                  >
+                    {artist.artistName}
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    color="inherit"
+                    paragraph
+                  ></Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <Item>{`NATIONALITY: Mexico `}</Item>
-            </Grid>
-            <Grid item xs={6}>
-              <Item>{`YEAR OF BIRTH: ${artist.birthDayAsString} `}</Item>
-            </Grid>
-            <Grid item xs={6}>
-              <Item>{`YEAR OF DEATH: ${artist.deathDayAsString} `}</Item>
-            </Grid>
-            <Grid item xs={6}>
-              <Item>{`PICTORICAL STYLE: XXXXXXXXXXXXXX `}</Item>
-            </Grid>
-            <Grid item xs={6}>
-              <Item>XXXXXX</Item>
-            </Grid>
-          </Grid>
-          <br />
-          <Paper sx={{ padding: 5, textAlign: "left" }}>
-            {artist.biography}
+            <Stack
+              direction="row"
+              spacing={2}
+              sx={{ justifyContent: "center" }}
+            >
+              <Avatar
+                sx={{ width: 200, height: 200, marginBottom: -7 }}
+                alt={artist.artistName}
+                src={artist.image}
+              />
+            </Stack>
+            <Button
+              sx={{
+                width: "250px",
+                mt: 2,
+                mb: 2,
+                float: "right",
+              }}
+              variant="contained"
+              onClick={handleQuizClick}
+            >
+              {`go to this artist's quiz`}
+            </Button>
           </Paper>
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-          <PaintingsCarousel paintings={selectedGalleryImages} />
-        </TabPanel>
-      </Box>
+          <Box sx={{ width: "100%", marginTop: 10 }}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab label="BIO" {...a11yProps(0)} />
+                <Tab label="PAINTINGS" {...a11yProps(1)} />
+              </Tabs>
+            </Box>
+            <TabPanel value={value} index={0}>
+              <Grid
+                container
+                rowSpacing={0}
+                columnSpacing={{ xs: 1, sm: 2, md: 6 }}
+              >
+                <Grid item xs={6}>
+                  <Item>{`ORIGINAL NAME: ${artist.OriginalArtistName} `}</Item>
+                </Grid>
+                <Grid item xs={6}>
+                  <Item>{`NATIONALITY: Mexico `}</Item>
+                </Grid>
+                <Grid item xs={6}>
+                  <Item>{`YEAR OF BIRTH: ${artist.birthDayAsString} `}</Item>
+                </Grid>
+                <Grid item xs={6}>
+                  <Item>{`YEAR OF DEATH: ${artist.deathDayAsString} `}</Item>
+                </Grid>
+                <Grid item xs={6}>
+                  <Item>{`PICTORICAL STYLE: XXXXXXXXXXXXXX `}</Item>
+                </Grid>
+                <Grid item xs={6}>
+                  <Item>XXXXXX</Item>
+                </Grid>
+              </Grid>
+              <br />
+              <Paper sx={{ padding: 5, textAlign: "left" }}>
+                {artist.biography}
+              </Paper>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <PaintingsCarousel paintings={selectedGalleryImages} />
+            </TabPanel>
+          </Box>
+        </div>
+      )}
     </>
   );
 }
