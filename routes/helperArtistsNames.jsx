@@ -1,6 +1,4 @@
-
 const listOfArtistsFullLinks = {
-
   FridaKahlo: "https://www.wikiart.org/en/frida-kahlo?json=2", // missing periodsOfWork
   TamaraDeLempicka: "https://www.wikiart.org/en/tamara-de-lempicka?json=2", // missing periodsOfWork
   EmmaAmos: "https://www.wikiart.org/en/emma-amos?json=2", // missing periodsOfWork
@@ -13,10 +11,7 @@ const listOfArtistsFullLinks = {
   IvanAivazovsky: "https://www.wikiart.org/en/ivan-aivazovsky?json=2", // missing periodsOfWork
 };
 
-
-
 const listOfArtists = {
-
   FridaKahlo: "frida-kahlo", // missing periodsOfWork
   TamaraDeLempicka: "tamara-de-lempicka", // missing periodsOfWork
   EmmaAmos: "emma-amos", // missing periodsOfWork

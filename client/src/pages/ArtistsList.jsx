@@ -19,7 +19,6 @@ export function ArtistsList() {
         method: "GET",
       });
       const data = await response.json();
-      console.log(response);
       setArtists(data);
     } catch (err) {
       console.log(err);
