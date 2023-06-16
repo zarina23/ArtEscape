@@ -24,3 +24,15 @@
     max-height: 300px;
   }
 }
+
+.selected {
+  color: blue;
+}
+
+.success {
+  background-color: green;
+}
+
+.danger {
+  background-color: red;
+}
