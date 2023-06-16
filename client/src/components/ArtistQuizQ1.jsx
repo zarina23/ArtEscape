@@ -18,14 +18,14 @@ function ArtistQuizQ1({}) {
         <Typography>{/* question? */}</Typography>
       </Paper>
       <Box
-       
+
       >
         <img
-        
+
         />
       </Box>
-      <MobileStepper
-        
+      {/* <MobileStepper
+
         nextButton={
           <Button
             size="small">
@@ -33,10 +33,10 @@ function ArtistQuizQ1({}) {
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          
+
           </Button>
         }
-      />
+      /> */}
     </Box>
   );
 }
