@@ -7,3 +7,17 @@
   gap: 15px;
   align-items: center;
 }
+
+body {
+  margin: 0;
+}
+
+p {
+  letter-spacing: -0.003em;
+  line-height: 32px;
+  margin-top: 2em;
+  font-size: 20px;
+  margin-bottom: -0.46em;
+  font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times,
+    serif;
+}

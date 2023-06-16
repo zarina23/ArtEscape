@@ -50,31 +50,30 @@ function PaintingsCarousel({ paintings }) {
       >
         <Typography>{images[activeStep].title}</Typography>
       </Paper>
-      <AutoPlaySwipeableViews
+      <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
         {images.map((step, index) => (
-          <div key={index}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 600,
-                  display: "block",
-                  maxWidth: 800,
-                  overflow: "hidden",
-                  width: "100%",
-                }}
-                src={step.image}
-                alt={step.title}
-              />
-            ) : null}
-          </div>
+          <Box
+            key={index}
+            component={"div"}
+            sx={{
+              width: "100%",
+              height: 750,
+              display: "flex",
+              justifyContent: "center",
+              overflow: "hidden",
+              backgroundPosition: "top",
+              backgroundSize: "cover",
+              backgroundImage:
+                Math.abs(activeStep - index) <= 2 ? `url(${step.image})` : null,
+            }}
+          />
         ))}
-      </AutoPlaySwipeableViews>
+      </SwipeableViews>
       <MobileStepper
         steps={maxSteps}
         position="static"

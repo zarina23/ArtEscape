@@ -54,7 +54,7 @@ export function ArtistsList() {
             key={id}
             id={artist.key}
             artistName={artist.name}
-            artistImage={artist.image}
+            artistImage={artist.profileImage}
           ></ArtistCard>
         ))}
       </div>

@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
+  const [artistStaticData, setArtistStaticData] = useState({});
   const [paintings, setPaintings] = useState([]);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
@@ -493,13 +494,27 @@ export function Artist() {
   ];
 
   const Item = styled(Box)(({ theme }) => ({
-    padding: theme.spacing(2),
-    textAlign: "left",
+    padding: theme.spacing(0.8),
+    textAlign: "center",
   }));
 
   useEffect(() => {
     getArtistAndPaintingsDetails(id);
+    getArtists();
   }, [id]);
+
+  const getArtists = async () => {
+    try {
+      const response = await fetch(`/api/artists`, {
+        method: "GET",
+      });
+      const data = await response.json();
+      const staticArtist = data.filter((artist) => artist.key === id);
+      setArtistStaticData(staticArtist[0]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const getArtistAndPaintingsDetails = async (id) => {
     setLoading(true);
@@ -585,7 +600,7 @@ export function Artist() {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundImage: `url(${paintings?.[0]?.image})`,
+              backgroundImage: `url(${artistStaticData.coverImage})`,
             }}
           >
             <Box
@@ -595,102 +610,114 @@ export function Artist() {
                 bottom: 0,
                 right: 0,
                 left: 0,
-                backgroundColor: "rgba(0,0,0,.6)",
+                backgroundColor: "rgba(0,0,0,.7)",
               }}
             />
-            <Grid container>
-              <Grid item md={6}>
-                <Box
-                  sx={{
-                    position: "relative",
-                    p: { xs: 3, md: 6 },
-                    pr: { md: 0 },
-                  }}
-                >
-                  <Typography
-                    component="h1"
-                    variant="h3"
-                    color="inherit"
-                    gutterBottom
-                  >
-                    {artist.artistName}
-                  </Typography>
-                  <Typography
-                    variant="h5"
-                    color="inherit"
-                    paragraph
-                  ></Typography>
-                </Box>
-              </Grid>
-            </Grid>
+            <Box
+              sx={{
+                position: "relative",
+                p: { xs: 3, md: 6 },
+                pr: { md: 0 },
+                width: 800,
+              }}
+            >
+              <Typography
+                component="h1"
+                variant="h3"
+                color="inherit"
+                gutterBottom
+              >
+                {artist.artistName}
+              </Typography>
+            </Box>
             <Stack
               direction="row"
               spacing={2}
               sx={{ justifyContent: "center" }}
             >
               <Avatar
-                sx={{ width: 200, height: 200, marginBottom: -7 }}
+                sx={{ width: 200, height: 200, marginBottom: -7, border: 5 }}
                 alt={artist.artistName}
-                src={artist.image}
+                src={artistStaticData.profileImage}
               />
             </Stack>
-            <Button
-              sx={{
-                width: "250px",
-                mt: 2,
-                mb: 2,
-                float: "right",
-              }}
-              variant="contained"
-              onClick={handleQuizClick}
-            >
-              {`go to this artist's quiz`}
-            </Button>
           </Paper>
-          <Box sx={{ width: "100%", marginTop: 10 }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-              >
-                <Tab label="BIO" {...a11yProps(0)} />
-                <Tab label="PAINTINGS" {...a11yProps(1)} />
-              </Tabs>
-            </Box>
-            <TabPanel value={value} index={0}>
-              <Grid
-                container
-                rowSpacing={0}
-                columnSpacing={{ xs: 1, sm: 2, md: 6 }}
-              >
-                <Grid item xs={6}>
-                  <Item>{`ORIGINAL NAME: ${artist.OriginalArtistName} `}</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>{`NATIONALITY: Mexico `}</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>{`YEAR OF BIRTH: ${artist.birthDayAsString} `}</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>{`YEAR OF DEATH: ${artist.deathDayAsString} `}</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>{`PICTORICAL STYLE: XXXXXXXXXXXXXX `}</Item>
-                </Grid>
-                <Grid item xs={6}>
+          <Box
+            sx={{
+              marginTop: "80px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                maxWidth: "850px",
+                width: "100%",
+              }}
+            >
+              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                <Tabs
+                  value={value}
+                  onChange={handleChange}
+                  aria-label="basic tabs example"
+                >
+                  <Tab label="BIO" {...a11yProps(0)} />
+                  <Tab label="PAINTINGS" {...a11yProps(1)} />
+                  <Button
+                    sx={{
+                      width: "150px",
+                      mt: 2,
+                      mb: 2,
+                      ml: 65,
+                    }}
+                    variant="contained"
+                    onClick={handleQuizClick}
+                  >
+                    {`go to quiz`}
+                  </Button>
+                </Tabs>
+              </Box>
+              <TabPanel value={value} index={0}>
+                <Grid
+                  container
+                  rowSpacing={2}
+                  columnSpacing={{ xs: 1, sm: 2, md: 6 }}
+                  sx={{ marginTop: "2px" }}
+                >
+                  <Grid item xs={6} sx={{ padding: 0 }}>
+                    <Item>{<strong>ORIGINAL NAME</strong>}</Item>
+                    <Item>{artist.OriginalArtistName}</Item>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Item>{<strong>NATIONALITY</strong>}</Item>
+                    <Item>{artistStaticData.nationality}</Item>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Item>{<strong>DATE OF BIRTH</strong>}</Item>
+                    <Item>{artist.birthDayAsString}</Item>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Item>{<strong>DATE OF DEATH</strong>}</Item>
+                    <Item>{artist.deathDayAsString}</Item>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Item>{<strong>PICTORICAL STYLE</strong>}</Item>
+                    <Item>{artistStaticData.style}</Item>
+                  </Grid>
+                  {/* <Grid item xs={6}>
                   <Item>XXXXXX</Item>
+                </Grid> */}
                 </Grid>
-              </Grid>
-              <br />
-              <Paper sx={{ padding: 5, textAlign: "left" }}>
-                {artist.biography}
-              </Paper>
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <PaintingsCarousel paintings={selectedGalleryImages} />
-            </TabPanel>
+                <br />
+                <Paper
+                  sx={{ padding: 5, textAlign: "left" }}
+                  dangerouslySetInnerHTML={{ __html: artistStaticData.bio }}
+                ></Paper>
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <PaintingsCarousel paintings={selectedGalleryImages} />
+              </TabPanel>
+            </Box>
           </Box>
         </div>
       )}
