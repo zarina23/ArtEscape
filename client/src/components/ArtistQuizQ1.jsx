@@ -11,10 +11,10 @@ import "./ArtistQuizQ1.css";
 // import { containerClasses } from "@mui/material";
 
 function ArtistQuizQ1({ quizQuestionsList }) {
-
   //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
 
-  const [questionItem, setQuestionItem] = useState({});
+  const [questionItemObject, setQuestionItemObject] = useState({});
+  const [answerOptionsList, setAnswerOptionsList] = useState([]);
 
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
@@ -22,26 +22,51 @@ function ArtistQuizQ1({ quizQuestionsList }) {
   );
 
   useEffect(() => {
-    console.log(filteredQuestion);
+    // console.log(filteredQuestion);
 
-    setQuestionItem(filteredQuestion[0]);
+    setQuestionItemObject(filteredQuestion[0]);
+
+    // setAnswerOptionsList([
+    //   { correctAnswer: questionItemObject?.option0_text },
+    //   { optionAnswer1: questionItemObject?.option1_text },
+    //   { optionAnswer2: questionItemObject?.option2_text },
+    //   { optionAnswer3: questionItemObject?.option3_text },
+    // ]);
   }, [filteredQuestion]);
 
+  useEffect(() => {
+    setAnswerOptionsList([
+      { correctAnswer: questionItemObject?.option0_text },
+      { optionAnswer1: questionItemObject?.option1_text },
+      { optionAnswer2: questionItemObject?.option2_text },
+      { optionAnswer3: questionItemObject?.option3_text },
+    ]);
+  }, [questionItemObject]);
 
   //next
   return (
     <div className="mainContainer">
       {/* Question text */}
-      <h3 className="questionText"> {questionItem?.question_text} </h3>
+      <h3 className="questionText"> {questionItemObject?.question_text} </h3>
 
       {/* Question Image */}
-      <div className="questionImageContainer">
+      <section className="questionImageContainer">
         <img
-          src={questionItem?.question_image_url}
+          src={questionItemObject?.question_image_url}
           alt=""
           className="questionImage"
         />
-      </div>
+      </section>
+
+      {/* Answer options */}
+      <section className="answerOptionsContainer">
+        <div>
+          <p>{answerOptionsList?.[0].correctAnswer}</p>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
     </div>
   );
 }

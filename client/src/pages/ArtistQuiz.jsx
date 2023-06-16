@@ -12,7 +12,7 @@ export function ArtistQuiz() {
       const response = await fetch(`/api/artists/${id}/quiz`);
       const data = await response.json();
       setQuizQuestionsList(data);
-      console.log(data);
+      // console.log(data);
 
       if (!response.ok) throw new Error(data.message);
     } catch (err) {
