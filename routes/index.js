@@ -115,7 +115,7 @@ router.get("/artists", function (req, res, next) {
         { title: "Kizette On The Balcony" },
         { title: "Double 47" },
         { title: "Andromeda" },
-        { title: "Portrait Of Ira P." },
+        { title: "Portrait Of Ira P" },
         { title: "Nude with Dove" },
         { title: "Portrait Of Dr. Boucard" },
         { title: "The Marquis D'Afflitto on a Staircase" },
@@ -158,7 +158,7 @@ router.get("/artists", function (req, res, next) {
       profileImage:
         "https://uploads4.wikiart.org/images/mary-cassatt.jpg!Portrait.jpg",
       coverImage:
-        "https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg",
+        "https://uploads3.wikiart.org/images/mary-cassatt/young-woman-sewing-in-the-garden-1886.jpg!Large.jpg",
       style: "Impressionism",
       nationality: "American",
       mainFacts: [],
@@ -175,7 +175,7 @@ router.get("/artists", function (req, res, next) {
       selectedPaintings: [
         { title: "At the Theater" },
         { title: "The Flirtation A Balcony in Seville" },
-        { title: "Maternity" },
+        { title: "After the bath" },
         { title: "Susan Comforting the Baby (no.1)" },
         { title: "Young Woman Sewing in the Garden" },
         { title: "Baby in His Mother's arms, sucking his finger" },
@@ -210,16 +210,18 @@ router.get("/artists", function (req, res, next) {
       
       <p>Through her work with the group 'the Five' af Klint created experimental automatic drawing as early as 1896, leading her towards an inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds. Quite apart from their diagrammatic purpose the paintings have a freshness and a modern aesthetic of tentative line and hastily captured image: a segmented circle, a helix bisected and divided into a spectrum of lightly painted colours. She continued prolifically to add to the body of work amounting to over 1000 pieces until 1941. She requested that it should not be shown until 20 years after the end of her life.</p>`,
       selectedPaintings: [
-        { title: "The Large Figure Paintings, No.5" },
+        { title: "The Large Figure Paintings, nr 5" },
         { title: "They tens mainstay IV" },
-        { title: "De tio största, No.2 Barnaaldern" },
-        { title: "Tree of Knowledge No.2" },
-        { title: "The Ten Largest" },
+        { title: "De tio största, n° 2 Barnaaldern" },
+        { title: "Tree of Knowledge No.2 Series W" },
+        { title: "The Dove, Nr. 12" },
         { title: "Svanen" },
         { title: "Wheat and Wormwood" },
-        { title: "Group VI, Evolution, No.15" },
-        { title: "Tree of Knowledge" },
-        { title: "The Swan, No.17" },
+        { title: "Altarpiece No. 1, Group X" },
+        {
+          title: "The Swan (No. 1)",
+        },
+        { title: "The Swan (No. 17)" },
       ],
     },
     {
@@ -278,9 +280,9 @@ router.get("/artists", function (req, res, next) {
       selectedPaintings: [
         { title: "The Discovery of America by Christopher Columbus" },
         { title: "The Vertebrated Cavern - Series of Decals" },
-        { title: "The Persistence of Memory" },
+        { title: "Portrait of the Cellist Ricard Pichot" },
         { title: "Space Elephant" },
-        { title: "Cygnes Reflétant des Eléphants" },
+        { title: "Swans Reflecting Elephants" },
         { title: "The Sublime Moment" },
         {
           title: "Geopolitical Child Watching the Birth of the New Man",
@@ -312,14 +314,14 @@ router.get("/artists", function (req, res, next) {
       <p>After the Bauhaus was closed, Kandinsky moved to Paris, where he was mostly isolated from the other Impressionist or Cubist painters. He later became a French citizen, and lived the rest of his days there. His legacy lives on in the newly created Kandinsky Award, which rewards a promising young Russian artist a 55,000 euro prize, and attempts to elevate the status of contemporary Russian art.</p>`,
       selectedPaintings: [
         { title: "Moscow I" },
-        { title: "Blue Mountain" },
+        { title: "Blue mountain" },
         { title: "To the Unknown Voice" },
         { title: "Red Oval" },
-        { title: "Small Worlds II" },
+        { title: "Small worlds II" },
         { title: "Composition 8" },
-        { title: "Small Dream in Red" },
+        { title: "Small dream in red" },
         { title: "Several Circles" },
-        { title: "Accent on Rose" },
+        { title: "Accent on rose" },
         { title: "Succession" },
       ],
     },
@@ -343,7 +345,7 @@ router.get("/artists", function (req, res, next) {
       <p>In his final years in France, he did little painting and mainly worked on his scientific studies and his treatise on painting. Leonardo Da Vinci died in 1519 in Cloux in France. Leonardo, one of the most revered painters of his time, remains among the most important figures in art history. However, it is important to note that his influence goes far beyond - from the drawings, scientific diagrams, and technical studies in his notebooks it is known that his scientific writings and mechanical inventions were centuries ahead of their time.</p>`,
       selectedPaintings: [
         { title: "Madonna and Child" },
-        { title: "Virgin of the Rocks" },
+        { title: "The Virgin of the Rocks" },
         { title: "The Baptism of Christ" },
         { title: "Mona Lisa" },
         { title: "Head of a Young Woman with Tousled Hair (Leda)" },
@@ -362,7 +364,7 @@ router.get("/artists", function (req, res, next) {
       profileImage:
         "https://uploads7.wikiart.org/00340/images/ivan-aivazovsky/440px-aivazovsky-self-portrait-1874.jpg!Portrait.jpg",
       coverImage:
-        "https://uploads2.wikiart.org/00342/images/ivan-aivazovsky/aivazovsky-view-of-constantinople-and-the-bosphorus.jpg!Large.jpg",
+        "https://uploads5.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-1851.jpg!Large.jpg",
       style: "Romanticism",
       nationality: "Russian, Armenian",
       mainFacts: [],
@@ -377,11 +379,10 @@ router.get("/artists", function (req, res, next) {
       selectedPaintings: [
         { title: "The Ninth Wave" },
         { title: "Lunar Night on the Black Sea" },
-        { title: "View of Constantinople" },
+        { title: "View of Constantinople by evening light" },
         { title: "Ships at Anchor" },
         { title: "View of Constantinople" },
         { title: "Fishermen on the Coast of the Sea" },
-        { title: "After the storm" },
         { title: "View of Constantinople and the Bosphorus" },
         { title: "Sunset at Sea" },
         { title: "Winter Caravan on Road" },
