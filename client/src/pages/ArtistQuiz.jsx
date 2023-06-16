@@ -26,7 +26,7 @@ export function ArtistQuiz() {
     <div>
       <h1>Artist Quiz</h1>
 
-      {quizQuestionsList?.[0]?.question_text}
+      
 
       <ArtistQuizQ1 quizQuestionsList={quizQuestionsList} />
     </div>
