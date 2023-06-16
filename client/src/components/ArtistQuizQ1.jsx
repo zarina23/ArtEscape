@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./ArtistQuizQ1.css";
 // import { useTheme } from "@mui/material/styles";
 // import Box from "@mui/material/Box";
 // import MobileStepper from "@mui/material/MobileStepper";
@@ -10,6 +11,9 @@ import { useState, useEffect } from "react";
 // import { containerClasses } from "@mui/material";
 
 function ArtistQuizQ1({ quizQuestionsList }) {
+
+  //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
+
   const [questionItem, setQuestionItem] = useState({});
 
   const filteredQuestion = quizQuestionsList.filter(
@@ -18,24 +22,27 @@ function ArtistQuizQ1({ quizQuestionsList }) {
   );
 
   useEffect(() => {
-    // const filteredQuestion = quizQuestionsList.filter(
-    //   (questionObject) =>
-    //     questionObject.question_type === "questionImage_answersText"
-    // );
-
     console.log(filteredQuestion);
+
+    setQuestionItem(filteredQuestion[0]);
   }, [filteredQuestion]);
 
+
+  //next
   return (
-    <>
+    <div className="mainContainer">
       {/* Question text */}
-      <h3> {quizQuestionsList?.[0]?.question_text} </h3>
+      <h3 className="questionText"> {questionItem?.question_text} </h3>
 
       {/* Question Image */}
-      <div>
-        <img src="" alt="" />
+      <div className="questionImageContainer">
+        <img
+          src={questionItem?.question_image_url}
+          alt=""
+          className="questionImage"
+        />
       </div>
-    </>
+    </div>
   );
 }
 
