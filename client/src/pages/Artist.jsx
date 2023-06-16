@@ -27,7 +27,7 @@ export function Artist() {
 
   const Item = styled(Box)(({ theme }) => ({
     padding: theme.spacing(0.8),
-    textAlign: "center",
+    // textAlign: "center",
     fontFamily: "Source Serif 4",
   }));
 
