@@ -1,6 +1,5 @@
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import Avatar from "@mui/material/Avatar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -8,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import * as React from "react";
 
 function Copyright(props) {
   return (
@@ -67,7 +65,7 @@ export function Home() {
               <CssBaseline />
               <Box
                 sx={{
-                  marginTop: 35,
+                  marginTop: 30,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",

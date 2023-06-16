@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
+// import { autoPlay } from "react-swipeable-views-utils";
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function PaintingsCarousel({ paintings }) {
   const theme = useTheme();
@@ -43,12 +42,13 @@ function PaintingsCarousel({ paintings }) {
         sx={{
           display: "flex",
           alignItems: "center",
-          height: 80,
+          maxWidth: "800px",
+          height: 70,
           pl: 2,
           bgcolor: "background.default",
         }}
       >
-        <Typography>{images[activeStep].title}</Typography>
+        <h4>{`${images[activeStep].title} - ${images[activeStep].yearAsString}`}</h4>
       </Paper>
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
