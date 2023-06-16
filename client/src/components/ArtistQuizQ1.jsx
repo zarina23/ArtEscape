@@ -18,6 +18,7 @@ function ArtistQuizQ1({ quizQuestionsList }) {
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
   const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
+  const [didCheck, setDidCheck] = useState(false);
 
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
@@ -41,13 +42,6 @@ function ArtistQuizQ1({ quizQuestionsList }) {
     // console.log(filteredQuestion);
 
     setQuestionItemObject(filteredQuestion[0]);
-
-    // setAnswerOptionsList([
-    //   { correctAnswer: questionItemObject?.option0_text },
-    //   { optionAnswer1: questionItemObject?.option1_text },
-    //   { optionAnswer2: questionItemObject?.option2_text },
-    //   { optionAnswer3: questionItemObject?.option3_text },
-    // ]);
   }, [filteredQuestion]);
 
   useEffect(() => {
@@ -63,15 +57,28 @@ function ArtistQuizQ1({ quizQuestionsList }) {
     shuffleArray(answerOptionsList);
   }, [answerOptionsList]);
 
+  //this function is called when user selects an answer BUT DOES NOT yet submit it
   function captureUserAnswer(event) {
     const userAnswer = event.target.innerHTML;
     setUserSelectedAnswer(userAnswer);
 
+    // const correctAnswer = filteredQuestion[0].option0_text;
+    // if (userAnswer === correctAnswer) {
+    //   setIsUserAnswerCorrect(true);
+    // }
+  }
+
+  //this function is called when user submits selected answer
+  const handleCheck = () => {
+    setDidCheck(true);
+
     const correctAnswer = filteredQuestion[0].option0_text;
-    if (userAnswer === correctAnswer) {
+
+    //compare the correct answer to the option selected by user
+    if (userSelectedAnswer === correctAnswer) {
       setIsUserAnswerCorrect(true);
     }
-  }
+  };
 
   //next
   return (
@@ -92,12 +99,18 @@ function ArtistQuizQ1({ quizQuestionsList }) {
       <section className="answerOptionsContainer">
         {shuffledAnswerOptionList.map((shuffledAnswerOptionObject, i) => (
           <div
-            onClick={(event) => captureUserAnswer(event)}
+            onClick={!didCheck ? (event) => captureUserAnswer(event) : null}
             key={i}
+            // disabled={didCheck ? "true" : "false"}
             className={
-              shuffledAnswerOptionObject?.optionAnswer === userSelectedAnswer
-                ? "selected"
-                : null
+              !didCheck
+                ? shuffledAnswerOptionObject?.optionAnswer ===
+                  userSelectedAnswer
+                  ? "selected"
+                  : null
+                : userSelectedAnswer === questionItemObject?.option0_text
+                ? "success"
+                : "danger"
             }
           >
             {shuffledAnswerOptionObject?.optionAnswer}
@@ -107,7 +120,7 @@ function ArtistQuizQ1({ quizQuestionsList }) {
 
       {/* action buttons */}
       <section>
-        <Button>Check</Button>
+        <Button onClick={handleCheck}>Check</Button>
         <Button>Next</Button>
       </section>
     </div>
