@@ -14,6 +14,7 @@ import Tab from "@mui/material/Tab";
 import PaintingsCarousel from "../components/PaintingsCarousel";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
@@ -32,7 +33,7 @@ export function Artist() {
   }));
 
   useEffect(() => {
-    getArtistAndPaintingsDetails(id);
+    getArtistAndPaintings(id);
     getArtists();
   }, [id]);
 
@@ -49,7 +50,7 @@ export function Artist() {
     }
   };
 
-  const getArtistAndPaintingsDetails = async (id) => {
+  const getArtistAndPaintings = async (id) => {
     setLoading(true);
     try {
       const response = await fetch(`/api/artists/${id}`, {
@@ -57,7 +58,6 @@ export function Artist() {
       });
       const data = await response.json();
       setArtist(data.artist);
-      setPaintings(data.paintings);
       setLoading(false);
     } catch (err) {
       console.log(err);
@@ -65,15 +65,6 @@ export function Artist() {
   };
 
   const paintingsPerArtist = artistStaticData.selectedPaintings;
-
-  const selectedGalleryImages = [];
-
-  paintings.forEach((painting) => {
-    paintingsPerArtist.forEach((selectedPainting) => {
-      painting.title === selectedPainting.title &&
-        selectedGalleryImages.push(painting);
-    });
-  });
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -117,6 +108,9 @@ export function Artist() {
 
   const handleClick = () => {
     setShowMore(!showMore);
+  };
+  const handleBackClick = () => {
+    navigate(`/lectures/artists`);
   };
 
   return (
@@ -199,10 +193,22 @@ export function Artist() {
                   <Tab label="PAINTINGS" {...a11yProps(1)} />
                   <Button
                     sx={{
-                      width: "150px",
+                      width: "130px",
                       mt: 2,
                       mb: 2,
-                      ml: 65,
+                      ml: 50,
+                    }}
+                    variant="outlined"
+                    onClick={handleBackClick}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    sx={{
+                      width: "130px",
+                      mt: 2,
+                      mb: 2,
+                      ml: 2,
                     }}
                     variant="contained"
                     onClick={handleQuizClick}
@@ -241,13 +247,11 @@ export function Artist() {
                 </Grid>
                 <br />
                 <div className="bio">
-                  <div
-                    dangerouslySetInnerHTML={
-                      showMore
-                        ? { __html: artistStaticData.bio }
-                        : { __html: artistStaticData.firstParagraph }
-                    }
-                  ></div>
+                  <div>
+                    {showMore
+                      ? ReactHtmlParser(artistStaticData.bio)
+                      : ReactHtmlParser(artistStaticData.firstParagraph)}
+                  </div>
                   <Button
                     sx={{ float: "right", mt: 2.5 }}
                     onClick={handleClick}
@@ -257,7 +261,9 @@ export function Artist() {
                 </div>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <PaintingsCarousel paintings={selectedGalleryImages} />
+                <PaintingsCarousel
+                  paintingsToBeDisplayed={paintingsPerArtist}
+                />
               </TabPanel>
             </Box>
           </Box>

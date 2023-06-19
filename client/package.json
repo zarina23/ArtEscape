@@ -14,9 +14,13 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
+    "photoswipe": "^5.3.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.12.1"
+    "react-photo-album": "^2.2.2",
+    "react-photoswipe-gallery": "^2.2.7",
+    "react-router-dom": "^6.12.1",
+    "yet-another-react-lightbox": "^3.11.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

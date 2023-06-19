@@ -9,6 +9,7 @@ import { ArtistQuiz } from "./pages/ArtistQuiz";
 import { ArtistsQuizFinal } from "./pages/ArtistsQuizFinal";
 
 import { Layout } from "./components/Layout";
+import { Gallery } from "./components/Gallery";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="lectures/artists" element={<ArtistsList />} />
           <Route path="lectures/artists/:id" element={<Artist />} />
           <Route path="lectures/artists/:id/quiz" element={<ArtistQuiz />} />
+          <Route path="lectures/paintings" element={<Gallery />} />
           <Route
             path="lectures/artists/final_quiz"
             element={<ArtistsQuizFinal />}
