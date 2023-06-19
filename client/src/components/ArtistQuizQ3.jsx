@@ -126,6 +126,7 @@ function ArtistQuizQ3({ quizQuestionsList, onNext }) {
         <Button
           onClick={didCheck ? onNext : null}
           variant={!didCheck ? "outlined" : "contained"}
+          color={!didCheck ? "primary" : "success"}
         >
           Submit
         </Button>
