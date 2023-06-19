@@ -80,6 +80,11 @@
   text-align: center;
 }
 
+.answerOptionUrl {
+  margin: 0; /* Reset margin for the <p> element */
+  width: 70%;
+}
+
 .buttonGroup {
   display: flex;
   justify-content: flex-end;

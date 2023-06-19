@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
+import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 
 import "../components/ArtistQuizQ1.css";
 
 export function ArtistQuiz() {
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
   const { id } = useParams();
 
@@ -30,9 +36,24 @@ export function ArtistQuiz() {
   return (
     <div>
       <h1>Artist Quiz</h1>
-      <ArtistQuizQ1 quizQuestionsList={quizQuestionsList} />
-      <ArtistQuizQ2 quizQuestionsList={quizQuestionsList} />
-      <ArtistQuizQ1 quizQuestionsList={quizQuestionsList} />
+      {currentPage === 1 && (
+        <ArtistQuizQ1
+          onNext={handleNextPage}
+          quizQuestionsList={quizQuestionsList}
+        />
+      )}
+      {currentPage === 2 && (
+        <ArtistQuizQ2
+          onNext={handleNextPage}
+          quizQuestionsList={quizQuestionsList}
+        />
+      )}
+      {currentPage === 3 && (
+        <ArtistQuizQ3
+          onNext={handleNextPage}
+          quizQuestionsList={quizQuestionsList}
+        />
+      )}
     </div>
   );
 }

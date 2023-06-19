@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import { containerClasses } from "@mui/material";
 
-function ArtistQuizQ1({ quizQuestionsList }) {
+function ArtistQuizQ1({ quizQuestionsList, onNext }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
@@ -142,7 +142,11 @@ function ArtistQuizQ1({ quizQuestionsList }) {
         >
           Check
         </Button>
-        <Button variant={!didCheck ? "outlined" : "contained"}>Next</Button>
+
+        <Button onClick={onNext} variant={!didCheck ? "outlined" : "contained"}>
+          Next
+        </Button>
+
       </section>
     </div>
   );

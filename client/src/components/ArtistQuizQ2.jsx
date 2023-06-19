@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import { containerClasses } from "@mui/material";
 
-function ArtistQuizQ2({ quizQuestionsList }) {
+function ArtistQuizQ2({ quizQuestionsList, onNext }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
@@ -118,7 +118,7 @@ function ArtistQuizQ2({ quizQuestionsList }) {
             }
           >
             <img
-              className="answerOption"
+              className="answerOptionUrl"
               src={shuffledAnswerOptionObject?.optionAnswer}
             />
           </div>
@@ -130,7 +130,9 @@ function ArtistQuizQ2({ quizQuestionsList }) {
         <Button variant="contained" onClick={handleCheck}>
           Check
         </Button>
-        <Button variant="outlined">Next</Button>
+        <Button onClick={onNext} variant="outlined">
+          Next
+        </Button>
       </section>
     </div>
   );

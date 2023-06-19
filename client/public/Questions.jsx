@@ -345,7 +345,7 @@ const questions = [
     artist_name_key: "pablo-picasso",
     question_type: "questionText_answersImage",
     question_text:
-      "Which of this paintings is The Weeping Woman painted in 1937?",
+      "Which of these paintings is The Weeping Woman painted in 1937?",
     option0_image_url:
       "https://uploads4.wikiart.org/images/pablo-picasso/crying-woman-1937-1.jpg!Large.jpg",
     option1_image_url:
