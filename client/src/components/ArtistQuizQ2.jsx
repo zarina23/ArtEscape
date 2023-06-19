@@ -60,6 +60,7 @@ function ArtistQuizQ2({ quizQuestionsList }) {
 
   //this function is called when user submits selected answer
   const handleCheck = () => {
+    // console.log(userSelectedAnswer);
     setDidCheck(true);
 
     const correctAnswer = filteredQuestion[0].option0_image_url;
