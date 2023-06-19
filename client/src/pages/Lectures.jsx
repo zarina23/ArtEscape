@@ -4,9 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 export function Lectures() {
   const navigate = useNavigate();
+
   const handleByArtistsClick = () => {
     navigate("/lectures/artists");
   };
+
+  const handleByPaintingsClick = () => {
+    navigate("/lectures/paintings");
+  };
+
   return (
     <Box sx={{ textAlign: "center", padding: 10 }}>
       <Box sx={{ padding: 2 }}>
@@ -25,6 +31,7 @@ export function Lectures() {
         <Button
           sx={{ maxWidth: "200px", minWidth: "200px" }}
           variant="contained"
+          onClick={handleByPaintingsClick}
         >
           By Paintings
         </Button>

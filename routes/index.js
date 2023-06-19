@@ -56,19 +56,87 @@ router.get("/artists", function (req, res, next) {
       
       <p>Women before Kahlo who had attempted to communicate the wildest and deepest of emotions were often labeled hysterical or condemned insane - while men were aligned with the 'melancholy' character type. By remaining artistically active under the weight of sadness, Kahlo revealed that women too can be melancholy rather than depressed and that these terms should not be thought of as gendered.</p>`,
       selectedPaintings: [
-        { title: "Me and My Parrots" },
-        { title: "Two women" },
-        { title: "My Grandparents, My Parents, and I (Family Tree)" },
-        { title: "Sun and Life" },
-        { title: "The Broken Column" },
-        { title: "Moses" },
+        {
+          title: "Me and My Parrots - 1941",
+          description: "Frida Kahlo",
+          width: 1776,
+          image:
+            "https://uploads8.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/me-and-my-parrots-1941.jpg!Large.jpg",
+          height: 2326,
+        },
+        {
+          title: "Two Women - 1929",
+          description: "Frida Kahlo",
+          width: "553",
+          image:
+            "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/two-women-1929.jpg!Large.jpg",
+          height: 750,
+        },
+        {
+          title: "My Grandparents, My Parents, and I (Family Tree) - 1936",
+          description: "Frida Kahlo",
+          width: 2527,
+          image:
+            "https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-grandparents-my-parents-and-me-1936.jpg!Large.jpg",
+          height: 2197,
+        },
+        {
+          title: "Sun and Life - 1947",
+          description: "Frida Kahlo",
+          width: 1822,
+          image:
+            "https://uploads3.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/sun-and-life-1947.jpg!Large.jpg",
+          height: 1447,
+        },
+        {
+          title: "Henry Ford Hospital (The Flying Bed) - 1932",
+          description: "Frida Kahlo",
+          width: 2305,
+          image:
+            "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/henry-ford-hospital-the-flying-bed-1932.jpg!Large.jpg",
+          height: 1845,
+        },
         {
           title:
-            "The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl",
+            "The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl - 1949",
+          description: "Frida Kahlo",
+          width: 1816,
+          image:
+            "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-love-embrace-of-the-universe-the-earth-mexico-myself-diego-and-señor-xólotl-1949.jpg!Large.jpg",
+          height: 2201,
         },
-        { title: "The Dream (The Bed)" },
-        { title: "The Two Fridas" },
-        { title: "Marxism Will Give Health to the Sick" },
+        {
+          title: "Moses",
+          description: "Frida Kahlo - 1945",
+          width: 1813,
+          image:
+            "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/moses-1945.jpg!Large.jpg",
+          height: 1456,
+        },
+        {
+          title: "The Two Fridas - 1939",
+          description: "Frida Kahlo",
+          width: 2206,
+          image:
+            "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg!Large.jpg",
+          height: 2186,
+        },
+        {
+          title: "Marxism Will Give Health to the Sick - 1954",
+          description: "Frida Kahlo",
+          width: 1866,
+          image:
+            "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/marxism-will-give-health-to-the-sick-1954.jpg!Large.jpg",
+          height: 2371,
+        },
+        {
+          title: "Self Portrait with Cropped Hair - 1940",
+          description: "Frida Kahlo",
+          width: 461,
+          image:
+            "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/self-portrait-with-cropped-hair-1940.jpg!Large.jpg",
+          height: 750,
+        },
       ],
     },
     {
@@ -109,16 +177,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>Her work, while arguably Cubist-inspired to an extent, exudes the lavishness of the decorative, just as do her sitters. Trained by two successful avant-garde artists at the height of post-Cubist experimentation, Lempicka's work is nevertheless most often categorized as Art Deco. While her style incorporates the geometric, faceted forms of Cubism, her emphasis on soft modeling achieved a more sensuous effect. The bodies of her sitters are slightly distorted so that they appear as elegant objets d'art as much as human figures. She incorporated the rich, limited palette of Art Deco - particularly, graphic design - to create polished portraits that seemed more decorative than serious high art. Finding her niche - a comfortable place between traditional easel painting inspired by the likes of Michelangelo, Caravaggio, and Ingres and objects produced solely for decoration - Tamara de Lempicka's Art Deco style has been an inspiration to figures as diverse as the singer and designer Florence Welch and fashion designers Karl Lagerfeld and Louis Vuitton. She was a favorite artist of the rich and socialites of her time, her popularity continues with celebrities such as Madonna, Jack Nicholson, and Barbra Streisand that enjoy her sharp lines and bold statements of a by-gone age.</p>`,
       selectedPaintings: [
-        { title: "My Portrait (Self-Portrait in the Green Bugatti)" },
-        { title: "Portrait of Marquis Sommi" },
-        { title: "Girl with Gloves" },
-        { title: "Kizette On The Balcony" },
-        { title: "Double 47" },
-        { title: "Andromeda" },
-        { title: "Portrait Of Ira P" },
-        { title: "Nude with Dove" },
-        { title: "Portrait Of Dr. Boucard" },
-        { title: "The Marquis D'Afflitto on a Staircase" },
+        {
+          title: "My Portrait (Self-Portrait in the Green Bugatti)",
+          artistName: "Tamara de Lempicka",
+          year: "1929",
+          width: 1190,
+          image:
+            "https://uploads6.wikiart.org/images/tamara-de-lempicka/portrait-in-the-green-bugatti-1925.jpg!Large.jpg",
+          height: 1584,
+        },
+        {
+          title: "Portrait of Marquis Sommi",
+          artistName: "Tamara de Lempicka",
+          year: "1925",
+          width: 424,
+          image:
+            "https://uploads2.wikiart.org/images/tamara-de-lempicka/portrait-of-marquis-sommi-1925.jpg!Large.jpg",
+          height: 648,
+        },
+        {
+          title: "Girl with Gloves",
+          artistName: "Tamara de Lempicka",
+          year: "1929",
+          width: 800,
+          image:
+            "https://uploads2.wikiart.org/images/tamara-de-lempicka/girl-with-gloves-1929.jpg!Large.jpg",
+          height: 1064,
+        },
+        {
+          title: "Kizette On The Balcony",
+          artistName: "Tamara de Lempicka",
+          year: "1927",
+          width: 750,
+          image:
+            "https://uploads8.wikiart.org/images/tamara-de-lempicka/kizette-on-the-balcony-1927.jpg!Large.jpg",
+          height: 1179,
+        },
+        {
+          title: "Double 47",
+          artistName: "Tamara de Lempicka",
+          year: "1924",
+          width: 794,
+          image:
+            "https://uploads8.wikiart.org/images/tamara-de-lempicka/double-47.jpg!Large.jpg",
+          height: 1023,
+        },
+        {
+          title: "Andromeda",
+          artistName: "Tamara de Lempicka",
+          year: "1929",
+          width: 724,
+          image:
+            "https://uploads4.wikiart.org/images/tamara-de-lempicka/andromeda-1929.jpg!Large.jpg",
+          height: 1114,
+        },
+        {
+          title: "Portrait Of Ira P",
+          artistName: "Tamara de Lempicka",
+          year: "1930",
+          width: 797,
+          image:
+            "https://uploads3.wikiart.org/images/tamara-de-lempicka/portrait-of-ira-p-1930.jpg!Large.jpg",
+          height: 1258,
+        },
+        {
+          title: "Nude with Dove",
+          artistName: "Tamara de Lempicka",
+          year: "1928",
+          width: 400,
+          image:
+            "https://uploads0.wikiart.org/images/tamara-de-lempicka/nude-with-dove-1928.jpg!Large.jpg",
+          height: 710,
+        },
+        {
+          title: "Portrait Of Dr. Boucard",
+          artistName: "Tamara de Lempicka",
+          year: "1929",
+          width: 897,
+          image:
+            "https://uploads8.wikiart.org/images/tamara-de-lempicka/portrait-of-dr-boucard-1929.jpg!Large.jpg",
+          height: 1612,
+        },
+        {
+          title: "The Marquis D'Afflitto on a Staircase",
+          artistName: "Tamara de Lempicka",
+          year: "1926",
+          width: 546,
+          image:
+            "https://uploads5.wikiart.org/images/tamara-de-lempicka/the-marquis-d-afflitto-on-a-staircase-1926.jpg!Large.jpg",
+          height: 866,
+        },
       ],
     },
     {
@@ -140,16 +288,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>In 1980, Amos was hired as an assistant professor at the Mason Gross School of Art, Rutgers University. She continued teaching there until she retired in June 2008.</p>`,
       selectedPaintings: [
-        { title: "Three Figures" },
-        { title: "Fanny Mae" },
-        { title: "22 and Cheetah" },
-        { title: "Equals" },
-        { title: "Identity" },
-        { title: "Does Black Rub Off?" },
-        { title: "Malcom X, Morley, Matisse and Me" },
-        { title: "Seated Figure and Nude" },
-        { title: "Head First" },
-        { title: "Without Feather Boa" },
+        {
+          title: "Three Figures",
+          artistName: "Emma Amos",
+          year: "1966",
+          width: 543,
+          image:
+            "https://uploads7.wikiart.org/00335/images/emma-amos/three-figures-1966.jpg!Large.jpg",
+          height: 640,
+        },
+        {
+          title: "Fanny Mae",
+          artistName: "Emma Amos",
+          year: "1965",
+          width: 540,
+          image:
+            "https://uploads3.wikiart.org/00335/images/emma-amos/fanny-mae-1965.jpg!Large.jpg",
+          height: 640,
+        },
+        {
+          title: "22 and Cheetah",
+          artistName: "Emma Amos",
+          year: "1983",
+          width: 490,
+          image:
+            "https://uploads8.wikiart.org/00335/images/emma-amos/22-and-cheetah-1983.jpg!Large.jpg",
+          height: 640,
+        },
+        {
+          title: "Equals",
+          artistName: "Emma Amos",
+          year: "1992",
+          width: 800,
+          image:
+            "https://uploads0.wikiart.org/00335/images/emma-amos/equals-1992.png!Large.png",
+          height: 734,
+        },
+        {
+          title: "Identity",
+          artistName: "Emma Amos",
+          year: "2006",
+          width: 800,
+          image:
+            "https://uploads2.wikiart.org/00335/images/emma-amos/identity-2006.png!Large.png",
+          height: 801,
+        },
+        {
+          title: "Does Black Rub Off?",
+          artistName: "Emma Amos",
+          year: "1992",
+          width: 776,
+          image:
+            "https://uploads8.wikiart.org/00335/images/emma-amos/does-black-rub-off-question-mark-1992.png!Large.png",
+          height: 1217,
+        },
+        {
+          title: "Does Black Rub Off?",
+          artistName: "Emma Amos",
+          year: "1992",
+          width: 776,
+          image:
+            "https://uploads8.wikiart.org/00335/images/emma-amos/does-black-rub-off-question-mark-1992.png!Large.png",
+          height: 1217,
+        },
+        {
+          title: "Seated Figure and Nude",
+          artistName: "Emma Amos",
+          year: "1966",
+          width: 800,
+          image:
+            "https://uploads7.wikiart.org/00335/images/emma-amos/seated-figure-and-nude-1966.png!Large.png",
+          height: 889,
+        },
+        {
+          title: "Head First",
+          artistName: "Emma Amos",
+          year: "2006",
+          width: 486,
+          image:
+            "https://uploads4.wikiart.org/00335/images/emma-amos/head-first-2006.jpg!Large.jpg",
+          height: 640,
+        },
+        {
+          title: "Without Feather Boa",
+          artistName: "Emma Amos",
+          year: "1965",
+          width: 504,
+          image:
+            "https://uploads4.wikiart.org/00335/images/emma-amos/without-feather-boa-1965.jpg!Large.jpg",
+          height: 640,
+        },
       ],
     },
     {
@@ -173,16 +401,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>In her later life, she was diagnosed with rheumatism, neuralgia, diabetes, and cataracts, although her spirit was never crushed. She continued to fight for the cause of women's suffrage after she went almost blind in 1914. She died twelve years later. He works have since been printed on United States postage stamps and her works have sold for as much as $2.9 million at auction.</p>`,
       selectedPaintings: [
-        { title: "At the Theater" },
-        { title: "The Flirtation A Balcony in Seville" },
-        { title: "After the bath" },
-        { title: "Susan Comforting the Baby (no.1)" },
-        { title: "Young Woman Sewing in the Garden" },
-        { title: "Baby in His Mother's arms, sucking his finger" },
-        { title: "Mother And Child" },
-        { title: "Mother Holding a Child in Her arms" },
-        { title: "Baby's First Caress" },
-        { title: "Mothers Kiss" },
+        {
+          title: "At the Theater",
+          artistName: "Mary Cassatt",
+          year: "1879",
+          width: 656,
+          image:
+            "https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg",
+          height: 800,
+        },
+        {
+          title: "The Flirtation A Balcony in Seville",
+          artistName: "Mary Cassatt",
+          year: "1872",
+          width: 826,
+          image:
+            "https://uploads6.wikiart.org/images/mary-cassatt/the-flirtation-a-balcony-in-seville-1872.jpg!Large.jpg",
+          height: 988,
+        },
+        {
+          title: "After the Bullfight",
+          artistName: "Mary Cassatt",
+          year: "1873",
+          width: 770,
+          image:
+            "https://uploads6.wikiart.org/images/mary-cassatt/toreador-1873.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "Susan Comforting the Baby (no.1)",
+          artistName: "Mary Cassatt",
+          yearA: "1881",
+          width: 1106,
+          image:
+            "https://uploads5.wikiart.org/images/mary-cassatt/susan-comforting-the-baby-no-1.jpg!Large.jpg",
+          height: 815,
+        },
+        {
+          title: "Young Woman Sewing in the garden",
+          artistName: "Mary Cassatt",
+          year: "1882",
+          width: 563,
+          image:
+            "https://uploads3.wikiart.org/images/mary-cassatt/young-woman-sewing-in-the-garden-1882.jpg!Large.jpg",
+          height: 800,
+        },
+        {
+          title: "Baby in His Mother`s arms, sucking his finger",
+          artistName: "Mary Cassatt",
+          year: "1889",
+          width: 716,
+          image:
+            "https://uploads6.wikiart.org/images/mary-cassatt/baby-in-his-mother-s-arms-sucking-his-finger-1889.jpg!Large.jpg",
+          height: 946,
+        },
+        {
+          title: "Mother And Child",
+          artistName: "Mary Cassatt",
+          year: "1889",
+          width: 845,
+          image:
+            "https://uploads5.wikiart.org/images/mary-cassatt/mother-and-child-1889.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "Mother Holding a Child in Her arms",
+          artistName: "Mary Cassatt",
+          year: "1890",
+          width: 767,
+          image:
+            "https://uploads0.wikiart.org/images/mary-cassatt/mother-holding-a-child-in-her-arms.jpg!Large.jpg",
+          height: 953,
+        },
+        {
+          title: "Baby`s First Caress",
+          artistName: "Mary Cassatt",
+          year: "1891",
+          width: 806,
+          image:
+            "https://uploads6.wikiart.org/images/mary-cassatt/baby-s-first-cess-1891.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "Mothers Kiss",
+          artistName: "Mary Cassatt",
+          year: "1891",
+          width: 618,
+          image:
+            "https://uploads1.wikiart.org/images/mary-cassatt/mothers-kiss-1891.jpg!Large.jpg",
+          height: 1000,
+        },
       ],
     },
     {
@@ -210,18 +518,97 @@ router.get("/artists", function (req, res, next) {
       
       <p>Through her work with the group 'the Five' af Klint created experimental automatic drawing as early as 1896, leading her towards an inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds. Quite apart from their diagrammatic purpose the paintings have a freshness and a modern aesthetic of tentative line and hastily captured image: a segmented circle, a helix bisected and divided into a spectrum of lightly painted colours. She continued prolifically to add to the body of work amounting to over 1000 pieces until 1941. She requested that it should not be shown until 20 years after the end of her life.</p>`,
       selectedPaintings: [
-        { title: "The Large Figure Paintings, nr 5" },
-        { title: "They tens mainstay IV" },
-        { title: "De tio största, n° 2 Barnaaldern" },
-        { title: "Tree of Knowledge No.2 Series W" },
-        { title: "The Dove, Nr. 12" },
-        { title: "Svanen" },
-        { title: "Wheat and Wormwood" },
-        { title: "Altarpiece No. 1, Group X" },
         {
-          title: "The Swan (No. 1)",
+          title: "The Large Figure Paintings, nr 5",
+          artistName: "Hilma af Klint",
+          year: "1907",
+          width: 801,
+          image:
+            "https://uploads6.wikiart.org/00287/images/hilma-af-klint/hilma-1.jpg!Large.jpg",
+          height: 1000,
         },
-        { title: "The Swan (No. 17)" },
+        {
+          title: "They tens mainstay IV",
+          artistName: "Hilma af Klint",
+          year: "1907",
+          width: 660,
+          image:
+            "https://uploads3.wikiart.org/images/hilma-af-klint/they-tens-mainstay-iv-1907.jpg!Large.jpg",
+          height: 898,
+        },
+        {
+          title: "De tio största, n° 2 Barnaaldern",
+          artistName: "Hilma af Klint",
+          year: "1907",
+          width: 673,
+          image:
+            "https://uploads3.wikiart.org/images/hilma-af-klint/de-tio-st-rsta-n-2-barnaaldern-1907.jpg!Large.jpg",
+          height: 899,
+        },
+        {
+          title: "Tree of Knowledge No.2 Series W",
+          artistName: "Hilma af Klint",
+          year: "1913",
+          width: 1072,
+          image:
+            "https://uploads3.wikiart.org/images/hilma-af-klint/untitled.jpg!Large.jpg",
+          height: 1600,
+        },
+        {
+          title: "The Dove, Nr. 12",
+          artistName: "Hilma af Klint",
+          year: "1915",
+          width: 462,
+          image:
+            "https://uploads5.wikiart.org/images/hilma-af-klint/the-dove-nr-12-1915.jpg!Large.jpg",
+          height: 553,
+        },
+        {
+          title: "Svanen",
+          artistName: "Hilma af Klint",
+          year: "1914",
+          width: 1010,
+          image:
+            "https://uploads6.wikiart.org/images/hilma-af-klint/svanen-1914.jpg!Large.jpg",
+          height: 1024,
+        },
+        {
+          title: "Wheat and Wormwood",
+          artistName: "Hilma af Klint",
+          year: "1922",
+          width: 1473,
+          image:
+            "https://uploads0.wikiart.org/images/hilma-af-klint/wheat-and-wormwood-1922.jpg!Large.jpg",
+          height: 1029,
+        },
+        {
+          title: "Altarpiece No. 1, Group X",
+          artistName: "Hilma af Klint",
+          year: "1915",
+          width: 364,
+          image:
+            "https://uploads5.wikiart.org/images/hilma-af-klint/altar-painting-1915.jpg!Large.jpg",
+          height: 481,
+        },
+        {
+          title: "The Swan (No. 16)",
+          artistName: "Hilma af Klint",
+          year: "1915",
+          width: 462,
+          image:
+            "https://uploads5.wikiart.org/images/hilma-af-klint/the-swan-no-16-1915.jpg!Large.jpg",
+          height: 474,
+        },
+        {
+          title: "The Swan (No. 17)",
+          artistName: "Hilma af Klint",
+          completitionYear: 1915,
+          yearAsString: "1915",
+          width: 1278,
+          image:
+            "https://uploads7.wikiart.org/00140/images/hilma-af-klint/hilma-af-klint-svanen.jpg!Large.jpg",
+          height: 1280,
+        },
       ],
     },
     {
@@ -243,16 +630,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>Picasso's influence was profound and far-reaching for most of his life. His work in pioneering Cubism established a set of pictorial problems, devices, and approaches, which remained important well into the 1950s. The Museum of Modern Art in New York (MoMA) has been called "the house that Pablo built," because it has so widely exhibited the artist's work. Picasso created some of the greatest 20th century paintings, several of which have achieved iconic status (Les Demoiselles d'Avignon, Guernica, Weeping Woman).</p>`,
       selectedPaintings: [
-        { title: "Guernica" },
-        { title: "Madeleine" },
-        { title: "Weeping Woman" },
-        { title: "Sleeping woman (Meditation)" },
-        { title: "Portrait of Marie-Thérèse Walter" },
-        { title: "Leaning woman" },
-        { title: "Portrait of Dora Maar" },
-        { title: "The Ironer" },
-        { title: "Woman with raven" },
-        { title: "A horsewoman" },
+        {
+          title: "Guernica",
+          artistName: "Pablo Picasso",
+          year: "1937",
+          width: 3369,
+          image:
+            "https://uploads0.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg!Large.jpg",
+          height: 1523,
+        },
+        {
+          title: "Madeleine",
+          artistName: "Pablo Picasso",
+          year: "1904",
+          width: 962,
+          image:
+            "https://uploads8.wikiart.org/images/pablo-picasso/madeleine-1904.jpg!Large.jpg",
+          height: 1266,
+        },
+        {
+          title: "Weeping Woman with Handkerchief",
+          artistName: "Pablo Picasso",
+          year: "1937",
+          width: 749,
+          image:
+            "https://uploads0.wikiart.org/00234/images/pablo-picasso/pablo-picasso-head-of-a-woman-crying-with-handkerchief-1937.jpeg!Large.jpeg",
+          height: 960,
+        },
+        {
+          title: "Sleeping woman (Meditation)",
+          artistName: "Pablo Picasso",
+          year: "1904",
+          width: 1443,
+          image:
+            "https://uploads6.wikiart.org/images/pablo-picasso/sleeping-woman-meditation-1904.jpg!Large.jpg",
+          height: 1984,
+        },
+        {
+          title: "Portrait of Marie-Thérèse Walter",
+          artistName: "Pablo Picasso",
+          year: "1937",
+          width: 888,
+          image:
+            "https://uploads4.wikiart.org/images/pablo-picasso/portrait-of-marie-thérèse-walter-1937.jpg!Large.jpg",
+          height: 1088,
+        },
+        {
+          title: "Leaning woman with bonnet",
+          artistName: "Pablo Picasso",
+          year: "1921",
+          width: 733,
+          image:
+            "https://uploads6.wikiart.org/images/pablo-picasso/leaning-woman-with-bonnet-1921.jpg!Large.jpg",
+          height: 940,
+        },
+        {
+          title: "Portrait of Dora Maar",
+          artistName: "Pablo Picasso",
+          year: "1937",
+          width: 900,
+          image:
+            "https://uploads2.wikiart.org/images/pablo-picasso/portrait-of-dora-maar-1937.jpg!Large.jpg",
+          height: 1088,
+        },
+        {
+          title: "The ironer",
+          artistName: "Pablo Picasso",
+          year: "1904",
+          width: 1522,
+          image:
+            "https://uploads0.wikiart.org/images/pablo-picasso/the-ironer-1904.jpg!Large.jpg",
+          height: 2454,
+        },
+        {
+          title: "Woman with raven",
+          artistName: "Pablo Picasso",
+          year: "1904",
+          width: 728,
+          image:
+            "https://uploads6.wikiart.org/images/pablo-picasso/woman-with-raven-1904.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "A horsewoman",
+          artistName: "Pablo Picasso",
+          year: "1905",
+          width: 974,
+          image:
+            "https://uploads2.wikiart.org/images/pablo-picasso/a-horsewoman-1905.jpg!Large.jpg",
+          height: 718,
+        },
       ],
     },
     {
@@ -278,20 +745,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>Dalí and Gala returned to Spain in 1948. The artist continued to be prolific in the late stages of his career, he worked on a variety of projects, while continuing to produce paintings, sculptures, and objects. He was also particularly fond of publicity stunts and was able to intrigue the public for decades with his outrageous behavior. Dalí died of heart failure on January 23, 1989, in Figueres, Spain.</p>`,
       selectedPaintings: [
-        { title: "The Discovery of America by Christopher Columbus" },
-        { title: "The Vertebrated Cavern - Series of Decals" },
-        { title: "Portrait of the Cellist Ricard Pichot" },
-        { title: "Space Elephant" },
-        { title: "Swans Reflecting Elephants" },
-        { title: "The Sublime Moment" },
+        {
+          title: "The Discovery of America by Christopher Columbus",
+          artistName: "Salvador Dali",
+          year: "1959",
+          width: 1018,
+          image:
+            "https://uploads2.wikiart.org/images/salvador-dali/the-discovery-of-america-by-christopher-columbus-1959.jpg!Large.jpg",
+          height: 1349,
+        },
+        {
+          title: "The Vertebrated Cavern - Series of Decals",
+          artistName: "Salvador Dali",
+          year: "1936",
+          width: 467,
+          image:
+            "https://uploads6.wikiart.org/images/salvador-dali/the-vertebrated-cavern-series-of-decals.jpg!Large.jpg",
+          height: 764,
+        },
+        {
+          title: "Portrait of the Cellist Ricard Pichot",
+          artistName: "Salvador Dali",
+          year: "1920",
+          width: 534,
+          image:
+            "https://uploads4.wikiart.org/images/salvador-dali/portrait-of-the-cellist-ricard-pichot.jpg!Large.jpg",
+          height: 700,
+        },
+        {
+          title: "Space Elephant",
+          artistName: "Salvador Dali",
+          year: "1948",
+          width: 834,
+          image:
+            "https://uploads8.wikiart.org/images/salvador-dali/space-elephant.jpg!Large.jpg",
+          height: 1600,
+        },
+        {
+          title: "Swans Reflecting Elephants",
+          artistName: "Salvador Dali",
+          year: "1937",
+          width: 2402,
+          image:
+            "https://uploads6.wikiart.org/images/salvador-dali/cygnes-refletant-des-elephants.jpg!Large.jpg",
+          height: 1600,
+        },
+        {
+          title: "The Sublime Moment",
+          artistName: "Salvador Dali",
+          year: "1938",
+          width: 1973,
+          image:
+            "https://uploads3.wikiart.org/images/salvador-dali/the-sublime-moment.jpg!Large.jpg",
+          height: 1600,
+        },
         {
           title: "Geopolitical Child Watching the Birth of the New Man",
+          artistName: "Salvador Dali",
+          year: "1943",
+          width: 1738,
+          image:
+            "https://uploads6.wikiart.org/images/salvador-dali/geopolitical-child-watching-the-birth-of-the-new-man-1943.jpg!Large.jpg",
+          height: 1600,
         },
         {
           title: "Fountain of Milk Spreading Itself Uselessly on Three Shoes",
+          artistName: "Salvador Dali",
+          year: "1945",
+          width: 1983,
+          image:
+            "https://uploads7.wikiart.org/images/salvador-dali/fountain-of-milk-spreading-itself-uselessly-on-three-shoes.jpg!Large.jpg",
+          height: 1600,
         },
-        { title: "Portrait of Mrs. Mary Sigall" },
-        { title: "Leda Atomica" },
+        {
+          title: "Portrait of Mrs. Mary Sigall",
+          artistName: "Salvador Dali",
+          year: "1948",
+          width: 640,
+          image:
+            "https://uploads3.wikiart.org/images/salvador-dali/portrait-of-mrs-mary-sigall.jpg!Large.jpg",
+          height: 736,
+        },
+        {
+          title: "Leda Atomica",
+          artistName: "Salvador Dali",
+          year: "1949",
+          width: 671,
+          image:
+            "https://uploads0.wikiart.org/00153/images/salvador-dali/leda-atomica.jpeg!Large.jpeg",
+          height: 900,
+        },
       ],
     },
     {
@@ -313,16 +856,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>After the Bauhaus was closed, Kandinsky moved to Paris, where he was mostly isolated from the other Impressionist or Cubist painters. He later became a French citizen, and lived the rest of his days there. His legacy lives on in the newly created Kandinsky Award, which rewards a promising young Russian artist a 55,000 euro prize, and attempts to elevate the status of contemporary Russian art.</p>`,
       selectedPaintings: [
-        { title: "Moscow I" },
-        { title: "Blue mountain" },
-        { title: "To the Unknown Voice" },
-        { title: "Red Oval" },
-        { title: "Small worlds II" },
-        { title: "Composition 8" },
-        { title: "Small dream in red" },
-        { title: "Several Circles" },
-        { title: "Accent on rose" },
-        { title: "Succession" },
+        {
+          title: "Moscow I",
+          artistName: "Wassily Kandinsky",
+          year: "1916",
+          width: 1063,
+          image:
+            "https://uploads2.wikiart.org/images/wassily-kandinsky/moscow-i-1916.jpg!Large.jpg",
+          height: 1102,
+        },
+        {
+          title: "Blue mountain",
+          artistName: "Wassily Kandinsky",
+          year: "1908",
+          width: 778,
+          image:
+            "https://uploads7.wikiart.org/images/wassily-kandinsky/blue-mountain-1908.jpg!Large.jpg",
+          height: 879,
+        },
+        {
+          title: "To the Unknown Voice",
+          artistName: "Wassily Kandinsky",
+          year: "1916",
+          width: 534,
+          image:
+            "https://uploads5.wikiart.org/images/wassily-kandinsky/to-the-unknown-voice-1916.jpg!Large.jpg",
+          height: 809,
+        },
+        {
+          title: "Red Oval",
+          artistName: "Wassily Kandinsky",
+          year: "1920",
+          width: 1063,
+          image:
+            "https://uploads2.wikiart.org/images/wassily-kandinsky/red-oval-1920.jpg!Large.jpg",
+          height: 1053,
+        },
+        {
+          title: "Small worlds II",
+          artistName: "Wassily Kandinsky",
+          year: "1922",
+          width: 587,
+          image:
+            "https://uploads0.wikiart.org/images/wassily-kandinsky/small-worlds-ii-1922.jpg!Large.jpg",
+          height: 750,
+        },
+        {
+          title: "Composition 8",
+          artistName: "Wassily Kandinsky",
+          year: "1923",
+          width: 1280,
+          image:
+            "https://uploads1.wikiart.org/00280/images/wassily-kandinsky/37-262-ph-web-1-1.jpg!Large.jpg",
+          height: 891,
+        },
+        {
+          title: "Small dream in red",
+          artistName: "Wassily Kandinsky",
+          year: "1925",
+          width: 703,
+          image:
+            "https://uploads3.wikiart.org/images/wassily-kandinsky/small-dream-in-red-1925.jpg!Large.jpg",
+          height: 605,
+        },
+        {
+          title: "Several Circles",
+          artistName: "Wassily Kandinsky",
+          year: "1926",
+          width: 1063,
+          image:
+            "https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg",
+          height: 1046,
+        },
+        {
+          title: "Accent on rose",
+          artistName: "Wassily Kandinsky",
+          year: "1926",
+          width: 515,
+          image:
+            "https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg",
+          height: 650,
+        },
+        {
+          title: "Succession",
+          artistName: "Wassily Kandinsky",
+          year: "1935",
+          width: 1800,
+          image:
+            "https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg",
+          height: 1450,
+        },
       ],
     },
     {
@@ -344,18 +967,96 @@ router.get("/artists", function (req, res, next) {
       
       <p>In his final years in France, he did little painting and mainly worked on his scientific studies and his treatise on painting. Leonardo Da Vinci died in 1519 in Cloux in France. Leonardo, one of the most revered painters of his time, remains among the most important figures in art history. However, it is important to note that his influence goes far beyond - from the drawings, scientific diagrams, and technical studies in his notebooks it is known that his scientific writings and mechanical inventions were centuries ahead of their time.</p>`,
       selectedPaintings: [
-        { title: "Madonna and Child" },
-        { title: "The Virgin of the Rocks" },
-        { title: "The Baptism of Christ" },
-        { title: "Mona Lisa" },
-        { title: "Head of a Young Woman with Tousled Hair (Leda)" },
+        {
+          title: "Study for Madonna and Child with St. Anne",
+          artistName: "Leonardo da Vinci",
+          year: "1510",
+          width: 852,
+          image:
+            "https://uploads2.wikiart.org/images/leonardo-da-vinci/study-for-madonna-and-child-with-st-anne.jpg!Large.jpg",
+          height: 789,
+        },
+        {
+          title: "The Virgin of the Rocks",
+          artistName: "Leonardo da Vinci",
+          year: "1505",
+          width: 2692,
+          image:
+            "https://uploads3.wikiart.org/00142/images/57726d85edc2cb3880b48ccd/leonardo-da-vinci-virgin-of-the-rocks-national-gallery-london.jpg!Large.jpg",
+          height: 4150,
+        },
+        {
+          title: "The Baptism of Christ",
+          artistName: "Leonardo da Vinci",
+          year: "1475",
+          width: 600,
+          image:
+            "https://uploads7.wikiart.org/00339/images/leonardo-da-vinci/the-baptism-of-christ-c-1475.png!Large.png",
+          height: 715,
+        },
+        {
+          title: "Mona Lisa",
+          artistName: "Leonardo da Vinci",
+          year: "1519",
+          width: 671,
+          image:
+            "https://uploads0.wikiart.org/00339/images/leonardo-da-vinci/mona-lisa-c-1503-1519.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "Head of a Young Woman with Tousled Hair (Leda)",
+          artistName: "Leonardo da Vinci",
+          year: "1508",
+          width: 808,
+          image:
+            "https://uploads6.wikiart.org/images/leonardo-da-vinci/head-of-a-young-woman-with-tousled-hair-leda.jpg!Large.jpg",
+          height: 952,
+        },
         {
           title: "La Bella Principessa - Portrait of Bianca Sforza",
+          artistName: "Leonardo da Vinci",
+          year: "1498",
+          width: 5000,
+          image:
+            "https://uploads4.wikiart.org/00302/images/leonardo-da-vinci/la-bella-principessa-portrait-of-bianca-sforza.jpg!Large.jpg",
+          height: 6977,
         },
-        { title: "The Last Supper (La ultima cena)" },
-        { title: "Heads of an old man and a youth" },
-        { title: "Leda and the Swan" },
-        { title: "Allegory of Boat, Wolf, and Eagle" },
+        {
+          title: "The Last Supper",
+          artistName: "Leonardo da Vinci",
+          year: "1495",
+          width: 5193,
+          image:
+            "https://uploads4.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg!Large.jpg",
+          height: 2926,
+        },
+        {
+          title: "Heads of an old man and a youth",
+          artistName: "Leonardo da Vinci",
+          year: "1495",
+          width: 704,
+          image:
+            "https://uploads2.wikiart.org/images/leonardo-da-vinci/heads-of-an-old-man-and-a-youth.jpg!Large.jpg",
+          height: 939,
+        },
+        {
+          title: "Leda and the Swan",
+          artistName: "Leonardo da Vinci",
+          year: "1506",
+          width: 865,
+          image:
+            "https://uploads6.wikiart.org/images/leonardo-da-vinci/leda-and-the-swan.jpg!Large.jpg",
+          height: 1000,
+        },
+        {
+          title: "Allegory",
+          artistName: "Leonardo da Vinci",
+          year: "1516",
+          width: 1150,
+          image:
+            "https://uploads8.wikiart.org/images/leonardo-da-vinci/allegory-with-wolf-and-eagle.jpg!Large.jpg",
+          height: 663,
+        },
       ],
     },
     {
@@ -377,15 +1078,87 @@ router.get("/artists", function (req, res, next) {
       
       <p>Today, Aivazovsky's paintings have been auctioned off for millions of dollars and have been printed on postage stamps for Russia, Ukraine, and Armenia. Perhaps it is also to his lasting legacy that he is said to be one of the most forged of all Russian artists.</p>`,
       selectedPaintings: [
-        { title: "The Ninth Wave" },
-        { title: "Lunar Night on the Black Sea" },
-        { title: "View of Constantinople by evening light" },
-        { title: "Ships at Anchor" },
-        { title: "View of Constantinople" },
-        { title: "Fishermen on the Coast of the Sea" },
-        { title: "View of Constantinople and the Bosphorus" },
-        { title: "Sunset at Sea" },
-        { title: "Winter Caravan on Road" },
+        {
+          title: "The Ninth Wave",
+          artistName: "Ivan Aivazovsky",
+          year: "1850",
+          width: 5090,
+          image:
+            "https://uploads8.wikiart.org/00129/images/ivan-aivazovsky/the-ninth-wave.jpg!Large.jpg",
+          height: 3420,
+        },
+        {
+          title: "Lunar night on the Black sea",
+          artistName: "Ivan Aivazovsky",
+          year: "1859",
+          width: 1000,
+          image:
+            "https://uploads2.wikiart.org/images/ivan-aivazovsky/lunar-night-on-the-black-sea-1859.jpg!Large.jpg",
+          height: 792,
+        },
+        {
+          title: "View of Constantinople by evening light",
+          artistName: "Ivan Aivazovsky",
+          year: "1846",
+          width: 1026,
+          image:
+            "https://uploads4.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-by-evening-light-1846.jpg!Large.jpg",
+          height: 663,
+        },
+        {
+          title: "Ships at anchor",
+          artistName: "Ivan Aivazovsky",
+          year: "1851",
+          width: 1000,
+          image:
+            "https://uploads7.wikiart.org/images/ivan-aivazovsky/ships-at-anchor-1851.jpg!Large.jpg",
+          height: 780,
+        },
+        {
+          title: "View of Constantinople",
+          artistName: "Ivan Aivazovsky",
+          year: "1851",
+          width: 1000,
+          image:
+            "https://uploads5.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-1851.jpg!Large.jpg",
+          height: 631,
+        },
+        {
+          title: "Fishermen on the coast of the sea",
+          artistName: "Ivan Aivazovsky",
+          year: "1852",
+          width: 1100,
+          image:
+            "https://uploads7.wikiart.org/images/ivan-aivazovsky/fishermen-on-the-coast-of-the-sea-1852.jpg!Large.jpg",
+          height: 712,
+        },
+        {
+          title: "View of Constantinople and the Bosphorus",
+          artistName: "Ivan Aivazovsky",
+          year: "1856",
+          width: 4000,
+          image:
+            "https://uploads2.wikiart.org/00342/images/ivan-aivazovsky/aivazovsky-view-of-constantinople-and-the-bosphorus.jpg!Large.jpg",
+          height: 2509,
+        },
+        {
+          title: "Sunset at Sea",
+          artistName: "Ivan Aivazovsky",
+          year: "1856",
+          width: 1000,
+          image:
+            "https://uploads5.wikiart.org/images/ivan-aivazovsky/sunset-at-sea-1856.jpg!Large.jpg",
+          height: 643,
+        },
+        {
+          title: "Winter Caravan on Road",
+          artistName: "Ivan Aivazovsky",
+          year: "1857",
+          width: 1204,
+          image:
+            "https://uploads7.wikiart.org/00279/images/ivan-aivazovsky/336666.jpeg!Large.jpeg",
+          height: 800,
+        },
       ],
     },
   ];

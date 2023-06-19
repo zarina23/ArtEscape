@@ -14,6 +14,12 @@ import Tab from "@mui/material/Tab";
 import PaintingsCarousel from "../components/PaintingsCarousel";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2,
+} from "react-html-parser";
+import { Gallery } from "../components/Gallery";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
@@ -27,12 +33,12 @@ export function Artist() {
 
   const Item = styled(Box)(({ theme }) => ({
     padding: theme.spacing(0.8),
-    // textAlign: "center",
+    textAlign: "center",
     fontFamily: "Source Serif 4",
   }));
 
   useEffect(() => {
-    getArtistAndPaintingsDetails(id);
+    getArtistAndPaintings(id);
     getArtists();
   }, [id]);
 
@@ -49,7 +55,7 @@ export function Artist() {
     }
   };
 
-  const getArtistAndPaintingsDetails = async (id) => {
+  const getArtistAndPaintings = async (id) => {
     setLoading(true);
     try {
       const response = await fetch(`/api/artists/${id}`, {
@@ -241,13 +247,11 @@ export function Artist() {
                 </Grid>
                 <br />
                 <div className="bio">
-                  <div
-                    dangerouslySetInnerHTML={
-                      showMore
-                        ? { __html: artistStaticData.bio }
-                        : { __html: artistStaticData.firstParagraph }
-                    }
-                  ></div>
+                  <div>
+                    {showMore
+                      ? ReactHtmlParser(artistStaticData.bio)
+                      : ReactHtmlParser(artistStaticData.firstParagraph)}
+                  </div>
                   <Button
                     sx={{ float: "right", mt: 2.5 }}
                     onClick={handleClick}
