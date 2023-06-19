@@ -4,7 +4,7 @@ import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 
-import "../components/ArtistQuizQ1.css";
+import "../components/stylesheets/ArtistQuiz.css";
 
 export function ArtistQuiz() {
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
