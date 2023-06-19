@@ -110,7 +110,6 @@ function ArtistQuizQ1({ quizQuestionsList, onNext }) {
                 : null
             }
             key={i}
-            // disabled={didCheck ? "true" : "false"}
             className={
               !didCheck
                 ? shuffledAnswerOptionObject?.optionAnswer ===
@@ -136,6 +135,7 @@ function ArtistQuizQ1({ quizQuestionsList, onNext }) {
 
       {/* action buttons */}
       <section className="buttonGroup">
+        
         <Button
           variant={!didCheck ? "contained" : "outlined"}
           onClick={handleCheck}
@@ -143,7 +143,7 @@ function ArtistQuizQ1({ quizQuestionsList, onNext }) {
           Check
         </Button>
 
-        <Button onClick={onNext} variant={!didCheck ? "outlined" : "contained"}>
+        <Button onClick={didCheck ? onNext : null} variant={!didCheck ? "outlined" : "contained"}>
           Next
         </Button>
 
