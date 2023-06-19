@@ -8,12 +8,8 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
-
-
-
 function ArtistQuizQ2({}) {
-    const theme = useTheme();
-
-
+  const theme = useTheme();
+}
 
 export default ArtistQuizQ2;

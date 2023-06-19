@@ -8,12 +8,5 @@ import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
-
-
-function ArtistQuizQ3({}) {
-    
-    
-
-
-
+function ArtistQuizQ3({}) {}
 export default ArtistQuizQ3;
