@@ -104,7 +104,7 @@ const questions = [
     option0_image_url:
       "https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg",
     option1_image_url:
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fcarpelibrum%2Fart-at-the-theater%2F&psig=AOvVaw128kvd8BJu640bl2Am8unD&ust=1686681714763000&source=images&cd=vfe&ved=2ahUKEwioj_eUsb7_AhVUQ8AKHTCpBWYQjRx6BAgAEAw",
+      "https://www.art-prints-on-demand.com/kunst/italian_school/Vorbereitende-Szenerie-in-einem-Theater.jpg",
     option2_image_url:
       "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2014/08/19/Style/Images/sundayimage001.jpg?t=20170517",
     option3_image_url:
@@ -311,8 +311,7 @@ const questions = [
       "https://studyfinds.org/wp-content/uploads/2020/12/AdobeStock_267410313-604x385.jpeg",
     option2_image_url:
       "https://i.etsystatic.com/36644323/r/il/4db5c9/4296968593/il_794xN.4296968593_5iyf.jpg",
-    option3_image_url:
-      "https://i.etsystatic.com/33706763/r/il/530aee/3828553553/il_794xN.3828553553_fu9o.jpg",
+    option3_image_url: "https://mdl.artvee.com/sftb/412819mfg.jpg",
   },
 
   {
