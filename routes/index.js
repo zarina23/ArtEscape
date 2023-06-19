@@ -1175,6 +1175,8 @@ router.get("/artists", function (req, res, next) {
   res.send(artistsResponse);
 });
 
+// route to get artists' info and paintings
+
 router.get("/artists/:artist_name", async function (req, res, next) {
   const { artist_name } = req.params;
 
@@ -1261,6 +1263,17 @@ router.get("/final_quiz", async function (req, res, next) {
     const results = await db(
       `SELECT * FROM questions WHERE quiz_type = 'artists_final';`
     );
+    res.send(results.data);
+  } catch (err) {
+    res.status(500).send({ message: err });
+  }
+});
+
+// route to get all questions for the HOOK quiz
+router.get("/hook_quiz", async function (req, res, next) {
+  // call to DB table questions
+  try {
+    const results = await db(`SELECT * FROM questions;`);
     res.send(results.data);
   } catch (err) {
     res.status(500).send({ message: err });
