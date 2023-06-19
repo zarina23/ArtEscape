@@ -72,14 +72,14 @@ export function Artist() {
 
   const paintingsPerArtist = artistStaticData.selectedPaintings;
 
-  const selectedGalleryImages = [];
+  console.log(paintingsPerArtist);
 
-  paintings.forEach((painting) => {
-    paintingsPerArtist.forEach((selectedPainting) => {
-      painting.title === selectedPainting.title &&
-        selectedGalleryImages.push(painting);
-    });
-  });
+  // paintings.forEach((painting) => {
+  //   paintingsPerArtist.forEach((selectedPainting) => {
+  //     painting.title === selectedPainting.title &&
+  //       selectedGalleryImages.push(painting);
+  //   });
+  // });
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -123,6 +123,9 @@ export function Artist() {
 
   const handleClick = () => {
     setShowMore(!showMore);
+  };
+  const handleBackClick = () => {
+    navigate(`/lectures/artists`);
   };
 
   return (
@@ -205,10 +208,22 @@ export function Artist() {
                   <Tab label="PAINTINGS" {...a11yProps(1)} />
                   <Button
                     sx={{
-                      width: "150px",
+                      width: "130px",
                       mt: 2,
                       mb: 2,
-                      ml: 65,
+                      ml: 50,
+                    }}
+                    variant="outlined"
+                    onClick={handleBackClick}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    sx={{
+                      width: "130px",
+                      mt: 2,
+                      mb: 2,
+                      ml: 2,
                     }}
                     variant="contained"
                     onClick={handleQuizClick}
@@ -261,7 +276,7 @@ export function Artist() {
                 </div>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <PaintingsCarousel paintings={selectedGalleryImages} />
+                <PaintingsCarousel paintings={paintingsPerArtist} />
               </TabPanel>
             </Box>
           </Box>

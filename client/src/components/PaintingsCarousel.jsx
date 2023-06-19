@@ -47,7 +47,7 @@ function PaintingsCarousel({ paintings }) {
           bgcolor: "background.default",
         }}
       >
-        <h4>{`${images[activeStep].title} - ${images[activeStep].yearAsString}`}</h4>
+        <h4>{`${images[activeStep].title} - ${images[activeStep].year}`}</h4>
       </Paper>
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -98,7 +98,7 @@ function PaintingsCarousel({ paintings }) {
             ) : (
               <KeyboardArrowLeft />
             )}
-            Back
+            Previous
           </Button>
         }
       />

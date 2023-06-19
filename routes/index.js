@@ -57,40 +57,45 @@ router.get("/artists", function (req, res, next) {
       <p>Women before Kahlo who had attempted to communicate the wildest and deepest of emotions were often labeled hysterical or condemned insane - while men were aligned with the 'melancholy' character type. By remaining artistically active under the weight of sadness, Kahlo revealed that women too can be melancholy rather than depressed and that these terms should not be thought of as gendered.</p>`,
       selectedPaintings: [
         {
-          title: "Me and My Parrots - 1941",
+          title: "Me and My Parrots",
           description: "Frida Kahlo",
           width: 1776,
+          year: 1941,
           image:
             "https://uploads8.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/me-and-my-parrots-1941.jpg!Large.jpg",
           height: 2326,
         },
         {
-          title: "Two Women - 1929",
+          title: "Two Women",
           description: "Frida Kahlo",
           width: "553",
+          year: 1929,
           image:
             "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/two-women-1929.jpg!Large.jpg",
           height: 750,
         },
         {
-          title: "My Grandparents, My Parents, and I (Family Tree) - 1936",
+          title: "My Grandparents, My Parents, and I (Family Tree)",
           description: "Frida Kahlo",
+          year: 1936,
           width: 2527,
           image:
             "https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-grandparents-my-parents-and-me-1936.jpg!Large.jpg",
           height: 2197,
         },
         {
-          title: "Sun and Life - 1947",
+          title: "Sun and Life",
           description: "Frida Kahlo",
+          year: 1947,
           width: 1822,
           image:
             "https://uploads3.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/sun-and-life-1947.jpg!Large.jpg",
           height: 1447,
         },
         {
-          title: "Henry Ford Hospital (The Flying Bed) - 1932",
+          title: "Henry Ford Hospital (The Flying Bed)",
           description: "Frida Kahlo",
+          year: 1932,
           width: 2305,
           image:
             "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/henry-ford-hospital-the-flying-bed-1932.jpg!Large.jpg",
@@ -98,41 +103,46 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title:
-            "The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl - 1949",
+            "The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl",
           description: "Frida Kahlo",
           width: 1816,
+          year: 1949,
           image:
             "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-love-embrace-of-the-universe-the-earth-mexico-myself-diego-and-señor-xólotl-1949.jpg!Large.jpg",
           height: 2201,
         },
         {
           title: "Moses",
-          description: "Frida Kahlo - 1945",
+          description: "Frida Kahlo",
           width: 1813,
+          year: 1945,
           image:
             "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/moses-1945.jpg!Large.jpg",
           height: 1456,
         },
         {
-          title: "The Two Fridas - 1939",
+          title: "The Two Fridas",
           description: "Frida Kahlo",
           width: 2206,
+          year: 1939,
           image:
             "https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg!Large.jpg",
           height: 2186,
         },
         {
-          title: "Marxism Will Give Health to the Sick - 1954",
+          title: "Marxism Will Give Health to the Sick",
           description: "Frida Kahlo",
           width: 1866,
+          year: 1954,
           image:
             "https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/marxism-will-give-health-to-the-sick-1954.jpg!Large.jpg",
           height: 2371,
         },
         {
-          title: "Self Portrait with Cropped Hair - 1940",
+          title: "Self Portrait with Cropped Hair",
           description: "Frida Kahlo",
           width: 461,
+          year: 1940,
           image:
             "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/self-portrait-with-cropped-hair-1940.jpg!Large.jpg",
           height: 750,
@@ -332,15 +342,6 @@ router.get("/artists", function (req, res, next) {
           image:
             "https://uploads2.wikiart.org/00335/images/emma-amos/identity-2006.png!Large.png",
           height: 801,
-        },
-        {
-          title: "Does Black Rub Off?",
-          artistName: "Emma Amos",
-          year: "1992",
-          width: 776,
-          image:
-            "https://uploads8.wikiart.org/00335/images/emma-amos/does-black-rub-off-question-mark-1992.png!Large.png",
-          height: 1217,
         },
         {
           title: "Does Black Rub Off?",
@@ -560,7 +561,7 @@ router.get("/artists", function (req, res, next) {
           year: "1915",
           width: 462,
           image:
-            "https://uploads5.wikiart.org/images/hilma-af-klint/the-dove-nr-12-1915.jpg!Large.jpg",
+            "https://uploads5.wikiart.org/images/hilma-af-klint/the-dove-nr-12-1915.jpg",
           height: 553,
         },
         {
@@ -587,7 +588,7 @@ router.get("/artists", function (req, res, next) {
           year: "1915",
           width: 364,
           image:
-            "https://uploads5.wikiart.org/images/hilma-af-klint/altar-painting-1915.jpg!Large.jpg",
+            "https://uploads5.wikiart.org/images/hilma-af-klint/altar-painting-1915.jpg",
           height: 481,
         },
         {
@@ -596,7 +597,7 @@ router.get("/artists", function (req, res, next) {
           year: "1915",
           width: 462,
           image:
-            "https://uploads5.wikiart.org/images/hilma-af-klint/the-swan-no-16-1915.jpg!Large.jpg",
+            "https://uploads5.wikiart.org/images/hilma-af-klint/the-swan-no-16-1915.jpg",
           height: 474,
         },
         {

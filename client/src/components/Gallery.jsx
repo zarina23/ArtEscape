@@ -26,8 +26,7 @@ export function Gallery() {
             src: painting.image,
             width: painting.width,
             height: painting.height,
-            title: painting.title,
-            year: painting.year,
+            title: `${painting.title} - ${painting.artistName} (${painting.year})`,
           };
         });
 
@@ -41,7 +40,7 @@ export function Gallery() {
   }, []);
 
   return (
-    <div>
+    <div className="gallery">
       <PhotoAlbum
         photos={paintings}
         layout="columns"

@@ -48,3 +48,7 @@ h4 {
   text-align: left;
   box-shadow: 1px 1px 1px gray;
 }
+
+.gallery {
+  padding: 20px;
+}
