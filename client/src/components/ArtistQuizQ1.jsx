@@ -115,15 +115,19 @@ function ArtistQuizQ1({ quizQuestionsList }) {
                 : null
             }
           >
-            <p className="answerOption">{shuffledAnswerOptionObject?.optionAnswer}</p>
+            <p className="answerOption">
+              {shuffledAnswerOptionObject?.optionAnswer}
+            </p>
           </div>
         ))}
       </section>
 
       {/* action buttons */}
       <section className="buttonGroup">
-        <Button onClick={handleCheck}>Check</Button>
-        <Button>Next</Button>
+        <Button variant="contained" onClick={handleCheck}>
+          Check
+        </Button>
+        <Button variant="outlined">Next</Button>
       </section>
     </div>
   );
