@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 // import { containerClasses } from "@mui/material";
 
 function ArtistQuizQ2({ quizQuestionsList, onNext }) {
-  //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
+  //We need to get the question from the quizQuestionsList which question_type is "questionText_answersImage"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
@@ -77,15 +77,6 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
       {/* Question text */}
       <p className="questionText"> {questionItemObject?.question_text} </p>
 
-      {/* Question Image */}
-      {/* <section className="questionImageContainer">
-        <img
-          src={questionItemObject?.question_image_url}
-          alt=""
-          className="questionImage"
-        />
-      </section> */}
-
       {/* Answer options */}
       <section className="answerOptionsContainer">
         {shuffledAnswerOptionList.map((shuffledAnswerOptionObject, i) => (
@@ -99,7 +90,6 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
                 : null
             }
             key={i}
-            // disabled={didCheck ? "true" : "false"}
             className={
               !didCheck
                 ? shuffledAnswerOptionObject?.optionAnswer ===
@@ -127,10 +117,17 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
 
       {/* action buttons */}
       <section className="buttonGroup">
-        <Button variant="contained" onClick={handleCheck}>
+        <Button
+          variant={!didCheck && userSelectedAnswer ? "contained" : "outlined"}
+          onClick={!didCheck && userSelectedAnswer ? handleCheck : null}
+        >
           Check
         </Button>
-        <Button onClick={onNext} variant="outlined">
+
+        <Button
+          onClick={didCheck ? onNext : null}
+          variant={!didCheck ? "outlined" : "contained"}
+        >
           Next
         </Button>
       </section>
