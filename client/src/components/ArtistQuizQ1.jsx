@@ -35,12 +35,13 @@ function ArtistQuizQ1({ quizQuestionsList }) {
         shuffledArray[i],
       ];
     }
-    // console.log(shuffledArray);
+
+    console.log(shuffledArray);
     setShuffledAnswerOptionList(shuffledArray);
   }
 
   useEffect(() => {
-    // console.log(filteredQuestion);
+    console.log(filteredQuestion);
 
     setQuestionItemObject(filteredQuestion[0]);
   }, [filteredQuestion]);
