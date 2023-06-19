@@ -13,6 +13,17 @@ export function ArtistQuiz() {
 
   const [artist, setArtist] = useState([]); // fetch with database to get all artists array
   const { id } = useParams();
+  const [score, setScore] = useState(0);
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const keepScore = (additionalScore) => {
+    const updatedScore = score + additionalScore;
+    setScore(updatedScore);
+    console.log(updatedScore)
+  }
 
   useEffect(() => {
     getArtist();
@@ -28,16 +39,14 @@ export function ArtistQuiz() {
       // console.log(data);
 
       const artist = data.filter((artist) => artist.key === id);
-      console.log(artist);
+      // console.log(artist);
       setArtist(artist[0]);
     } catch (err) {
       console.log(err);
     }
   };
 
-  const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
+
 
   const getQuizQuestionsList = async (id) => {
     try {
@@ -63,26 +72,24 @@ export function ArtistQuiz() {
         <ArtistQuizQ1
           onNext={handleNextPage}
           quizQuestionsList={quizQuestionsList}
+          keepScore={keepScore}
         />
       )}
       {currentPage === 2 && (
         <ArtistQuizQ2
           onNext={handleNextPage}
           quizQuestionsList={quizQuestionsList}
+          keepScore={keepScore}
         />
       )}
       {currentPage === 3 && (
         <ArtistQuizQ3
           onNext={handleNextPage}
           quizQuestionsList={quizQuestionsList}
+          keepScore={keepScore}
         />
       )}
-      {currentPage === 4 && (
-        <ScoreFeedback
-          onNext={handleNextPage}
-          quizQuestionsList={quizQuestionsList}
-        />
-      )}
+      {currentPage === 4 && <ScoreFeedback artist={artist} />}
     </div>
   );
 }
