@@ -85,6 +85,17 @@ function ArtistQuizQ1({ quizQuestionsList }) {
         />
       </section>
 
+      {/* Feedback */}
+
+      <section className="feedbackContainer">
+        {!didCheck ? null : userSelectedAnswer ===
+          questionItemObject?.option0_text ? (
+          <p className="feedbackTextPositive">Look at you go. Good job! </p>
+        ) : (
+          <p className="feedbackTextNegative">Oops! Wrong answer...</p>
+        )}
+      </section>
+
       {/* Answer options */}
       <section className="answerOptionsContainer">
         {shuffledAnswerOptionList.map((shuffledAnswerOptionObject, i) => (
@@ -124,10 +135,13 @@ function ArtistQuizQ1({ quizQuestionsList }) {
 
       {/* action buttons */}
       <section className="buttonGroup">
-        <Button variant="contained" onClick={handleCheck}>
+        <Button
+          variant={!didCheck ? "contained" : "outlined"}
+          onClick={handleCheck}
+        >
           Check
         </Button>
-        <Button variant="outlined">Next</Button>
+        <Button variant={!didCheck ? "outlined" : "contained"}>Next</Button>
       </section>
     </div>
   );
