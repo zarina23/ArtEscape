@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import { containerClasses } from "@mui/material";
 
-function ArtistQuizQ2({ quizQuestionsList, onNext }) {
+function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionText_answersImage"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
@@ -65,11 +65,13 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
 
     const correctAnswer = filteredQuestion[0].option0_image_url;
 
-    //compare the correct answer to the option selected by user
+    //compare the correct answer to the option selected by user and update score
     if (userSelectedAnswer === correctAnswer) {
-      setIsUserAnswerCorrect(true);
-    }
-  };
+      keepScore(1);
+    } else {
+      keepScore(0);
+  }
+}
 
   //next
   return (
@@ -113,6 +115,17 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
             />
           </div>
         ))}
+      </section>
+
+      {/* Feedback */}
+
+      <section className="feedbackContainer">
+        {!didCheck ? null : userSelectedAnswer ===
+          questionItemObject?.option0_text ? (
+          <p className="feedbackTextPositive">Look at you go. Good job! </p>
+        ) : (
+          <p className="feedbackTextNegative">Oops! Wrong answer...</p>
+        )}
       </section>
 
       {/* action buttons */}

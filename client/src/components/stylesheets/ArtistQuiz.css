@@ -2,6 +2,11 @@
   font-family: "Roboto", serif;
 }
 
+.artistQuizHeader {
+  text-align: center;
+  color: #1876d2;
+}
+
 .mainContainer {
   background-color: #f1f5fa;
   border: 1px solid #1876d2;
