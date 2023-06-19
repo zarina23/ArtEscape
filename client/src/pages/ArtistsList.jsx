@@ -26,7 +26,7 @@ export function ArtistsList() {
   };
 
   const handleQuizClick = () => {
-    navigate("/lectures/artists/quiz");
+    navigate("/lectures/artists/final_quiz");
   };
 
   return (

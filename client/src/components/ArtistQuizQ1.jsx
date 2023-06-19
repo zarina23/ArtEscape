@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./ArtistQuizQ1.css";
+import "./stylesheets/ArtistQuiz.css";
 // import { useTheme } from "@mui/material/styles";
 // import Box from "@mui/material/Box";
 // import MobileStepper from "@mui/material/MobileStepper";
@@ -10,14 +10,16 @@ import Button from "@mui/material/Button";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import { containerClasses } from "@mui/material";
 
-function ArtistQuizQ1({ quizQuestionsList }) {
+function ArtistQuizQ1({ quizQuestionsList, onNext }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
   const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
+  // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
+  const [didCheck, setDidCheck] = useState(false);
 
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
@@ -33,21 +35,15 @@ function ArtistQuizQ1({ quizQuestionsList }) {
         shuffledArray[i],
       ];
     }
-    // console.log(shuffledArray);
+
+    console.log(shuffledArray);
     setShuffledAnswerOptionList(shuffledArray);
   }
 
   useEffect(() => {
-    // console.log(filteredQuestion);
+    console.log(filteredQuestion);
 
     setQuestionItemObject(filteredQuestion[0]);
-
-    // setAnswerOptionsList([
-    //   { correctAnswer: questionItemObject?.option0_text },
-    //   { optionAnswer1: questionItemObject?.option1_text },
-    //   { optionAnswer2: questionItemObject?.option2_text },
-    //   { optionAnswer3: questionItemObject?.option3_text },
-    // ]);
   }, [filteredQuestion]);
 
   useEffect(() => {
@@ -63,21 +59,23 @@ function ArtistQuizQ1({ quizQuestionsList }) {
     shuffleArray(answerOptionsList);
   }, [answerOptionsList]);
 
-  function captureUserAnswer(event) {
-    const userAnswer = event.target.innerHTML;
-    setUserSelectedAnswer(userAnswer);
+  //this function is called when user submits selected answer
+  const handleCheck = () => {
+    setDidCheck(true);
 
     const correctAnswer = filteredQuestion[0].option0_text;
-    if (userAnswer === correctAnswer) {
+
+    //compare the correct answer to the option selected by user
+    if (userSelectedAnswer === correctAnswer) {
       setIsUserAnswerCorrect(true);
     }
-  }
+  };
 
   //next
   return (
     <div className="mainContainer">
       {/* Question text */}
-      <h3 className="questionText"> {questionItemObject?.question_text} </h3>
+      <p className="questionText"> {questionItemObject?.question_text} </p>
 
       {/* Question Image */}
       <section className="questionImageContainer">
@@ -88,27 +86,68 @@ function ArtistQuizQ1({ quizQuestionsList }) {
         />
       </section>
 
+      {/* Feedback */}
+
+      <section className="feedbackContainer">
+        {!didCheck ? null : userSelectedAnswer ===
+          questionItemObject?.option0_text ? (
+          <p className="feedbackTextPositive">Look at you go. Good job! </p>
+        ) : (
+          <p className="feedbackTextNegative">Oops! Wrong answer...</p>
+        )}
+      </section>
+
       {/* Answer options */}
       <section className="answerOptionsContainer">
         {shuffledAnswerOptionList.map((shuffledAnswerOptionObject, i) => (
           <div
-            onClick={(event) => captureUserAnswer(event)}
+            onClick={
+              !didCheck
+                ? () =>
+                    setUserSelectedAnswer(
+                      shuffledAnswerOptionObject.optionAnswer
+                    )
+                : null
+            }
             key={i}
             className={
-              shuffledAnswerOptionObject?.optionAnswer === userSelectedAnswer
-                ? "selected"
+              !didCheck
+                ? shuffledAnswerOptionObject?.optionAnswer ===
+                  userSelectedAnswer
+                  ? "selected"
+                  : null
+                : shuffledAnswerOptionObject?.optionAnswer ===
+                  questionItemObject?.option0_text
+                ? "success"
+                : userSelectedAnswer !== questionItemObject?.option0_text &&
+                  shuffledAnswerOptionObject?.optionAnswer ===
+                    userSelectedAnswer
+                ? "danger"
                 : null
             }
           >
-            {shuffledAnswerOptionObject?.optionAnswer}
+            <p className="answerOption">
+              {shuffledAnswerOptionObject?.optionAnswer}
+            </p>
           </div>
         ))}
       </section>
 
       {/* action buttons */}
-      <section>
-        <Button>Check</Button>
-        <Button>Next</Button>
+      <section className="buttonGroup">
+        <Button
+          variant={!didCheck && userSelectedAnswer ? "contained" : "outlined"}
+          onClick={!didCheck && userSelectedAnswer ? handleCheck : null}
+        >
+          Check
+        </Button>
+
+        <Button
+          onClick={didCheck ? onNext : null}
+          variant={!didCheck ? "outlined" : "contained"}
+        >
+          Next
+        </Button>
       </section>
     </div>
   );
