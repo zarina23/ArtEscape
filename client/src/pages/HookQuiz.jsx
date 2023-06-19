@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
+import ArtistQuizQ1 from "../components/ArtistQuizQ1";
+import ArtistQuizQ2 from "../components/ArtistQuizQ2";
+import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 
 export function HookQuiz() {
   const [hookQuizQuestionsList, setHookQuizQuestionsList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
   const getHookQuizQuestionsList = async () => {
     try {
@@ -24,11 +32,30 @@ export function HookQuiz() {
   return (
     <>
       <h3>Hook Quiz</h3>
-      <div className="artistsList">
+      {/* 
+      <div className="HookQuestions">
         {hookQuizQuestionsList.map((hook, id) => (
           <div key={id}>{hook.question_text}</div>
-        ))}
-      </div>
+        ))} */}
+
+      {currentPage === 1 && (
+        <ArtistQuizQ1
+          onNext={handleNextPage}
+          hookQuizQuestionsList={hookQuizQuestionsList}
+        />
+      )}
+      {currentPage === 2 && (
+        <ArtistQuizQ2
+          onNext={handleNextPage}
+          hookQuizQuestionsList={hookQuizQuestionsList}
+        />
+      )}
+      {currentPage === 3 && (
+        <ArtistQuizQ3
+          onNext={handleNextPage}
+          hookQuizQuestionsList={hookQuizQuestionsList}
+        />
+      )}
     </>
   );
 }
