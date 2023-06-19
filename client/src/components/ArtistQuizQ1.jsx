@@ -17,6 +17,7 @@ function ArtistQuizQ1({ quizQuestionsList }) {
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
   const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
+  // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
 
@@ -57,17 +58,6 @@ function ArtistQuizQ1({ quizQuestionsList }) {
     shuffleArray(answerOptionsList);
   }, [answerOptionsList]);
 
-  //this function is called when user selects an answer BUT DOES NOT yet submit it
-  function captureUserAnswer(event) {
-    const userAnswer = event.target.innerHTML;
-    setUserSelectedAnswer(userAnswer);
-
-    // const correctAnswer = filteredQuestion[0].option0_text;
-    // if (userAnswer === correctAnswer) {
-    //   setIsUserAnswerCorrect(true);
-    // }
-  }
-
   //this function is called when user submits selected answer
   const handleCheck = () => {
     setDidCheck(true);
@@ -99,7 +89,14 @@ function ArtistQuizQ1({ quizQuestionsList }) {
       <section className="answerOptionsContainer">
         {shuffledAnswerOptionList.map((shuffledAnswerOptionObject, i) => (
           <div
-            onClick={!didCheck ? (event) => captureUserAnswer(event) : null}
+            onClick={
+              !didCheck
+                ? () =>
+                    setUserSelectedAnswer(
+                      shuffledAnswerOptionObject.optionAnswer
+                    )
+                : null
+            }
             key={i}
             // disabled={didCheck ? "true" : "false"}
             className={
@@ -108,12 +105,17 @@ function ArtistQuizQ1({ quizQuestionsList }) {
                   userSelectedAnswer
                   ? "selected"
                   : null
-                : userSelectedAnswer === questionItemObject?.option0_text
+                : shuffledAnswerOptionObject?.optionAnswer ===
+                  questionItemObject?.option0_text
                 ? "success"
-                : "danger"
+                : userSelectedAnswer !== questionItemObject?.option0_text &&
+                  shuffledAnswerOptionObject?.optionAnswer ===
+                    userSelectedAnswer
+                ? "danger"
+                : null
             }
           >
-            {shuffledAnswerOptionObject?.optionAnswer}
+            <p>{shuffledAnswerOptionObject?.optionAnswer}</p>
           </div>
         ))}
       </section>
