@@ -115,6 +115,17 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
         ))}
       </section>
 
+      {/* Feedback */}
+
+      <section className="feedbackContainer">
+        {!didCheck ? null : userSelectedAnswer ===
+          questionItemObject?.option0_text ? (
+          <p className="feedbackTextPositive">Look at you go. Good job! </p>
+        ) : (
+          <p className="feedbackTextNegative">Oops! Wrong answer...</p>
+        )}
+      </section>
+
       {/* action buttons */}
       <section className="buttonGroup">
         <Button
