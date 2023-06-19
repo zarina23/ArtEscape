@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
-import "../components/ArtistQuizQ1.css";
+import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 
+import "../components/ArtistQuizQ1.css";
 
 export function ArtistQuiz() {
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
@@ -29,6 +30,8 @@ export function ArtistQuiz() {
   return (
     <div>
       <h1>Artist Quiz</h1>
+      <ArtistQuizQ1 quizQuestionsList={quizQuestionsList} />
+      <ArtistQuizQ2 quizQuestionsList={quizQuestionsList} />
       <ArtistQuizQ1 quizQuestionsList={quizQuestionsList} />
     </div>
   );
