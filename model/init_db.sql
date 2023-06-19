@@ -1,4 +1,5 @@
 DROP TABLE if exists questions;
+DROP TABLE if exists artistsData;
 
 CREATE TABLE questions (
     id INT NOT NULL AUTO_INCREMENT,
