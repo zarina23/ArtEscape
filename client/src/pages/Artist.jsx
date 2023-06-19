@@ -14,12 +14,7 @@ import Tab from "@mui/material/Tab";
 import PaintingsCarousel from "../components/PaintingsCarousel";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
-import { Gallery } from "../components/Gallery";
+import ReactHtmlParser from "react-html-parser";
 
 export function Artist() {
   const [artist, setArtist] = useState({});
@@ -63,7 +58,6 @@ export function Artist() {
       });
       const data = await response.json();
       setArtist(data.artist);
-      setPaintings(data.paintings);
       setLoading(false);
     } catch (err) {
       console.log(err);
@@ -71,15 +65,6 @@ export function Artist() {
   };
 
   const paintingsPerArtist = artistStaticData.selectedPaintings;
-
-  console.log(paintingsPerArtist);
-
-  // paintings.forEach((painting) => {
-  //   paintingsPerArtist.forEach((selectedPainting) => {
-  //     painting.title === selectedPainting.title &&
-  //       selectedGalleryImages.push(painting);
-  //   });
-  // });
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -276,7 +261,9 @@ export function Artist() {
                 </div>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <PaintingsCarousel paintings={paintingsPerArtist} />
+                <PaintingsCarousel
+                  paintingsToBeDisplayed={paintingsPerArtist}
+                />
               </TabPanel>
             </Box>
           </Box>

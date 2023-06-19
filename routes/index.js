@@ -58,7 +58,7 @@ router.get("/artists", function (req, res, next) {
       selectedPaintings: [
         {
           title: "Me and My Parrots",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 1776,
           year: 1941,
           image:
@@ -67,7 +67,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Two Women",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: "553",
           year: 1929,
           image:
@@ -76,7 +76,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "My Grandparents, My Parents, and I (Family Tree)",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           year: 1936,
           width: 2527,
           image:
@@ -85,7 +85,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Sun and Life",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           year: 1947,
           width: 1822,
           image:
@@ -94,7 +94,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Henry Ford Hospital (The Flying Bed)",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           year: 1932,
           width: 2305,
           image:
@@ -104,7 +104,7 @@ router.get("/artists", function (req, res, next) {
         {
           title:
             "The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 1816,
           year: 1949,
           image:
@@ -113,7 +113,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Moses",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 1813,
           year: 1945,
           image:
@@ -122,7 +122,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "The Two Fridas",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 2206,
           year: 1939,
           image:
@@ -131,7 +131,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Marxism Will Give Health to the Sick",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 1866,
           year: 1954,
           image:
@@ -140,7 +140,7 @@ router.get("/artists", function (req, res, next) {
         },
         {
           title: "Self Portrait with Cropped Hair",
-          description: "Frida Kahlo",
+          artistName: "Frida Kahlo",
           width: 461,
           year: 1940,
           image:
@@ -378,6 +378,15 @@ router.get("/artists", function (req, res, next) {
           image:
             "https://uploads4.wikiart.org/00335/images/emma-amos/without-feather-boa-1965.jpg!Large.jpg",
           height: 640,
+        },
+        {
+          title: "Blue Balls",
+          artistName: "Emma Amos",
+          year: "1964",
+          width: 640,
+          image:
+            "https://uploads4.wikiart.org/00335/images/emma-amos/blue-balls-1964.jpg",
+          height: 525,
         },
       ],
     },

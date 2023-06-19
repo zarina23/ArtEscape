@@ -1,108 +1,49 @@
-import { useState } from "react";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
-// import { autoPlay } from "react-swipeable-views-utils";
-// const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+import { useState, useEffect } from "react";
+import PhotoAlbum from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 
-function PaintingsCarousel({ paintings }) {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-  const images = paintings;
-  const maxSteps = images.length;
+function PaintingsCarousel({ paintingsToBeDisplayed }) {
+  const [index, setIndex] = useState(-1);
+  const [paintings, setPaintings] = useState([]);
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+  useEffect(() => {
+    const paintings = paintingsToBeDisplayed;
+    const mappedPaintings = paintings.map((painting) => {
+      return {
+        src: painting.image,
+        width: painting.width,
+        height: painting.height,
+        title: `${painting.title} - ${painting.year}`,
+      };
+    });
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
+    const random = mappedPaintings.sort(() => 0.5 - Math.random());
+    setPaintings(random);
+  }, [paintingsToBeDisplayed]);
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        alignContent: "center",
-      }}
-    >
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          maxWidth: "800px",
-          height: 70,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        <h4>{`${images[activeStep].title} - ${images[activeStep].year}`}</h4>
-      </Paper>
-      <SwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <Box
-            key={index}
-            component={"div"}
-            sx={{
-              width: "100%",
-              height: 750,
-              display: "flex",
-              justifyContent: "center",
-              overflow: "hidden",
-              backgroundPosition: "top",
-              backgroundSize: "cover",
-              backgroundImage:
-                Math.abs(activeStep - index) <= 2 ? `url(${step.image})` : null,
-            }}
-          />
-        ))}
-      </SwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === "rtl" ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Previous
-          </Button>
-        }
+    <div className="gallery">
+      <PhotoAlbum
+        photos={paintings}
+        layout="columns"
+        targetRowHeight={150}
+        onClick={({ index }) => setIndex(index)}
       />
-    </Box>
+
+      <Lightbox
+        slides={paintings}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        plugins={[Captions]}
+        captions={{
+          descriptionTextAlign: "center",
+        }}
+      />
+    </div>
   );
 }
 

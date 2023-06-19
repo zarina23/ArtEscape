@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
-
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
 export function Gallery() {
   const [index, setIndex] = useState(-1);
   const [paintings, setPaintings] = useState([]);
-
-  console.log(paintings);
 
   useEffect(() => {
     const getArtists = async () => {
@@ -21,7 +18,6 @@ export function Gallery() {
         const data = await response.json();
         const paintings = data.map((artist) => artist.selectedPaintings);
         const mappedPaintings = paintings.flat().map((painting) => {
-          // src prop is required in the react-photo-album
           return {
             src: painting.image,
             width: painting.width,
@@ -29,7 +25,6 @@ export function Gallery() {
             title: `${painting.title} - ${painting.artistName} (${painting.year})`,
           };
         });
-
         const random = mappedPaintings.sort(() => 0.5 - Math.random());
         setPaintings(random);
       } catch (err) {
