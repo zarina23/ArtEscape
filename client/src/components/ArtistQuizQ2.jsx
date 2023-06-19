@@ -118,8 +118,8 @@ function ArtistQuizQ2({ quizQuestionsList, onNext }) {
       {/* action buttons */}
       <section className="buttonGroup">
         <Button
-          variant={!didCheck ? "contained" : "outlined"}
-          onClick={handleCheck}
+          variant={!didCheck && userSelectedAnswer ? "contained" : "outlined"}
+          onClick={!didCheck && userSelectedAnswer ? handleCheck : null}
         >
           Check
         </Button>
