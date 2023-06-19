@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
+import "../components/ArtistQuizQ1.css";
+
 
 export function ArtistQuiz() {
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);

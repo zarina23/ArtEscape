@@ -74,7 +74,7 @@ function ArtistQuizQ1({ quizQuestionsList }) {
   return (
     <div className="mainContainer">
       {/* Question text */}
-      <h3 className="questionText"> {questionItemObject?.question_text} </h3>
+      <p className="questionText"> {questionItemObject?.question_text} </p>
 
       {/* Question Image */}
       <section className="questionImageContainer">
@@ -115,13 +115,13 @@ function ArtistQuizQ1({ quizQuestionsList }) {
                 : null
             }
           >
-            <p>{shuffledAnswerOptionObject?.optionAnswer}</p>
+            <p className="answerOption">{shuffledAnswerOptionObject?.optionAnswer}</p>
           </div>
         ))}
       </section>
 
       {/* action buttons */}
-      <section>
+      <section className="buttonGroup">
         <Button onClick={handleCheck}>Check</Button>
         <Button>Next</Button>
       </section>
