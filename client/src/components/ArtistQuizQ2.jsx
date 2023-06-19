@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./ArtistQuizQ1.css";
+import "./stylesheets/ArtistQuiz.css";
 // import { useTheme } from "@mui/material/styles";
 // import Box from "@mui/material/Box";
 // import MobileStepper from "@mui/material/MobileStepper";
