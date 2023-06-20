@@ -13,6 +13,9 @@
   border-radius: 35px;
   margin: 2% 15%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .questionImageContainer {
@@ -115,6 +118,7 @@
 
 /* Responsive design */
 
+/* iPad view */
 @media all and (max-width: 840px) {
   .questionImage {
     max-width: 400px;
@@ -135,19 +139,9 @@
   .answerOptionsContainer > div {
     padding: 2%;
   }
-
-  .scoreContainer {
-    background-color: rgba(155, 195, 238, 0.679);
-    border-radius: 50%;
-    width: 20%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40%;
-  }
 }
 
+/* iPhone view */
 @media all and (max-width: 540px) {
   .questionText {
     margin-top: 0%;
@@ -164,14 +158,14 @@
   }
 
   .scoreContainer {
-    background-color: rgba(155, 195, 238, 0.679);
-    border-radius: 50%;
-    width: 20%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40%;
+    width: 40% !important;
+
+    /* margin-left: 40%; */
+  }
+
+  .score {
+    font-size: 32px !important;
+    /* color: red; */
   }
 }
 
@@ -181,11 +175,9 @@
   background-color: rgba(155, 195, 238, 0.679);
   border-radius: 50%;
   width: 20%;
-  height: 20%;
+  min-height: 20%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-left: 40%;
 }
 
 .score {
