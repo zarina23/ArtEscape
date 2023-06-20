@@ -3,16 +3,13 @@ var router = express.Router();
 const axios = require("axios");
 const db = require("../model/helper");
 
-router.get("/artists", function (req, res, next) {
+router.get("/artists", async function (req, res, next) {
   try {
-    const results = await db(
-      `SELECT * FROM artistsData;`
-    );
+    const results = await db(`SELECT * FROM artistsData;`);
     res.send(results.data);
   } catch (err) {
     res.status(500).send({ message: err });
   }
-
 });
 
 router.get("/artists/:artist_name", async function (req, res, next) {
