@@ -25,17 +25,42 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
   return (
     <div className="mainContainer">
       <p className="questionText">Quiz completed!</p>
-      <p className="score">{score}/8</p>
 
-      {score === 8 && <p className="scoreFeedback">Impressive!</p>}
-      {score === 7 && <p className="scoreFeedback">Impressive!</p>}
-      {score === 6 && <p className="scoreFeedback">Well done!</p>}
-      {score === 5 && <p className="scoreFeedback">Well done!</p>}
-      {score === 4 && <p className="scoreFeedback">Well done!</p>}
-      {score === 3 && <p className="scoreFeedback">Nice effort!</p>}
-      {score === 2 && <p className="scoreFeedback">Nice effort!</p>}
-      {score === 1 && <p className="scoreFeedback">Keep exploring!</p>}
-      {score === 0 && <p className="scoreFeedback">Keep exploring!</p>}
+      <div className="scoreContainer">
+        <h3 className="score">{score}/8</h3>
+      </div>
+
+      {score === 8 && (
+        <p className="scoreFeedback">Amazing! You are an expert! </p>
+      )}
+      {score === 7 && <p className="scoreFeedback">Impressive! Great Job!</p>}
+      {score === 6 && <p className="scoreFeedback">Well done! Keep going!</p>}
+      {score === 5 && (
+        <p className="scoreFeedback">Well done! You are doing great!</p>
+      )}
+      {score === 4 && (
+        <p className="scoreFeedback">
+          Well done! You will be an expert in no time!
+        </p>
+      )}
+      {score === 3 && (
+        <p className="scoreFeedback">Nice effort! Keep up the good work!</p>
+      )}
+      {score === 2 && (
+        <p className="scoreFeedback">
+          Nice effort! Your efforts are paying off!
+        </p>
+      )}
+      {score === 1 && (
+        <p className="scoreFeedback">
+          Keep exploring! Remember, each step forward is a success!
+        </p>
+      )}
+      {score === 0 && (
+        <p className="scoreFeedback">
+          Keep exploring! Remember, each step forward is a success!
+        </p>
+      )}
 
       {/* CTAs */}
       <section className="ctaBigContainer">
@@ -58,7 +83,7 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
               color="info"
               onClick={() => takeTheQuizAgain()}
             >
-              Take the quiz again!
+              Take the quiz again
             </Chip>
           </div>
 

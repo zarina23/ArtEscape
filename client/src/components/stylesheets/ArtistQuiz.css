@@ -135,6 +135,17 @@
   .answerOptionsContainer > div {
     padding: 2%;
   }
+
+  .scoreContainer {
+    background-color: rgba(155, 195, 238, 0.679);
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+  }
 }
 
 @media all and (max-width: 540px) {
@@ -151,23 +162,36 @@
     display: flex;
     flex-direction: column;
   }
+
+  .scoreContainer {
+    background-color: rgba(155, 195, 238, 0.679);
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+  }
 }
 
 /* ScoreFeedback component */
 
-.score {
+.scoreContainer {
   background-color: rgba(155, 195, 238, 0.679);
   border-radius: 50%;
-  padding: 7% 5%;
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 20%;
   display: flex;
   justify-content: center;
-  margin-left: 38%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 60px;
+  align-items: center;
+  margin-left: 40%;
+}
+
+.score {
+  font-size: 4vw;
   font-family: "Rubik", sans-serif;
+  text-align: center;
 }
 
 .scoreFeedback {
