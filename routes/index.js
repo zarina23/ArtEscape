@@ -12,67 +12,79 @@ router.get("/artists", async function (req, res, next) {
   }
 });
 
-router.get("/artists/:artist_name", async function (req, res, next) {
-  const { artist_name } = req.params;
+// Route for artists data
+router.get("/artists/:id", async function (req, res, next) {
+  const { id } = req.params;
 
   // Call WikiArt API with axios (no need to json)
   try {
-    // Make both axios requests simultaneously
-    const [response1, response2] = await Promise.all([
-      axios.get(`https://www.wikiart.org/en/${artist_name}?json=2`),
-      axios.get(
-        `https://www.wikiart.org/en/App/Painting/PaintingsByArtist?artistUrl=${artist_name}&json=2`
-      ),
-    ]);
+    const response1 = await db(`SELECT * FROM artistsData WHERE id = ${id};`);
+    const artistsStaticData = response1.data[0];
+    const artist_key = artistsStaticData.artistKey;
 
-    const artistDataFull = response1.data;
-    if (response1.status !== 200) throw new Error(artistDataFull.message);
+    const response2 = await axios.get(
+      `https://www.wikiart.org/en/${artist_key}?json=2`
+    );
+    const artistDataFull = response2.data;
 
-    const paintingsDataFull = response2.data;
-    if (response2.status !== 200) throw new Error(paintingsDataFull.message);
-
-    // Process the data and send the response
+    // if (response1.status !== 200) throw new Error(artistsStaticData.message);
+    if (response2.status !== 200) throw new Error(artistDataFull.message);
 
     //Clean artist bio data
     const {
       OriginalArtistName,
-      artistName,
-      image,
       birthDayAsString,
       deathDayAsString,
-      biography,
       wikipediaUrl,
     } = artistDataFull;
 
-    let artistDataCleaned = {
-      OriginalArtistName,
+    const {
+      // id,
+      artistKey,
       artistName,
-      image,
+      profileImage,
+      coverImage,
+      style,
+      nationality,
+      firstParagraph,
+      bio,
+    } = artistsStaticData;
+
+    let artistDataJoined = {
+      OriginalArtistName,
       birthDayAsString,
       deathDayAsString,
-      biography,
       wikipediaUrl,
-    };
-
-    artistDataCleaned = {
-      ...artistDataCleaned,
-      artistId: artistDataFull.contentId,
-    };
-
-    const artistAndPaintingsData = {
-      artist: artistDataCleaned,
-      paintings: paintingsDataFull,
+      artistKey,
+      artistName,
+      profileImage,
+      coverImage,
+      style,
+      nationality,
+      firstParagraph,
+      bio,
     };
 
     // Send response
-    res.send(artistAndPaintingsData);
+    res.send(artistDataJoined);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Route for paintings data
+router.get("/paintings", async function (req, res, next) {
+  try {
+    const response = await db(`SELECT * FROM paintingsData;`);
+    const paintingsData = response.data;
+
+    res.send(paintingsData);
   } catch (err) {
     res.status(500).send(err);
   }
 });
 
 // Route for quiz "individual artist"
-
 router.get("/artists/:artist_name/quiz", async function (req, res, next) {
   const { artist_name } = req.params;
 

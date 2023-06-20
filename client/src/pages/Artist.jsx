@@ -19,7 +19,6 @@ import ReactHtmlParser from "react-html-parser";
 export function Artist() {
   const [artist, setArtist] = useState({});
   const [artistStaticData, setArtistStaticData] = useState({});
-  const [paintings, setPaintings] = useState([]);
   const { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState(0);
@@ -33,24 +32,10 @@ export function Artist() {
   }));
 
   useEffect(() => {
-    getArtistAndPaintings(id);
-    getArtists();
+    getArtist(id);
   }, [id]);
 
-  const getArtists = async () => {
-    try {
-      const response = await fetch(`/api/artists`, {
-        method: "GET",
-      });
-      const data = await response.json();
-      const staticArtist = data.filter((artist) => artist.key === id);
-      setArtistStaticData(staticArtist[0]);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getArtistAndPaintings = async (id) => {
+  const getArtist = async (id) => {
     setLoading(true);
     try {
       const response = await fetch(`/api/artists/${id}`, {
@@ -58,6 +43,19 @@ export function Artist() {
       });
       const data = await response.json();
       setArtist(data.artist);
+      setLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getPaintings = async () => {
+    try {
+      const response = await fetch(`/api/paintings`, {
+        method: "GET",
+      });
+      const data = await response.json();
+      setArtistPaintings(data.artist);
       setLoading(false);
     } catch (err) {
       console.log(err);

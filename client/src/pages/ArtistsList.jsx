@@ -52,8 +52,8 @@ export function ArtistsList() {
         {artists.map((artist, id) => (
           <ArtistCard
             key={id}
-            id={artist.key}
-            artistName={artist.name}
+            id={artist.id}
+            artistName={artist.artistName}
             artistImage={artist.profileImage}
           ></ArtistCard>
         ))}
