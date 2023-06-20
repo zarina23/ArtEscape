@@ -13,6 +13,9 @@
   border-radius: 35px;
   margin: 2% 15%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .questionImageContainer {
@@ -115,6 +118,7 @@
 
 /* Responsive design */
 
+/* iPad view */
 @media all and (max-width: 840px) {
   .questionImage {
     max-width: 400px;
@@ -137,6 +141,7 @@
   }
 }
 
+/* iPhone view */
 @media all and (max-width: 540px) {
   .questionText {
     margin-top: 0%;
@@ -151,23 +156,34 @@
     display: flex;
     flex-direction: column;
   }
+
+  .scoreContainer {
+    width: 40% !important;
+
+    /* margin-left: 40%; */
+  }
+
+  .score {
+    font-size: 32px !important;
+    /* color: red; */
+  }
 }
 
 /* ScoreFeedback component */
 
-.score {
+.scoreContainer {
   background-color: rgba(155, 195, 238, 0.679);
   border-radius: 50%;
-  padding: 7% 5%;
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  min-height: 20%;
   display: flex;
   justify-content: center;
-  margin-left: 38%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  font-size: 60px;
+}
+
+.score {
+  font-size: 4vw;
   font-family: "Rubik", sans-serif;
+  text-align: center;
 }
 
 .scoreFeedback {

@@ -27,7 +27,9 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
     <div className="mainContainer">
       <p className="questionText">Quiz completed!</p>
       <p className="questionText">Your {artist.name} quiz results:</p>
-      <p className="score">{score}/3</p>
+      <div className="scoreContainer">
+        <h3 className="score">{score}/3</h3>
+      </div>
 
       {score === 3 && (
         <p className="scoreFeedback">

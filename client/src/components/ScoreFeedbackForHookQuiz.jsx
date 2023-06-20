@@ -26,14 +26,30 @@ function ScoreFeedbackForHookQuiz({ score }) {
   return (
     <div className="mainContainer">
       <p className="questionText">Quiz completed!</p>
-      <p className="score">{score}/5</p>
+      <div className="scoreContainer">
+        <h3 className="score">{score}/5</h3>
+      </div>
 
-      {score === 5 && <p className="scoreFeedback">Impressive!</p>}
+      {score === 5 && (
+        <p className="scoreFeedback">Amazing! You are an expert!</p>
+      )}
       {score === 4 && <p className="scoreFeedback">Impressive!</p>}
-      {score === 3 && <p className="scoreFeedback">Well done!</p>}
-      {score === 2 && <p className="scoreFeedback">Well done!</p>}
-      {score === 1 && <p className="scoreFeedback">Nice effort!</p>}
-      {score === 0 && <p className="scoreFeedback">Keep exploring!</p>}
+      {score === 3 && (
+        <p className="scoreFeedback">Well done! You are doing great!</p>
+      )}
+      {score === 2 && (
+        <p className="scoreFeedback">
+          Well done! You will be an expert in no time!
+        </p>
+      )}
+      {score === 1 && (
+        <p className="scoreFeedback">Nice effort! Keep up the good work!</p>
+      )}
+      {score === 0 && (
+        <p className="scoreFeedback">
+          Keep exploring! Remember, each step forward is a success!
+        </p>
+      )}
 
       {/* CTAs */}
       <section className="ctaBigContainer">
@@ -56,7 +72,7 @@ function ScoreFeedbackForHookQuiz({ score }) {
               color="info"
               onClick={() => takeTheQuizAgain()}
             >
-              Take the quiz again!
+              Take the quiz again
             </Chip>
           </div>
 

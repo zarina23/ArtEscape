@@ -4,6 +4,8 @@ import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 import ScoreFeedbackForArtistQuiz from "../components/ScoreFeedbackForArtistQuiz";
+import ScoreFeedbackForHookQuiz from "../components/ScoreFeedbackForHookQuiz";
+import ScoreFeedbackForFinalQuiz from "../components/ScoreFeedbackForFinalQuiz";
 
 import "../components/stylesheets/ArtistQuiz.css";
 
@@ -89,7 +91,7 @@ export function ArtistQuiz() {
       )}
 
       {currentPage === 4 && (
-        <ScoreFeedbackForArtistQuiz artist={artist} score={score} id={id} />
+        <ScoreFeedbackForFinalQuiz artist={artist} score={score} id={id} />
       )}
     </div>
   );
