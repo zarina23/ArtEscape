@@ -63,7 +63,11 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
     // console.log(userSelectedAnswer);
     setDidCheck(true);
 
+
     const correctAnswer = filteredQuestion[0].option0_image_url;
+
+    console.log(correctAnswer);
+    console.log(userSelectedAnswer);
 
     //compare the correct answer to the option selected by user and update score
     if (userSelectedAnswer === correctAnswer) {
@@ -121,7 +125,7 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
 
       <section className="feedbackContainer">
         {!didCheck ? null : userSelectedAnswer ===
-          questionItemObject?.option0_text ? (
+          questionItemObject?.option0_image_url ? (
           <p className="feedbackTextPositive">Look at you go. Good job! </p>
         ) : (
           <p className="feedbackTextNegative">Oops! Wrong answer...</p>
