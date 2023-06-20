@@ -21,6 +21,10 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
 
+  useEffect(() => {
+    setDidCheck(false);
+  }, [quizQuestionsList]);
+
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
       questionObject.question_type === "questionText_answersImage"

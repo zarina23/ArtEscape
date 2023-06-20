@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import "./stylesheets/ArtistQuiz.css";
-// import { useTheme } from "@mui/material/styles";
-// import Box from "@mui/material/Box";
-// import MobileStepper from "@mui/material/MobileStepper";
-// import Paper from "@mui/material/Paper";
-// import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-// import { containerClasses } from "@mui/material";
 
 function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionImage_answersText"
@@ -16,10 +8,13 @@ function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
-  // const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
   // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
+
+  useEffect(() => {
+    setDidCheck(false);
+  }, [quizQuestionsList]);
 
   const filteredQuestion = quizQuestionsList?.filter(
     (questionObject) =>
