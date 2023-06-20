@@ -70,8 +70,8 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
       keepScore(1);
     } else {
       keepScore(0);
-  }
-}
+    }
+  };
 
   //next
   return (
