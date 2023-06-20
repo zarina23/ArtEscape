@@ -3,9 +3,9 @@ import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 import "../components/stylesheets/ArtistQuiz.css";
+import ScoreFeedbackForHookQuiz from "../components/ScoreFeedbackForHookQuiz";
 
 export function HookQuiz() {
-
   const [currentPage, setCurrentPage] = useState(1);
 
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
@@ -83,7 +83,6 @@ export function HookQuiz() {
 
   return (
     <>
-
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
       {/* {currentPage === 1 &&
@@ -123,9 +122,7 @@ export function HookQuiz() {
           }
         )}
 
-      {currentPage === 6 && <p>Feedback page here</p>}
-
-     
+      {currentPage === 6 && <ScoreFeedbackForHookQuiz score={score} />}
     </>
   );
 }
