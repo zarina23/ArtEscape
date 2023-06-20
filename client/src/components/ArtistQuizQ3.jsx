@@ -16,7 +16,7 @@ function ArtistQuizQ3({ quizQuestionsList, onNext, keepScore }) {
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
-  const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
+  // const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
   // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
