@@ -94,8 +94,9 @@
 }
 
 .buttonGroup {
+  align-self: flex-end;
   display: flex;
-  justify-content: flex-end;
+
   margin-right: 5%;
   padding-right: 20px;
   padding-top: 20px;
