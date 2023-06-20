@@ -2,13 +2,8 @@ import "./stylesheets/ArtistQuiz.css";
 import Chip from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 
-function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
-  //
+export default function ScoreFeedbackForFinalQuiz({ score }) {
   const navigate = useNavigate();
-
-  const exploreSameArtist = (id) => {
-    navigate(`/lectures/artists/${id}`);
-  };
 
   const exploreAllArtists = () => {
     navigate(`/lectures/artists`);
@@ -16,6 +11,10 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
 
   const returnToHomePage = () => {
     navigate(`/`);
+  };
+
+  const takeTheQuizAgain = () => {
+    navigate(`/lectures/artists/final_quiz`);
   };
 
   const shareWithFriends = () => {
@@ -26,30 +25,17 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
   return (
     <div className="mainContainer">
       <p className="questionText">Quiz completed!</p>
-      <p className="questionText">Your {artist.name} quiz results:</p>
-      <p className="score">{score}/3</p>
+      <p className="score">{score}/8</p>
 
-      {score === 3 && (
-        <p className="scoreFeedback">
-          Impressive! You&apos;re a {artist.name} expert!
-        </p>
-      )}
-      {score === 2 && (
-        <p className="scoreFeedback">
-          Well done! You&apos;re on your way to mastering {artist.name}&apos;s
-          art.
-        </p>
-      )}
-      {score === 1 && (
-        <p className="scoreFeedback">
-          Nice effort! Keep exploring {artist.name}&apos;s work.
-        </p>
-      )}
-      {score === 0 && (
-        <p className="scoreFeedback">
-          Keep exploring! {artist.name}&apos;s art has much to discover.
-        </p>
-      )}
+      {score === 8 && <p className="scoreFeedback">Impressive!</p>}
+      {score === 7 && <p className="scoreFeedback">Impressive!</p>}
+      {score === 6 && <p className="scoreFeedback">Well done!</p>}
+      {score === 5 && <p className="scoreFeedback">Well done!</p>}
+      {score === 4 && <p className="scoreFeedback">Well done!</p>}
+      {score === 3 && <p className="scoreFeedback">Nice effort!</p>}
+      {score === 2 && <p className="scoreFeedback">Nice effort!</p>}
+      {score === 1 && <p className="scoreFeedback">Keep exploring!</p>}
+      {score === 0 && <p className="scoreFeedback">Keep exploring!</p>}
 
       {/* CTAs */}
       <section className="ctaBigContainer">
@@ -64,16 +50,18 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
               Spread the word: share results with friends
             </Chip>
           </div>
+
           <div className="chip">
             <Chip
               label="Clickable"
               variant="contained"
               color="info"
-              onClick={() => exploreSameArtist(id)}
+              onClick={() => takeTheQuizAgain()}
             >
-              Explore the world of {artist.name}
+              Take the quiz again!
             </Chip>
           </div>
+
           <div className="chip">
             <Chip
               label="Clickable"
@@ -99,5 +87,3 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
     </div>
   );
 }
-
-export default ScoreFeedbackForArtistQuiz;
