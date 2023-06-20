@@ -22,8 +22,8 @@ export function ArtistQuiz() {
   const keepScore = (additionalScore) => {
     const updatedScore = score + additionalScore;
     setScore(updatedScore);
-    console.log(updatedScore)
-  }
+    console.log(updatedScore);
+  };
 
   useEffect(() => {
     getArtist();
@@ -45,8 +45,6 @@ export function ArtistQuiz() {
       console.log(err);
     }
   };
-
-
 
   const getQuizQuestionsList = async (id) => {
     try {
