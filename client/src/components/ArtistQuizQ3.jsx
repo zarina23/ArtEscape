@@ -21,6 +21,10 @@ function ArtistQuizQ3({ quizQuestionsList, onNext, keepScore }) {
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
 
+  useEffect(() => {
+    setDidCheck(false);
+  }, [quizQuestionsList]);
+
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
       questionObject.question_type === "questionText_answersText"
@@ -103,7 +107,6 @@ function ArtistQuizQ3({ quizQuestionsList, onNext, keepScore }) {
                 : null
             }
             key={i}
-            // disabled={didCheck ? "true" : "false"}
             className={
               !didCheck
                 ? shuffledAnswerOptionObject?.optionAnswer ===

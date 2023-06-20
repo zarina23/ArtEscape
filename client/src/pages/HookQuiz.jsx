@@ -85,32 +85,7 @@ export function HookQuiz() {
     <>
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
-      {/* {currentPage === 1 &&
-        (questionOne?.[0]?.question_type === "questionImage_answersText" ? (
-          <ArtistQuizQ1
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersImage" ? (
-          <ArtistQuizQ2
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersText" ? (
-          <ArtistQuizQ3
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : null)} */}
 
-      {/* {currentPage === 1 &&
-        shuffledQuizQuestionsList?.[0] &&
-        createElement(components[shuffledQuizQuestionsList[0]?.question_type], {
-          onNext: handleNextPage,
-          quizQuestionsList: [shuffledQuizQuestionsList[0]],
-        })} */}
-
-      {/* {currentPage === 1 && */}
       {currentPage < 6 &&
         shuffledQuizQuestionsList?.[0] &&
         createElement(
