@@ -91,7 +91,7 @@ export function ArtistQuiz() {
       )}
 
       {currentPage === 4 && (
-        <ScoreFeedbackForFinalQuiz artist={artist} score={score} id={id} />
+        <ScoreFeedbackForArtistQuiz artist={artist} score={score} id={id} />
       )}
     </div>
   );
