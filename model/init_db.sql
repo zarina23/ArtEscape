@@ -1,7 +1,16 @@
-DROP TABLE if exists questions;
-DROP TABLE if exists artistsData;
 DROP TABLE if exists paintingsData;
+CREATE TABLE paintingsData (
+	id INT NOT NULL AUTO_INCREMENT,
+	artistId INT NOT NULL,
+	title VARCHAR(255) NOT NULL,
+	width INT NOT NULL,
+	height INT NOT NULL,
+	image VARCHAR(400) NOT NULL,
+	year INT NOT NULL,
+	PRIMARY KEY (id)
+);
 
+DROP TABLE if exists questions;
 CREATE TABLE questions (
     id INT NOT NULL AUTO_INCREMENT,
     quiz_type VARCHAR(255) NOT NULL,
@@ -164,7 +173,7 @@ VALUES
   NULL
 );
 
-
+DROP TABLE if exists artistsData;
 CREATE TABLE artistsData (
     id INT NOT NULL AUTO_INCREMENT,
     artistName     VARCHAR(255)   NOT NULL,
@@ -251,137 +260,127 @@ VALUES
 <p>In 1914, after the beginning of World War I, Kandinsky returned to Moscow, where he did not find much inspiration in the art world. In 1921, he returned to Munich, where he taught at the Bauhaus school of architecture, until it was closed by the Nazis in 1933. He was an active art theorist, publishing a number of books on art theory, and developing a complex and deeply emotional theory about the ability of colors and shapes to represent sound and evince human emotion. He eventually traveled to the United States to lecture on the topic.</p>
 <p>After the Bauhaus was closed, Kandinsky moved to Paris, where he was mostly isolated from the other Impressionist or Cubist painters. He later became a French citizen, and lived the rest of his days there. His legacy lives on in the newly created Kandinsky Award, which rewards a promising young Russian artist a 55,000 euro prize, and attempts to elevate the status of contemporary Russian art.</p>');
 
-
-CREATE TABLE paintingsData (
-	id INT NOT NULL AUTO_INCREMENT,
-	title VARCHAR(255) NOT NULL,
-	artistName varchar(255) NOT NULL,
-	width INT NOT NULL,
-	height INT NOT NULL,
-	image VARCHAR(400) NOT NULL,
-	year INT NOT NULL,
-	PRIMARY KEY (id)
-);
+ALTER TABLE paintingsData ADD CONSTRAINT paintingsData_fk0 FOREIGN KEY (artistId) REFERENCES artistsData(id);
 
 
-INSERT INTO paintingsData (title, artistName, width, height, image, year) 
+INSERT INTO paintingsData (title, artistId, width, height, image, year) 
 VALUES 
 /* Paintings of Emma Amos */
-('Three Figures', 'Emma Amos', 543, 640, 'https://uploads7.wikiart.org/00335/images/emma-amos/three-figures-1966.jpg!Large.jpg', 1966 ),
-('Fanny Mae', 'Emma Amos', 540, 640, 'https://uploads3.wikiart.org/00335/images/emma-amos/fanny-mae-1965.jpg!Large.jpg', 1965 ),
-('22 and Cheetah', 'Emma Amos', 490, 640, 'https://uploads8.wikiart.org/00335/images/emma-amos/22-and-cheetah-1983.jpg!Large.jpg', 1983 ),
-('Equals', 'Emma Amos', 800, 734, 'https://uploads0.wikiart.org/00335/images/emma-amos/equals-1992.png!Large.png', 1992 ),
-('Identity', 'Emma Amos', 800, 801, 'https://uploads2.wikiart.org/00335/images/emma-amos/identity-2006.png!Large.png', 2006 ),
-('Does Black Rub Off?', 'Emma Amos', 776, 1217, 'https://uploads8.wikiart.org/00335/images/emma-amos/does-black-rub-off-question-mark-1992.png!Large.png', 1992 ),
-('Seated Figure and Nude', 'Emma Amos', 800, 889, 'https://uploads7.wikiart.org/00335/images/emma-amos/seated-figure-and-nude-1966.png!Large.png', 1966 ),
-('Head First', 'Emma Amos', 486, 640, 'https://uploads4.wikiart.org/00335/images/emma-amos/head-first-2006.jpg!Large.jpg', 2006 ),
-('Without Feather Boa', 'Emma Amos', 504, 640, 'https://uploads4.wikiart.org/00335/images/emma-amos/without-feather-boa-1965.jpg!Large.jpg', 1965 ),
-('Blue Balls', 'Emma Amos', 640, 525, 'https://uploads4.wikiart.org/00335/images/emma-amos/blue-balls-1964.jpg', 1964 ),
+('Three Figures', 1, 543, 640, 'https://uploads7.wikiart.org/00335/images/emma-amos/three-figures-1966.jpg!Large.jpg', 1966 ),
+('Fanny Mae', 1, 540, 640, 'https://uploads3.wikiart.org/00335/images/emma-amos/fanny-mae-1965.jpg!Large.jpg', 1965 ),
+('22 and Cheetah', '1', 490, 640, 'https://uploads8.wikiart.org/00335/images/emma-amos/22-and-cheetah-1983.jpg!Large.jpg', 1983 ),
+('Equals', 1, 800, 734, 'https://uploads0.wikiart.org/00335/images/emma-amos/equals-1992.png!Large.png', 1992 ),
+('Identity', 1, 800, 801, 'https://uploads2.wikiart.org/00335/images/emma-amos/identity-2006.png!Large.png', 2006 ),
+('Does Black Rub Off?', 1, 776, 1217, 'https://uploads8.wikiart.org/00335/images/emma-amos/does-black-rub-off-question-mark-1992.png!Large.png', 1992 ),
+('Seated Figure and Nude', 1, 800, 889, 'https://uploads7.wikiart.org/00335/images/emma-amos/seated-figure-and-nude-1966.png!Large.png', 1966 ),
+('Head First', 1, 486, 640, 'https://uploads4.wikiart.org/00335/images/emma-amos/head-first-2006.jpg!Large.jpg', 2006 ),
+('Without Feather Boa', 1, 504, 640, 'https://uploads4.wikiart.org/00335/images/emma-amos/without-feather-boa-1965.jpg!Large.jpg', 1965 ),
+('Blue Balls', 1, 640, 525, 'https://uploads4.wikiart.org/00335/images/emma-amos/blue-balls-1964.jpg', 1964 ),
 
--- /* Paintings of Frida Kahlo */
-('Me and My Parrots', 'Frida Kahlo', 1776, 2326, 'https://uploads8.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/me-and-my-parrots-1941.jpg!Large.jpg', 1941 ),
-('Two Women', 'Frida Kahlo', 553, 750, 'https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/two-women-1929.jpg!Large.jpg', 1929),
-('My Grandparents, My Parents, and I (Family Tree)', 'Frida Kahlo', 2527, 2197, 'https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-grandparents-my-parents-and-me-1936.jpg!Large.jpg', 1936 ),
-('Henry Ford Hospital (The Flying Bed)', 'Frida Kahlo', 2305, 1845, 'https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/henry-ford-hospital-the-flying-bed-1932.jpg!Large.jpg', 1932 ),
-('The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl', 'Frida Kahlo', 1816, 2201, 'https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-love-embrace-of-the-universe-the-earth-mexico-myself-diego-and-señor-xólotl-1949.jpg!Large.jpg', 1949 ),
-('Moses', 'Frida Kahlo', 1813, 1456, 'https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/moses-1945.jpg!Large.jpgg', 1945 ),
-('The Two Fridas', 'Frida Kahlo', 2206, 2186, 'https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg!Large.jpg', 19339 ),
-('Marxism Will Give Health to the Sick', 'Frida Kahlo', 1866, 2371, 'https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/marxism-will-give-health-to-the-sick-1954.jpg!Large.jpg', 1954 ),
-('Self Portrait with Cropped Hair', 'Frida Kahlo', 461, 750, 'https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/self-portrait-with-cropped-hair-1940.jpg!Large.jpg', 1940 ),
-('Sun and Life', 'Frida Kahlo', 1822, 1447, 'https://uploads3.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/sun-and-life-1947.jpg!Large.jpg', 1947 ),
+/* Paintings of Frida Kahlo */
+('Me and My Parrots', 2, 1776, 2326, 'https://uploads8.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/me-and-my-parrots-1941.jpg!Large.jpg', 1941 ),
+('Two Women', 2, 553, 750, 'https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/two-women-1929.jpg!Large.jpg', 1929),
+('My Grandparents, My Parents, and I (Family Tree)', 2, 2527, 2197, 'https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-grandparents-my-parents-and-me-1936.jpg!Large.jpg', 1936 ),
+('Henry Ford Hospital (The Flying Bed)', 2, 2305, 1845, 'https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/henry-ford-hospital-the-flying-bed-1932.jpg!Large.jpg', 1932 ),
+('The Love Embrace of the Universe, the Earth (Mexico), Myself, Diego and Señor Xólotl', 2, 1816, 2201, 'https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-love-embrace-of-the-universe-the-earth-mexico-myself-diego-and-señor-xólotl-1949.jpg!Large.jpg', 1949 ),
+('Moses', 2, 1813, 1456, 'https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/moses-1945.jpg!Large.jpgg', 1945 ),
+('The Two Fridas', 2, 2206, 2186, 'https://uploads5.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg!Large.jpg', 19339 ),
+('Marxism Will Give Health to the Sick', 2, 1866, 2371, 'https://uploads0.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/marxism-will-give-health-to-the-sick-1954.jpg!Large.jpg', 1954 ),
+('Self Portrait with Cropped Hair', 2, 461, 750, 'https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/self-portrait-with-cropped-hair-1940.jpg!Large.jpg', 1940 ),
+('Sun and Life', 2, 1822, 1447, 'https://uploads3.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/sun-and-life-1947.jpg!Large.jpg', 1947 ),
 
 -- /* Paintings of Hilma Af Klint */
-('The Large Figure Paintings, nr 5', 'Hilma Af Klint', 801, 1000, 'https://uploads6.wikiart.org/00287/images/hilma-af-klint/hilma-1.jpg!Large.jpg', 1907 ),
-('They tens mainstay IV', 'Hilma Af Klint', 660, 898, 'https://uploads3.wikiart.org/images/hilma-af-klint/they-tens-mainstay-iv-1907.jpg!Large.jpg', 1907 ),
-('De tio största, n° 2 Barnaaldern', 'Hilma Af Klint', 673, 899, 'https://uploads3.wikiart.org/images/hilma-af-klint/de-tio-st-rsta-n-2-barnaaldern-1907.jpg!Large.jpg', 1907 ),
-('Tree of Knowledge No.2 Series W', 'Hilma Af Klint', 1072, 1600, 'https://uploads3.wikiart.org/images/hilma-af-klint/untitled.jpg!Large.jpg', 1913),
-('The Dove, Nr. 12', 'Hilma Af Klint', 462, 553, 'https://uploads5.wikiart.org/images/hilma-af-klint/the-dove-nr-12-1915.jpg', 1915 ),
-('Svanen', 'Hilma Af Klint', 1010, 1024, 'https://uploads6.wikiart.org/images/hilma-af-klint/svanen-1914.jpg!Large.jpg', 1914 ),
-('Wheat and Wormwood', 'Hilma Af Klint', 1473, 1029, 'https://uploads0.wikiart.org/images/hilma-af-klint/wheat-and-wormwood-1922.jpg!Large.jpg', 1922 ),
-('Altarpiece No. 1, Group X', 'Hilma Af Klint', 364, 481, 'https://uploads5.wikiart.org/images/hilma-af-klint/altar-painting-1915.jpg', 1915 ),
-('The Swan (No. 16)', 'Hilma Af Klint', 462, 474, 'https://uploads5.wikiart.org/images/hilma-af-klint/the-swan-no-16-1915.jpg', 1915 ),
-('The Swan (No. 17)', 'Hilma Af Klint', 1278, 1280, 'https://uploads7.wikiart.org/00140/images/hilma-af-klint/hilma-af-klint-svanen.jpg!Large.jpg', 1915 ),
+('The Large Figure Paintings, nr 5', 3, 801, 1000, 'https://uploads6.wikiart.org/00287/images/hilma-af-klint/hilma-1.jpg!Large.jpg', 1907 ),
+('They tens mainstay IV', 3, 660, 898, 'https://uploads3.wikiart.org/images/hilma-af-klint/they-tens-mainstay-iv-1907.jpg!Large.jpg', 1907 ),
+('De tio största, n° 2 Barnaaldern', 3, 673, 899, 'https://uploads3.wikiart.org/images/hilma-af-klint/de-tio-st-rsta-n-2-barnaaldern-1907.jpg!Large.jpg', 1907 ),
+('Tree of Knowledge No.2 Series W', 3, 1072, 1600, 'https://uploads3.wikiart.org/images/hilma-af-klint/untitled.jpg!Large.jpg', 1913),
+('The Dove, Nr. 12', 3, 462, 553, 'https://uploads5.wikiart.org/images/hilma-af-klint/the-dove-nr-12-1915.jpg', 1915 ),
+('Svanen', 3, 1010, 1024, 'https://uploads6.wikiart.org/images/hilma-af-klint/svanen-1914.jpg!Large.jpg', 1914 ),
+('Wheat and Wormwood', 3, 1473, 1029, 'https://uploads0.wikiart.org/images/hilma-af-klint/wheat-and-wormwood-1922.jpg!Large.jpg', 1922 ),
+('Altarpiece No. 1, Group X', 3, 364, 481, 'https://uploads5.wikiart.org/images/hilma-af-klint/altar-painting-1915.jpg', 1915 ),
+('The Swan (No. 16)', 3, 462, 474, 'https://uploads5.wikiart.org/images/hilma-af-klint/the-swan-no-16-1915.jpg', 1915 ),
+('The Swan (No. 17)', 3, 1278, 1280, 'https://uploads7.wikiart.org/00140/images/hilma-af-klint/hilma-af-klint-svanen.jpg!Large.jpg', 1915 ),
 
 /* Paintings of Ivan Aivazovsky */
-('The Ninth Wave', 'Ivan Aivazovsky', 5090, 3420, 'https://uploads8.wikiart.org/00129/images/ivan-aivazovsky/the-ninth-wave.jpg!Large.jpg', 1850 ),
-('Lunar night on the Black sea', 'Ivan Aivazovsky', 1000, 792, 'https://uploads2.wikiart.org/images/ivan-aivazovsky/lunar-night-on-the-black-sea-1859.jpg!Large.jpg', 1859 ),
-('View of Constantinople by evening light', 'Ivan Aivazovsky', 1026, 663, 'https://uploads4.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-by-evening-light-1846.jpg!Large.jpg', 1846 ),
-('Ships at anchor', 'Ivan Aivazovsky', 1000, 780, 'https://uploads7.wikiart.org/images/ivan-aivazovsky/ships-at-anchor-1851.jpg!Large.jpg', 1851 ),
-('View of Constantinople', 'Ivan Aivazovsky', 1000, 631, 'https://uploads5.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-1851.jpg!Large.jpg', 1851 ),
-('Fishermen on the coast of the sea', 'Ivan Aivazovsky', 1100, 712, 'https://uploads7.wikiart.org/images/ivan-aivazovsky/fishermen-on-the-coast-of-the-sea-1852.jpg!Large.jpg', 1852 ),
-('View of Constantinople and the Bosphorus', 'Ivan Aivazovsky', 4000, 2509, 'https://uploads2.wikiart.org/00342/images/ivan-aivazovsky/aivazovsky-view-of-constantinople-and-the-bosphorus.jpg!Large.jpg', 1856 ),
-('Sunset at Sea', 'Ivan Aivazovsky', 1000, 643, 'https://uploads5.wikiart.org/images/ivan-aivazovsky/sunset-at-sea-1856.jpg!Large.jpg', 1856 ),
-('Winter Caravan on Road', 'Ivan Aivazovsky', 1204, 800, 'https://uploads7.wikiart.org/00279/images/ivan-aivazovsky/336666.jpeg!Large.jpeg', 1857 ),
-('Aivazovsky with friends', 'Ivan Aivazovsky', 1000, 677, 'https://uploads6.wikiart.org/images/ivan-aivazovsky/aivazovsky-with-friends-1893.jpg!Large.jpg', 1893 ),
+('The Ninth Wave', 4, 5090, 3420, 'https://uploads8.wikiart.org/00129/images/ivan-aivazovsky/the-ninth-wave.jpg!Large.jpg', 1850 ),
+('Lunar night on the Black sea', 4, 1000, 792, 'https://uploads2.wikiart.org/images/ivan-aivazovsky/lunar-night-on-the-black-sea-1859.jpg!Large.jpg', 1859 ),
+('View of Constantinople by evening light', 4, 1026, 663, 'https://uploads4.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-by-evening-light-1846.jpg!Large.jpg', 1846 ),
+('Ships at anchor', 4, 1000, 780, 'https://uploads7.wikiart.org/images/ivan-aivazovsky/ships-at-anchor-1851.jpg!Large.jpg', 1851 ),
+('View of Constantinople', 4, 1000, 631, 'https://uploads5.wikiart.org/images/ivan-aivazovsky/view-of-constantinople-1851.jpg!Large.jpg', 1851 ),
+('Fishermen on the coast of the sea', 4, 1100, 712, 'https://uploads7.wikiart.org/images/ivan-aivazovsky/fishermen-on-the-coast-of-the-sea-1852.jpg!Large.jpg', 1852 ),
+('View of Constantinople and the Bosphorus', 4, 4000, 2509, 'https://uploads2.wikiart.org/00342/images/ivan-aivazovsky/aivazovsky-view-of-constantinople-and-the-bosphorus.jpg!Large.jpg', 1856 ),
+('Sunset at Sea', 4, 1000, 643, 'https://uploads5.wikiart.org/images/ivan-aivazovsky/sunset-at-sea-1856.jpg!Large.jpg', 1856 ),
+('Winter Caravan on Road', 4, 1204, 800, 'https://uploads7.wikiart.org/00279/images/ivan-aivazovsky/336666.jpeg!Large.jpeg', 1857 ),
+('Aivazovsky with friends', 4, 1000, 677, 'https://uploads6.wikiart.org/images/ivan-aivazovsky/aivazovsky-with-friends-1893.jpg!Large.jpg', 1893 ),
 
 /* Paintings of Leonardo Da Vinci */
-('Study for Madonna and Child with St. Anne', 'Leonardo Da Vinci', 852, 789, 'https://uploads2.wikiart.org/images/leonardo-da-vinci/study-for-madonna-and-child-with-st-anne.jpg!Large.jpg', 1510 ),
-('The Virgin of the Rocks', 'Leonardo Da Vinci', 2692, 4150, 'https://uploads3.wikiart.org/00142/images/57726d85edc2cb3880b48ccd/leonardo-da-vinci-virgin-of-the-rocks-national-gallery-london.jpg!Large.jpg', 1505 ),
-('The Baptism of Christ', 'Leonardo Da Vinci', 600, 715, 'https://uploads7.wikiart.org/00339/images/leonardo-da-vinci/the-baptism-of-christ-c-1475.png!Large.png', 1475 ),
-('Mona Lisa', 'Leonardo Da Vinci', 671, 1000, 'https://uploads0.wikiart.org/00339/images/leonardo-da-vinci/mona-lisa-c-1503-1519.jpg!Large.jpg', 1519 ),
-('Head of a Young Woman with Tousled Hair (Leda)', 'Leonardo Da Vinci', 808, 952, 'https://uploads6.wikiart.org/images/leonardo-da-vinci/head-of-a-young-woman-with-tousled-hair-leda.jpg!Large.jpg', 1508 ),
-('La Bella Principessa - Portrait of Bianca Sforza', 'Leonardo Da Vinci', 5000, 6977, 'https://uploads4.wikiart.org/00302/images/leonardo-da-vinci/la-bella-principessa-portrait-of-bianca-sforza.jpg!Large.jpg', 1498 ),
-('The Last Supper', 'Leonardo Da Vinci', 5193, 2926, 'https://uploads4.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg!Large.jpg', 1495 ),
-('Heads of an old man and a youth', 'Leonardo Da Vinci', 704, 939, 'https://uploads2.wikiart.org/images/leonardo-da-vinci/heads-of-an-old-man-and-a-youth.jpg!Large.jpg', 1495 ),
-('Leda and the Swan', 'Leonardo Da Vinci', 865, 1000, 'https://uploads6.wikiart.org/images/leonardo-da-vinci/leda-and-the-swan.jpg!Large.jpg', 1506 ),
-('Allegory', 'Leonardo Da Vinci', 1150, 663, 'https://uploads8.wikiart.org/images/leonardo-da-vinci/allegory-with-wolf-and-eagle.jpg!Large.jpg', 1516 ),
+('Study for Madonna and Child with St. Anne', 5, 852, 789, 'https://uploads2.wikiart.org/images/leonardo-da-vinci/study-for-madonna-and-child-with-st-anne.jpg!Large.jpg', 1510 ),
+('The Virgin of the Rocks', 5, 2692, 4150, 'https://uploads3.wikiart.org/00142/images/57726d85edc2cb3880b48ccd/leonardo-da-vinci-virgin-of-the-rocks-national-gallery-london.jpg!Large.jpg', 1505 ),
+('The Baptism of Christ', 5, 600, 715, 'https://uploads7.wikiart.org/00339/images/leonardo-da-vinci/the-baptism-of-christ-c-1475.png!Large.png', 1475 ),
+('Mona Lisa', 5, 671, 1000, 'https://uploads0.wikiart.org/00339/images/leonardo-da-vinci/mona-lisa-c-1503-1519.jpg!Large.jpg', 1519 ),
+('Head of a Young Woman with Tousled Hair (Leda)', 5, 808, 952, 'https://uploads6.wikiart.org/images/leonardo-da-vinci/head-of-a-young-woman-with-tousled-hair-leda.jpg!Large.jpg', 1508 ),
+('La Bella Principessa - Portrait of Bianca Sforza', 5, 5000, 6977, 'https://uploads4.wikiart.org/00302/images/leonardo-da-vinci/la-bella-principessa-portrait-of-bianca-sforza.jpg!Large.jpg', 1498 ),
+('The Last Supper', 5, 5193, 2926, 'https://uploads4.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg!Large.jpg', 1495 ),
+('Heads of an old man and a youth', 5, 704, 939, 'https://uploads2.wikiart.org/images/leonardo-da-vinci/heads-of-an-old-man-and-a-youth.jpg!Large.jpg', 1495 ),
+('Leda and the Swan', 5, 865, 1000, 'https://uploads6.wikiart.org/images/leonardo-da-vinci/leda-and-the-swan.jpg!Large.jpg', 1506 ),
+('Allegory', 5, 1150, 663, 'https://uploads8.wikiart.org/images/leonardo-da-vinci/allegory-with-wolf-and-eagle.jpg!Large.jpg', 1516 ),
 
 -- /* Paintings of Mary Cassatt */
-('At the Theater', 'Mary Cassatt', 656, 800, 'https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg', 1879 ),
-('The Flirtation A Balcony in Seville', 'Mary Cassatt', 826, 988, 'https://uploads6.wikiart.org/images/mary-cassatt/the-flirtation-a-balcony-in-seville-1872.jpg!Large.jpg', 1879 ),
-('After the Bullfight', 'Mary Cassatt', 770, 1000, 'https://uploads6.wikiart.org/images/mary-cassatt/toreador-1873.jpg!Large.jpg', 1873 ),
-('Susan Comforting the Baby (no.1)', 'Mary Cassatt', 1106, 815, 'https://uploads5.wikiart.org/images/mary-cassatt/susan-comforting-the-baby-no-1.jpg!Large.jpg', 1881 ),
-('Young Woman Sewing in the garden', 'Mary Cassatt', 563, 800, 'https://uploads3.wikiart.org/images/mary-cassatt/young-woman-sewing-in-the-garden-1882.jpg!Large.jpg', 1882 ),
-('Baby in His Mother`s arms, sucking his finger', 'Mary Cassatt', 716, 946, 'https://uploads6.wikiart.org/images/mary-cassatt/baby-in-his-mother-s-arms-sucking-his-finger-1889.jpg!Large.jpg', 1889 ),
-('Mother And Child', 'Mary Cassatt', 845, 1000, 'https://uploads5.wikiart.org/images/mary-cassatt/mother-and-child-1889.jpg!Large.jpg', 1889 ),
-('Mother Holding a Child in Her arms', 'Mary Cassatt', 767, 953, 'https://uploads0.wikiart.org/images/mary-cassatt/mother-holding-a-child-in-her-arms.jpg!Large.jpg', 1890 ),
-('Baby`s First Caress', 'Mary Cassatt', 806, 1000, 'https://uploads6.wikiart.org/images/mary-cassatt/baby-s-first-cess-1891.jpg!Large.jpg', 1891 ),
-('Mothers Kiss', 'Mary Cassatt', 618, 1000, 'https://uploads1.wikiart.org/images/mary-cassatt/mothers-kiss-1891.jpg!Large.jpg', 1891 ),
+('At the Theater', 6, 656, 800, 'https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg', 1879 ),
+('The Flirtation A Balcony in Seville', 6, 826, 988, 'https://uploads6.wikiart.org/images/mary-cassatt/the-flirtation-a-balcony-in-seville-1872.jpg!Large.jpg', 1879 ),
+('After the Bullfight', 6, 770, 1000, 'https://uploads6.wikiart.org/images/mary-cassatt/toreador-1873.jpg!Large.jpg', 1873 ),
+('Susan Comforting the Baby (no.1)', 6, 1106, 815, 'https://uploads5.wikiart.org/images/mary-cassatt/susan-comforting-the-baby-no-1.jpg!Large.jpg', 1881 ),
+('Young Woman Sewing in the garden', 6, 563, 800, 'https://uploads3.wikiart.org/images/mary-cassatt/young-woman-sewing-in-the-garden-1882.jpg!Large.jpg', 1882 ),
+('Baby in His Mother`s arms, sucking his finger', 6, 716, 946, 'https://uploads6.wikiart.org/images/mary-cassatt/baby-in-his-mother-s-arms-sucking-his-finger-1889.jpg!Large.jpg', 1889 ),
+('Mother And Child', 6, 845, 1000, 'https://uploads5.wikiart.org/images/mary-cassatt/mother-and-child-1889.jpg!Large.jpg', 1889 ),
+('Mother Holding a Child in Her arms', 6, 767, 953, 'https://uploads0.wikiart.org/images/mary-cassatt/mother-holding-a-child-in-her-arms.jpg!Large.jpg', 1890 ),
+('Baby`s First Caress', 6, 806, 1000, 'https://uploads6.wikiart.org/images/mary-cassatt/baby-s-first-cess-1891.jpg!Large.jpg', 1891 ),
+('Mothers Kiss', 6, 618, 1000, 'https://uploads1.wikiart.org/images/mary-cassatt/mothers-kiss-1891.jpg!Large.jpg', 1891 ),
 
 -- /* Paintings of Pablo Picasso */
-('Guernica', 'Pablo Picasso', 3369, 1523, 'https://uploads0.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg!Large.jpg', 1937 ),
-('Madeleine', 'Pablo Picasso', 962, 1266, 'https://uploads8.wikiart.org/images/pablo-picasso/madeleine-1904.jpg!Large.jpg', 1904 ),
-('Weeping Woman with Handkerchief', 'Pablo Picasso', 749, 960, 'https://uploads0.wikiart.org/00234/images/pablo-picasso/pablo-picasso-head-of-a-woman-crying-with-handkerchief-1937.jpeg!Large.jpeg', 1937 ),
-('Sleeping woman (Meditation)', 'Pablo Picasso', 1443, 1984, 'https://uploads6.wikiart.org/images/pablo-picasso/sleeping-woman-meditation-1904.jpg!Large.jpg', 1904 ),
-('Portrait of Marie-Thérèse Walter', 'Pablo Picasso', 888, 1088, 'https://uploads4.wikiart.org/images/pablo-picasso/portrait-of-marie-thérèse-walter-1937.jpg!Large.jpg', 1937 ),
-('Leaning woman with bonnet', 'Pablo Picasso', 733, 940, 'https://uploads6.wikiart.org/images/pablo-picasso/leaning-woman-with-bonnet-1921.jpg!Large.jpg', 1921 ),
-('Portrait of Dora Maar', 'Pablo Picasso', 900, 1088, 'https://uploads2.wikiart.org/images/pablo-picasso/portrait-of-dora-maar-1937.jpg!Large.jpg', 1937 ),
-('The ironer', 'Pablo Picasso', 1522, 2454, 'https://uploads0.wikiart.org/images/pablo-picasso/the-ironer-1904.jpg!Large.jpg', 1904 ),
-('Woman with raven', 'Pablo Picasso', 728, 1000, 'https://uploads6.wikiart.org/images/pablo-picasso/woman-with-raven-1904.jpg!Large.jpg', 1904 ),
-('A horsewoman', 'Pablo Picasso', 974, 718, 'https://uploads2.wikiart.org/images/pablo-picasso/a-horsewoman-1905.jpg!Large.jpg', 1905 ),
+('Guernica', 7, 3369, 1523, 'https://uploads0.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg!Large.jpg', 1937 ),
+('Madeleine', 7, 962, 1266, 'https://uploads8.wikiart.org/images/pablo-picasso/madeleine-1904.jpg!Large.jpg', 1904 ),
+('Weeping Woman with Handkerchief', 7, 749, 960, 'https://uploads0.wikiart.org/00234/images/pablo-picasso/pablo-picasso-head-of-a-woman-crying-with-handkerchief-1937.jpeg!Large.jpeg', 1937 ),
+('Sleeping woman (Meditation)', 7, 1443, 1984, 'https://uploads6.wikiart.org/images/pablo-picasso/sleeping-woman-meditation-1904.jpg!Large.jpg', 1904 ),
+('Portrait of Marie-Thérèse Walter', 7, 888, 1088, 'https://uploads4.wikiart.org/images/pablo-picasso/portrait-of-marie-thérèse-walter-1937.jpg!Large.jpg', 1937 ),
+('Leaning woman with bonnet', 7, 733, 940, 'https://uploads6.wikiart.org/images/pablo-picasso/leaning-woman-with-bonnet-1921.jpg!Large.jpg', 1921 ),
+('Portrait of Dora Maar', 7, 900, 1088, 'https://uploads2.wikiart.org/images/pablo-picasso/portrait-of-dora-maar-1937.jpg!Large.jpg', 1937 ),
+('The ironer', 7, 1522, 2454, 'https://uploads0.wikiart.org/images/pablo-picasso/the-ironer-1904.jpg!Large.jpg', 1904 ),
+('Woman with raven', 7, 728, 1000, 'https://uploads6.wikiart.org/images/pablo-picasso/woman-with-raven-1904.jpg!Large.jpg', 1904 ),
+('A horsewoman', 7, 974, 718, 'https://uploads2.wikiart.org/images/pablo-picasso/a-horsewoman-1905.jpg!Large.jpg', 1905 ),
 
 -- /* Paintings of Salvador Dalí */
-('The Discovery of America by Christopher Columbus', 'Salvador Dalí', 1018, 1349, 'https://uploads2.wikiart.org/images/salvador-dali/the-discovery-of-america-by-christopher-columbus-1959.jpg!Large.jpg', 1959 ),
-('The Vertebrated Cavern - Series of Decals', 'Salvador Dalí', 467, 764, 'https://uploads6.wikiart.org/images/salvador-dali/the-vertebrated-cavern-series-of-decals.jpg!Large.jpg', 1936 ),
-('Portrait of the Cellist Ricard Pichot', 'Salvador Dalí', 1822, 1447, 'https://uploads4.wikiart.org/images/salvador-dali/portrait-of-the-cellist-ricard-pichot.jpg!Large.jpg', 1920 ),
-('Space Elephant', 'Salvador Dalí', 834, 1600, 'https://uploads8.wikiart.org/images/salvador-dali/space-elephant.jpg!Large.jpg', 1948 ),
-('Swans Reflecting Elephants', 'Salvador Dalí', 2402, 1600, 'https://uploads6.wikiart.org/images/salvador-dali/cygnes-refletant-des-elephants.jpg!Large.jpg', 1937 ),
-('The Sublime Moment', 'Salvador Dalí', 1973, 1600, 'https://uploads3.wikiart.org/images/salvador-dali/the-sublime-moment.jpg!Large.jpg', 1938 ),
-('Geopolitical Child Watching the Birth of the New Man', 'Salvador Dalí', 1738, 1600, 'https://uploads6.wikiart.org/images/salvador-dali/geopolitical-child-watching-the-birth-of-the-new-man-1943.jpg!Large.jpg', 1943 ),
-('Fountain of Milk Spreading Itself Uselessly on Three Shoes', 'Salvador Dalí', 1983, 1600, 'https://uploads7.wikiart.org/images/salvador-dali/fountain-of-milk-spreading-itself-uselessly-on-three-shoes.jpg!Large.jpg', 1945 ),
-('Portrait of Mrs. Mary Sigall', 'Salvador Dalí', 640, 736, 'https://uploads3.wikiart.org/images/salvador-dali/portrait-of-mrs-mary-sigall.jpg!Large.jpg', 1948 ),
-('Leda Atomica', 'Salvador Dalí', 671, 900, 'https://uploads0.wikiart.org/00153/images/salvador-dali/leda-atomica.jpeg!Large.jpeg', 1949 ),
+('The Discovery of America by Christopher Columbus', 8, 1018, 1349, 'https://uploads2.wikiart.org/images/salvador-dali/the-discovery-of-america-by-christopher-columbus-1959.jpg!Large.jpg', 1959 ),
+('The Vertebrated Cavern - Series of Decals', 8, 467, 764, 'https://uploads6.wikiart.org/images/salvador-dali/the-vertebrated-cavern-series-of-decals.jpg!Large.jpg', 1936 ),
+('Portrait of the Cellist Ricard Pichot', 8, 1822, 1447, 'https://uploads4.wikiart.org/images/salvador-dali/portrait-of-the-cellist-ricard-pichot.jpg!Large.jpg', 1920 ),
+('Space Elephant', 8, 834, 1600, 'https://uploads8.wikiart.org/images/salvador-dali/space-elephant.jpg!Large.jpg', 1948 ),
+('Swans Reflecting Elephants', 8, 2402, 1600, 'https://uploads6.wikiart.org/images/salvador-dali/cygnes-refletant-des-elephants.jpg!Large.jpg', 1937 ),
+('The Sublime Moment', 8, 1973, 1600, 'https://uploads3.wikiart.org/images/salvador-dali/the-sublime-moment.jpg!Large.jpg', 1938 ),
+('Geopolitical Child Watching the Birth of the New Man', 8, 1738, 1600, 'https://uploads6.wikiart.org/images/salvador-dali/geopolitical-child-watching-the-birth-of-the-new-man-1943.jpg!Large.jpg', 1943 ),
+('Fountain of Milk Spreading Itself Uselessly on Three Shoes', 8, 1983, 1600, 'https://uploads7.wikiart.org/images/salvador-dali/fountain-of-milk-spreading-itself-uselessly-on-three-shoes.jpg!Large.jpg', 1945 ),
+('Portrait of Mrs. Mary Sigall', 8, 640, 736, 'https://uploads3.wikiart.org/images/salvador-dali/portrait-of-mrs-mary-sigall.jpg!Large.jpg', 1948 ),
+('Leda Atomica', 8, 671, 900, 'https://uploads0.wikiart.org/00153/images/salvador-dali/leda-atomica.jpeg!Large.jpeg', 1949 ),
 
 -- /* Paintings of Tamara de Lempicka */
-('My Portrait (Self-Portrait in the Green Bugatti)', 'Tamara de Lempicka', 1190, 1584, 'https://uploads6.wikiart.org/images/tamara-de-lempicka/portrait-in-the-green-bugatti-1925.jpg!Large.jpg', 1929 ),
-('Portrait of Marquis Sommi', 'Tamara de Lempicka', 424, 648, 'https://uploads2.wikiart.org/images/tamara-de-lempicka/portrait-of-marquis-sommi-1925.jpg!Large.jpg', 1925 ),
-('Girl with Gloves', 'Tamara de Lempicka', 800, 1064, 'https://uploads2.wikiart.org/images/tamara-de-lempicka/girl-with-gloves-1929.jpg!Large.jpg', 1929 ),
-('Kizette On The Balcony', 'Tamara de Lempicka', 750, 1179, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/kizette-on-the-balcony-1927.jpg!Large.jpg', 1927 ),
-('Double 47', 'Tamara de Lempicka', 794, 1023, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/double-47.jpg!Large.jpg', 1924 ),
-('Andromeda', 'Tamara de Lempicka', 724, 1114, 'https://uploads4.wikiart.org/images/tamara-de-lempicka/andromeda-1929.jpg!Large.jpg', 1929 ),
-('Portrait Of Ira P', 'Tamara de Lempicka', 1822, 1447, 'https://uploads3.wikiart.org/images/tamara-de-lempicka/portrait-of-ira-p-1930.jpg!Large.jpg', 1930 ),
-('Nude with Dove', 'Tamara de Lempicka', 400, 710, 'https://uploads0.wikiart.org/images/tamara-de-lempicka/nude-with-dove-1928.jpg!Large.jpg', 1928 ),
-('Portrait Of Dr. Boucard', 'Tamara de Lempicka', 897, 1612, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/portrait-of-dr-boucard-1929.jpg!Large.jpg', 1929 ),
-('The Marquis DAfflitto on a Staircase', 'Tamara de Lempicka', 546, 866, 'https://uploads5.wikiart.org/images/tamara-de-lempicka/the-marquis-d-afflitto-on-a-staircase-1926.jpg!Large.jpg', 1926 ),
+('My Portrait (Self-Portrait in the Green Bugatti)', 9, 1190, 1584, 'https://uploads6.wikiart.org/images/tamara-de-lempicka/portrait-in-the-green-bugatti-1925.jpg!Large.jpg', 1929 ),
+('Portrait of Marquis Sommi', 9, 424, 648, 'https://uploads2.wikiart.org/images/tamara-de-lempicka/portrait-of-marquis-sommi-1925.jpg!Large.jpg', 1925 ),
+('Girl with Gloves', 9, 800, 1064, 'https://uploads2.wikiart.org/images/tamara-de-lempicka/girl-with-gloves-1929.jpg!Large.jpg', 1929 ),
+('Kizette On The Balcony', 9, 750, 1179, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/kizette-on-the-balcony-1927.jpg!Large.jpg', 1927 ),
+('Double 47', 9, 794, 1023, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/double-47.jpg!Large.jpg', 1924 ),
+('Andromeda', 9, 724, 1114, 'https://uploads4.wikiart.org/images/tamara-de-lempicka/andromeda-1929.jpg!Large.jpg', 1929 ),
+('Portrait Of Ira P', 9, 1822, 1447, 'https://uploads3.wikiart.org/images/tamara-de-lempicka/portrait-of-ira-p-1930.jpg!Large.jpg', 1930 ),
+('Nude with Dove', 9, 400, 710, 'https://uploads0.wikiart.org/images/tamara-de-lempicka/nude-with-dove-1928.jpg!Large.jpg', 1928 ),
+('Portrait Of Dr. Boucard', 9, 897, 1612, 'https://uploads8.wikiart.org/images/tamara-de-lempicka/portrait-of-dr-boucard-1929.jpg!Large.jpg', 1929 ),
+('The Marquis DAfflitto on a Staircase', 9, 546, 866, 'https://uploads5.wikiart.org/images/tamara-de-lempicka/the-marquis-d-afflitto-on-a-staircase-1926.jpg!Large.jpg', 1926 ),
 
 /* Paintings of Wassily Kandinsky */
-('Moscow I', 'Wassily Kandinsky', 1063, 1102, 'https://uploads2.wikiart.org/images/wassily-kandinsky/moscow-i-1916.jpg!Large.jpg', 1916 ),
-('Blue mountain', 'Wassily Kandinsky', 778, 879, 'https://uploads7.wikiart.org/images/wassily-kandinsky/blue-mountain-1908.jpg!Large.jpg', 1908 ),
-('To the Unknown Voice', 'Wassily Kandinsky', 534, 809, 'https://uploads5.wikiart.org/images/wassily-kandinsky/to-the-unknown-voice-1916.jpg!Large.jpg', 1916 ),
-('Red Oval', 'Wassily Kandinsky', 1063, 1053, 'https://uploads2.wikiart.org/images/wassily-kandinsky/red-oval-1920.jpg!Large.jpg', 1920 ),
-('Small worlds II', 'Wassily Kandinsky', 587, 750, 'https://uploads0.wikiart.org/images/wassily-kandinsky/small-worlds-ii-1922.jpg!Large.jpg', 1922 ),
-('Composition 8', 'Wassily Kandinsky', 1280, 891, 'https://uploads1.wikiart.org/00280/images/wassily-kandinsky/37-262-ph-web-1-1.jpg!Large.jpg', 1923 ),
-('Small dream in red', 'Wassily Kandinsky', 703, 605, 'https://uploads3.wikiart.org/images/wassily-kandinsky/small-dream-in-red-1925.jpg!Large.jpg', 1925 ),
-('Several Circles', 'Wassily Kandinsky', 1063, 1046, 'https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg', 1926 ),
-('Accent on rose', 'Wassily Kandinsky', 515, 650, 'https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg', 1926 ),
-('Succession', 'Wassily Kandinsky', 1800, 1450, 'https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg', 1935 );
+('Moscow I', 10, 1063, 1102, 'https://uploads2.wikiart.org/images/wassily-kandinsky/moscow-i-1916.jpg!Large.jpg', 1916 ),
+('Blue mountain', 10, 778, 879, 'https://uploads7.wikiart.org/images/wassily-kandinsky/blue-mountain-1908.jpg!Large.jpg', 1908 ),
+('To the Unknown Voice', 10, 534, 809, 'https://uploads5.wikiart.org/images/wassily-kandinsky/to-the-unknown-voice-1916.jpg!Large.jpg', 1916 ),
+('Red Oval', 10, 1063, 1053, 'https://uploads2.wikiart.org/images/wassily-kandinsky/red-oval-1920.jpg!Large.jpg', 1920 ),
+('Small worlds II', 10, 587, 750, 'https://uploads0.wikiart.org/images/wassily-kandinsky/small-worlds-ii-1922.jpg!Large.jpg', 1922 ),
+('Composition 8', 10, 1280, 891, 'https://uploads1.wikiart.org/00280/images/wassily-kandinsky/37-262-ph-web-1-1.jpg!Large.jpg', 1923 ),
+('Small dream in red', 10, 703, 605, 'https://uploads3.wikiart.org/images/wassily-kandinsky/small-dream-in-red-1925.jpg!Large.jpg', 1925 ),
+('Several Circles', 10, 1063, 1046, 'https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg', 1926 ),
+('Accent on rose', 10, 515, 650, 'https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg', 1926 ),
+('Succession', 10, 1800, 1450, 'https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg', 1935 );
