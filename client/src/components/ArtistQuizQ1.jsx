@@ -144,12 +144,7 @@ function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
           Check
         </Button>
 
-        <Button
-          onClick={didCheck ? onNext : null}
-          variant={!didCheck ? "outlined" : "contained"}
-        >
-          Next
-        </Button>
+        
       </section>
     </div>
   );
