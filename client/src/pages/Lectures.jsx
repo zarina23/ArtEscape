@@ -9,10 +9,6 @@ export function Lectures() {
     navigate("/lectures/artists");
   };
 
-  const handleByPaintingsClick = () => {
-    navigate("/lectures/paintings");
-  };
-
   return (
     <Box sx={{ textAlign: "center", padding: 10 }}>
       <Box sx={{ padding: 2 }}>
@@ -27,7 +23,7 @@ export function Lectures() {
           By Artists
         </Button>
       </Box>
-      <Box sx={{ padding: 2 }}>
+      {/* <Box sx={{ padding: 2 }}>
         <Button
           sx={{ maxWidth: "200px", minWidth: "200px" }}
           variant="contained"
@@ -35,7 +31,7 @@ export function Lectures() {
         >
           By Paintings
         </Button>
-      </Box>
+      </Box> 
       <Box sx={{ padding: 2 }}>
         <Button
           sx={{ maxWidth: "200px", minWidth: "200px" }}
@@ -43,7 +39,7 @@ export function Lectures() {
         >
           By Periods
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 }

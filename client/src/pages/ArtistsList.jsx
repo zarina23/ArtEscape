@@ -50,12 +50,7 @@ export function ArtistsList() {
       </Box>
       <div className="artistsList">
         {artists.map((artist, id) => (
-          <ArtistCard
-            key={id}
-            id={artist.id}
-            artistName={artist.artistName}
-            artistImage={artist.profileImage}
-          ></ArtistCard>
+          <ArtistCard key={id} id={artist.id} artist={artist}></ArtistCard>
         ))}
       </div>
     </Box>

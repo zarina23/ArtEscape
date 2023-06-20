@@ -11,7 +11,7 @@ export function Layout() {
   const navigate = useNavigate();
 
   const handleGalleryClick = () => {
-    navigate("/lectures/paintings");
+    navigate("/gallery");
   };
 
   const handleLecturesClick = () => {
@@ -19,7 +19,7 @@ export function Layout() {
   };
 
   const handleQuizClick = () => {
-    navigate("lectures/artists/quiz");
+    navigate("lectures/artists/final_quiz");
   };
 
   const handleLogoClick = () => {

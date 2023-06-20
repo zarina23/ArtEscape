@@ -11,15 +11,15 @@ import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import PaintingsCarousel from "../components/PaintingsCarousel";
+import EachArtistGallery from "../components/EachArtistGallery";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 
 export function Artist() {
-  const [artist, setArtist] = useState({});
-  const [artistStaticData, setArtistStaticData] = useState({});
   const { id } = useParams();
+  const [artist, setArtist] = useState({});
+  const [paintings, setPaintings] = useState();
   const [loading, setLoading] = useState(false);
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
@@ -32,37 +32,35 @@ export function Artist() {
   }));
 
   useEffect(() => {
+    const getPaintings = async () => {
+      try {
+        const response = await fetch(`/api/paintings/${id}`, {
+          method: "GET",
+        });
+        const data = await response.json();
+        setPaintings(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const getArtist = async (id) => {
+      setLoading(true);
+      try {
+        const response = await fetch(`/api/artists/${id}`, {
+          method: "GET",
+        });
+        const data = await response.json();
+        setArtist(data);
+        setLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
     getArtist(id);
+    getPaintings();
   }, [id]);
-
-  const getArtist = async (id) => {
-    setLoading(true);
-    try {
-      const response = await fetch(`/api/artists/${id}`, {
-        method: "GET",
-      });
-      const data = await response.json();
-      setArtist(data.artist);
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const getPaintings = async () => {
-    try {
-      const response = await fetch(`/api/paintings`, {
-        method: "GET",
-      });
-      const data = await response.json();
-      setArtistPaintings(data.artist);
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const paintingsPerArtist = artistStaticData.selectedPaintings;
 
   function TabPanel(props) {
     const { children, value, index } = props;
@@ -113,6 +111,7 @@ export function Artist() {
 
   return (
     <>
+      {" "}
       {loading ? (
         <Loading />
       ) : (
@@ -126,7 +125,7 @@ export function Artist() {
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              backgroundImage: `url(${artistStaticData.coverImage})`,
+              backgroundImage: `url(${artist.coverImage})`,
             }}
           >
             <Box
@@ -144,15 +143,11 @@ export function Artist() {
                 position: "relative",
                 p: { xs: 3, md: 6 },
                 pr: { md: 0 },
-                width: 800,
+                width: "calc(100% - 48px)",
+                maxWidth: 800,
               }}
             >
-              <Typography
-                component="h1"
-                variant="h3"
-                color="inherit"
-                gutterBottom
-              >
+              <Typography component="h1" variant="h3" color="inherit">
                 {artist.artistName}
               </Typography>
             </Box>
@@ -164,7 +159,7 @@ export function Artist() {
               <Avatar
                 sx={{ width: 200, height: 200, marginBottom: -7, border: 5 }}
                 alt={artist.artistName}
-                src={artistStaticData.profileImage}
+                src={artist.profileImage}
               />
             </Stack>
           </Paper>
@@ -224,11 +219,15 @@ export function Artist() {
                 >
                   <Grid item xs={6} sx={{ padding: 0 }}>
                     <Item>{<strong>ORIGINAL NAME</strong>}</Item>
-                    <Item>{artist.OriginalArtistName}</Item>
+                    <Item>
+                      {artist.OriginalArtistName
+                        ? artist.OriginalArtistName
+                        : artist.artistName}
+                    </Item>
                   </Grid>
                   <Grid item xs={6}>
                     <Item>{<strong>NATIONALITY</strong>}</Item>
-                    <Item>{artistStaticData.nationality}</Item>
+                    <Item>{artist.nationality}</Item>
                   </Grid>
                   <Grid item xs={6}>
                     <Item>{<strong>DATE OF BIRTH</strong>}</Item>
@@ -240,15 +239,15 @@ export function Artist() {
                   </Grid>
                   <Grid item xs={6}>
                     <Item>{<strong>ART MOVEMENT </strong>}</Item>
-                    <Item>{artistStaticData.style}</Item>
+                    <Item>{artist.style}</Item>
                   </Grid>
                 </Grid>
                 <br />
                 <div className="bio">
                   <div>
                     {showMore
-                      ? ReactHtmlParser(artistStaticData.bio)
-                      : ReactHtmlParser(artistStaticData.firstParagraph)}
+                      ? ReactHtmlParser(artist.bio)
+                      : ReactHtmlParser(artist.firstParagraph)}
                   </div>
                   <Button
                     sx={{ float: "right", mt: 2.5 }}
@@ -259,9 +258,7 @@ export function Artist() {
                 </div>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <PaintingsCarousel
-                  paintingsToBeDisplayed={paintingsPerArtist}
-                />
+                <EachArtistGallery paintingsToBeDisplayed={paintings} />
               </TabPanel>
             </Box>
           </Box>

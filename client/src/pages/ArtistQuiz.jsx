@@ -18,7 +18,7 @@ export function ArtistQuiz() {
 
   const getQuizQuestionsList = async (id) => {
     try {
-      const response = await fetch(`/api/artists/${id}/quiz`);
+      const response = await fetch(`/api/quiz/${id}`);
       const data = await response.json();
       setQuizQuestionsList(data);
       // console.log(data);
@@ -31,7 +31,7 @@ export function ArtistQuiz() {
 
   useEffect(() => {
     getQuizQuestionsList(id);
-  }, []);
+  }, [id]);
 
   return (
     <div>

@@ -17,12 +17,12 @@ function App() {
       <Routes>
         <Route path="/" index element={<Home />} />
         <Route path="/" element={<Layout />}>
+          <Route path="gallery" element={<Gallery />} />
           <Route path="hookQuiz" element={<HookQuiz />} />
           <Route path="lectures" element={<Lectures />} />
           <Route path="lectures/artists" element={<ArtistsList />} />
           <Route path="lectures/artists/:id" element={<Artist />} />
           <Route path="lectures/artists/:id/quiz" element={<ArtistQuiz />} />
-          <Route path="lectures/paintings" element={<Gallery />} />
           <Route
             path="lectures/artists/final_quiz"
             element={<ArtistsQuizFinal />}
