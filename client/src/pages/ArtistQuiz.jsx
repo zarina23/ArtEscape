@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
-import ScoreFeedback from "../components/ScoreFeedbackForArtistQuiz";
+import ScoreFeedbackForArtistQuiz from "../components/ScoreFeedbackForArtistQuiz";
 
 import "../components/stylesheets/ArtistQuiz.css";
 
@@ -87,7 +87,10 @@ export function ArtistQuiz() {
           keepScore={keepScore}
         />
       )}
-      {currentPage === 4 && <ScoreFeedback artist={artist} score={score} id={id}/>}
+
+      {currentPage === 4 && (
+        <ScoreFeedbackForArtistQuiz artist={artist} score={score} id={id} />
+      )}
     </div>
   );
 }

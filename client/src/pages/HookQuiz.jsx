@@ -5,6 +5,7 @@ import ArtistQuizQ3 from "../components/ArtistQuizQ3";
 import "../components/stylesheets/ArtistQuiz.css";
 
 export function HookQuiz() {
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
@@ -38,6 +39,7 @@ export function HookQuiz() {
       });
       const data = await response.json();
       setQuizQuestionsList(data);
+
       if (!response.ok) throw new Error(data.message);
     } catch (err) {
       console.log(err.message);
@@ -81,6 +83,7 @@ export function HookQuiz() {
 
   return (
     <>
+
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
       {/* {currentPage === 1 &&
@@ -122,18 +125,7 @@ export function HookQuiz() {
 
       {currentPage === 6 && <p>Feedback page here</p>}
 
-      {/* {currentPage === 2 && (
-        <ArtistQuizQ2
-          onNext={handleNextPage}
-          hookQuizQuestionsList={hookQuizQuestionsList}
-        />
-      )}
-      {currentPage === 3 && (
-        <ArtistQuizQ3
-          onNext={handleNextPage}
-          hookQuizQuestionsList={hookQuizQuestionsList}
-        />
-      )} */}
+     
     </>
   );
 }
