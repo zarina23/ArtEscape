@@ -153,10 +153,31 @@
   }
 }
 
-
-
 /* ScoreFeedback component */
 
 .score {
   text-align: center;
+}
+
+.scoreFeedback {
+  text-align: center;
+}
+
+.ctaBigContainer {
+  display: flex;
+  justify-content: center;
+  margin: 4%;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* max-width: 350px; */
+}
+
+.chip {
+margin: 5px;
+display: flex;
+justify-content: center;
 }

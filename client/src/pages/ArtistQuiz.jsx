@@ -87,7 +87,7 @@ export function ArtistQuiz() {
           keepScore={keepScore}
         />
       )}
-      {currentPage === 4 && <ScoreFeedback artist={artist} score={score} />}
+      {currentPage === 4 && <ScoreFeedback artist={artist} score={score} id={id}/>}
     </div>
   );
 }
