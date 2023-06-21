@@ -171,6 +171,10 @@
     font-size: 32px !important;
     /* color: red; */
   }
+
+  .artistListheader {
+    font-size: smaller;
+  }
 }
 
 /* ScoreFeedback component */
