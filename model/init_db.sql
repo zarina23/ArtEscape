@@ -44,6 +44,7 @@ VALUES
     ('individual_artist', 2, 'questionText_answersText', 'What was one of the most important narratives in the work of Frida, which she was actively known for?', NULL, 'Political activism and Mexican indigenous values', 'Anatomy of the human body and philosophy', 'Romantic relationship with Diego Rivera', 'Nature symbols and animals', NULL, NULL, NULL, NULL),
 		
 		('individual_artist', 3, 'questionImage_answersText', 'What is the name of this painting?', 'https://uploads6.wikiart.org/images/hilma-af-klint/the-ten-largest-1907.jpg', 'The Ten Largest', 'Circles', 'White circles', 'Blue and yellow circles', NULL, NULL, NULL, NULL),
+
     ('individual_artist', 3, 'questionText_answersImage', 'Which one of this paintings is called What A Human Being Is by af Klimt?', NULL, NULL, NULL, NULL, NULL, 'https://uploads3.wikiart.org/images/hilma-af-klint/what-a-human-being-is-1910.jpg', 'https://studyfinds.org/wp-content/uploads/2020/12/AdobeStock_267410313-604x385.jpeg', 'https://i.etsystatic.com/36644323/r/il/4db5c9/4296968593/il_794xN.4296968593_5iyf.jpg', 'https://dqm0pnlwcddhp.cloudfront.net/db/text_with_image_blocks/image_svs/1392/original/bo400.jpg?1572008627'),
     ('individual_artist', 3, 'questionText_answersText', 'What kind of work characterizes af Klint and The Five?', NULL, 'Inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds', 'A chain of fast food restaurants', 'A talk show on Fox News Channel', 'A mystery thriller miniseries', NULL, NULL, NULL, NULL),
 		
@@ -389,6 +390,3 @@ VALUES
 ('Several Circles', 'Wassily Kandinsky', 10, 1063, 1046, 'https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg', 1926 ),
 ('Accent on rose', 'Wassily Kandinsky', 10, 515, 650, 'https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg', 1926 ),
 ('Succession', 'Wassily Kandinsky', 10, 1800, 1450, 'https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg', 1935 );
-
-
-
