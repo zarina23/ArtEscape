@@ -1,4 +1,4 @@
-import { useEffect, useState, createElement } from "react";
+import { useEffect, useState, createElement, useMemo } from "react";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
@@ -81,6 +81,11 @@ export function HookQuiz() {
     questionText_answersText: ArtistQuizQ3,
   };
 
+  const selectQuiz = useMemo(
+    () => [shuffledQuizQuestionsList[currentPage - 1]],
+    [currentPage, shuffledQuizQuestionsList]
+  );
+
   return (
     <>
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
@@ -92,7 +97,7 @@ export function HookQuiz() {
           components[shuffledQuizQuestionsList[currentPage - 1]?.question_type],
           {
             onNext: handleNextPage,
-            quizQuestionsList: [shuffledQuizQuestionsList[currentPage - 1]],
+            quizQuestionsList: selectQuiz ,
             keepScore: keepScore,
           }
         )}
