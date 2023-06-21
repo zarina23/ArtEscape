@@ -22,25 +22,20 @@ export function ArtistQuiz() {
   const keepScore = (additionalScore) => {
     const updatedScore = score + additionalScore;
     setScore(updatedScore);
-    console.log(updatedScore);
   };
 
   useEffect(() => {
-    getArtist();
-  }, []);
+    getArtist(id);
+  }, [id]);
 
   //this is needed to fetch artist's name to display at the top of the page
-  const getArtist = async () => {
+  const getArtist = async (id) => {
     try {
-      const response = await fetch(`/api/artists`, {
+      const response = await fetch(`/api/artists/${id}`, {
         method: "GET",
       });
       const data = await response.json();
-      // console.log(data);
-
-      const artist = data.filter((artist) => artist.key === id);
-      // console.log(artist);
-      setArtist(artist[0]);
+      setArtist(data);
     } catch (err) {
       console.log(err);
     }
@@ -51,7 +46,6 @@ export function ArtistQuiz() {
       const response = await fetch(`/api/quiz/${id}`);
       const data = await response.json();
       setQuizQuestionsList(data);
-      // console.log(data);
 
       if (!response.ok) throw new Error(data.message);
     } catch (err) {
@@ -65,7 +59,9 @@ export function ArtistQuiz() {
 
   return (
     <div>
-      <h1 className="artistQuizHeader">Test Your Knowledge: {artist.name}</h1>
+      <h1 className="artistQuizHeader">
+        Test Your Knowledge: {artist?.artistName}
+      </h1>
       {currentPage === 1 && (
         <ArtistQuizQ1
           onNext={handleNextPage}
