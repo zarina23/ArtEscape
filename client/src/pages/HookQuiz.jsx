@@ -34,7 +34,7 @@ export function HookQuiz() {
   //API call to fetch all question from database
   const getHookQuizQuestionsList = async () => {
     try {
-      const response = await fetch(`/api/hook_quiz`, {
+      const response = await fetch(`/api/quiz`, {
         method: "GET",
       });
       const data = await response.json();

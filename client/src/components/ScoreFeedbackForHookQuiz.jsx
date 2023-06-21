@@ -33,13 +33,17 @@ function ScoreFeedbackForHookQuiz({ score }) {
       {score === 5 && (
         <p className="scoreFeedback">Amazing! You are an expert!</p>
       )}
-      {score === 4 && <p className="scoreFeedback">Impressive!</p>}
+      {score === 4 && (
+        <p className="scoreFeedback">Impressive! You are doing great!</p>
+      )}
       {score === 3 && (
-        <p className="scoreFeedback">Well done! You are doing great!</p>
+        <p className="scoreFeedback">
+          Well done! You&apos;re on your way to mastering the world of art!
+        </p>
       )}
       {score === 2 && (
         <p className="scoreFeedback">
-          Well done! You will be an expert in no time!
+          Nice effort! Keep exploring our lectures.
         </p>
       )}
       {score === 1 && (
