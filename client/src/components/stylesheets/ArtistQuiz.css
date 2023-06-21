@@ -2,12 +2,20 @@
   font-family: "Roboto", serif;
 }
 
+.artistQuizHeader {
+  text-align: center;
+  color: #1876d2;
+}
+
 .mainContainer {
   background-color: #f1f5fa;
   border: 1px solid #1876d2;
   border-radius: 35px;
   margin: 2% 15%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .questionImageContainer {
@@ -86,8 +94,9 @@
 }
 
 .buttonGroup {
+  align-self: flex-end;
   display: flex;
-  justify-content: flex-end;
+
   margin-right: 5%;
   padding-right: 20px;
   padding-top: 20px;
@@ -110,6 +119,7 @@
 
 /* Responsive design */
 
+/* iPad view */
 @media all and (max-width: 840px) {
   .questionImage {
     max-width: 400px;
@@ -132,6 +142,7 @@
   }
 }
 
+/* iPhone view */
 @media all and (max-width: 540px) {
   .questionText {
     margin-top: 0%;
@@ -146,4 +157,55 @@
     display: flex;
     flex-direction: column;
   }
+
+  .scoreContainer {
+    width: 40% !important;
+
+    /* margin-left: 40%; */
+  }
+
+  .score {
+    font-size: 32px !important;
+    /* color: red; */
+  }
+}
+
+/* ScoreFeedback component */
+
+.scoreContainer {
+  background-color: rgba(155, 195, 238, 0.679);
+  border-radius: 50%;
+  width: 20%;
+  min-height: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  font-size: 4vw;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}
+
+.scoreFeedback {
+  text-align: center;
+}
+
+.ctaBigContainer {
+  display: flex;
+  justify-content: center;
+  margin: 4%;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* max-width: 350px; */
+}
+
+.chip {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
 }

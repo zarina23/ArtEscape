@@ -19,7 +19,7 @@ export function Layout() {
   };
 
   const handleQuizClick = () => {
-    navigate("lectures/artists/final_quiz");
+    navigate("hook_quiz");
   };
 
   const handleLogoClick = () => {

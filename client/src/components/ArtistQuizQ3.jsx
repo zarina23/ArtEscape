@@ -10,16 +10,20 @@ import Button from "@mui/material/Button";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import { containerClasses } from "@mui/material";
 
-function ArtistQuizQ3({ quizQuestionsList, onNext }) {
+function ArtistQuizQ3({ quizQuestionsList, onNext, keepScore }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionText_answersText"
 
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
-  const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
+  // const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
   // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
+
+  useEffect(() => {
+    setDidCheck(false);
+  }, [quizQuestionsList]);
 
   const filteredQuestion = quizQuestionsList.filter(
     (questionObject) =>
@@ -65,9 +69,11 @@ function ArtistQuizQ3({ quizQuestionsList, onNext }) {
 
     const correctAnswer = filteredQuestion[0].option0_text;
 
-    //compare the correct answer to the option selected by user
+    //compare the correct answer to the option selected by user and update score
     if (userSelectedAnswer === correctAnswer) {
-      setIsUserAnswerCorrect(true);
+      keepScore(1);
+    } else {
+      keepScore(0);
     }
   };
 
@@ -76,6 +82,17 @@ function ArtistQuizQ3({ quizQuestionsList, onNext }) {
     <div className="mainContainer">
       {/* Question text */}
       <p className="questionText"> {questionItemObject?.question_text} </p>
+
+      {/* Feedback */}
+
+      <section className="feedbackContainer">
+        {!didCheck ? null : userSelectedAnswer ===
+          questionItemObject?.option0_text ? (
+          <p className="feedbackTextPositive">Look at you go. Good job! </p>
+        ) : (
+          <p className="feedbackTextNegative">Oops! Wrong answer...</p>
+        )}
+      </section>
 
       {/* Answer options */}
       <section className="answerOptionsContainer">
@@ -90,7 +107,6 @@ function ArtistQuizQ3({ quizQuestionsList, onNext }) {
                 : null
             }
             key={i}
-            // disabled={didCheck ? "true" : "false"}
             className={
               !didCheck
                 ? shuffledAnswerOptionObject?.optionAnswer ===
@@ -126,9 +142,8 @@ function ArtistQuizQ3({ quizQuestionsList, onNext }) {
         <Button
           onClick={didCheck ? onNext : null}
           variant={!didCheck ? "outlined" : "contained"}
-          color={!didCheck ? "primary" : "success"}
         >
-          Submit
+          Next
         </Button>
       </section>
     </div>
