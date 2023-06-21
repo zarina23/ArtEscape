@@ -49,6 +49,29 @@ h4 {
   box-shadow: 1px 1px 1px gray;
 }
 
-.gallery {
+.main-gallery {
   padding: 20px;
+}
+
+.main-gallery .yarl__slide_title {
+  white-space: pre-wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.gallery {
+  padding: 2px;
+}
+
+/* Overwrite the yet-another-react-lightbox caption title */
+.gallery .yarl__slide_title {
+  white-space: pre-wrap;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.gallery .yarl__container {
+  background-color: rgba(0, 0, 0, 0.92);
+}
+
+.gallery..yarl__slide_captions_container {
+  background: rgba(0, 0, 0.1);
 }

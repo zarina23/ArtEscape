@@ -14,6 +14,7 @@ const con = mysql.createConnection({
   database: DB_NAME || "artescape",
   multipleStatements: true,
 });
+const SQL = ``;
 
 con.connect(function (err) {
   if (err) throw err;

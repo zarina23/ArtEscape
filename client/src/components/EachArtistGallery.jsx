@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
-function PaintingsCarousel({ paintingsToBeDisplayed }) {
+function EachArtistGallery({ paintingsToBeDisplayed }) {
+  const galleryRef = useRef();
   const [index, setIndex] = useState(-1);
   const [paintings, setPaintings] = useState([]);
 
@@ -25,7 +26,7 @@ function PaintingsCarousel({ paintingsToBeDisplayed }) {
   }, [paintingsToBeDisplayed]);
 
   return (
-    <div className="gallery">
+    <div className="gallery" ref={galleryRef}>
       <PhotoAlbum
         photos={paintings}
         layout="columns"
@@ -34,6 +35,7 @@ function PaintingsCarousel({ paintingsToBeDisplayed }) {
       />
 
       <Lightbox
+        portal={{ root: galleryRef.current }}
         slides={paintings}
         open={index >= 0}
         index={index}
@@ -47,4 +49,4 @@ function PaintingsCarousel({ paintingsToBeDisplayed }) {
   );
 }
 
-export default PaintingsCarousel;
+export default EachArtistGallery;
