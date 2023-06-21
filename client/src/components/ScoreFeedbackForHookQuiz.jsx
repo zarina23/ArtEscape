@@ -18,7 +18,6 @@ function ScoreFeedbackForHookQuiz({ score }) {
   const takeTheQuizAgain = () => {
     window.location.href = "/hook_quiz";
     window.location.reload();
-
   };
 
   const shareWithFriends = () => {
@@ -45,12 +44,12 @@ function ScoreFeedbackForHookQuiz({ score }) {
         </p>
       )}
       {score === 2 && (
+        <p className="scoreFeedback">Nice effort! Keep up the good work!</p>
+      )}
+      {score === 1 && (
         <p className="scoreFeedback">
           Nice effort! Keep exploring our lectures.
         </p>
-      )}
-      {score === 1 && (
-        <p className="scoreFeedback">Nice effort! Keep up the good work!</p>
       )}
       {score === 0 && (
         <p className="scoreFeedback">

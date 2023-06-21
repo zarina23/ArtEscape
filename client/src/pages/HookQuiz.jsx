@@ -90,14 +90,13 @@ export function HookQuiz() {
     <>
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
-
       {currentPage < 6 &&
         shuffledQuizQuestionsList?.[0] &&
         createElement(
           components[shuffledQuizQuestionsList[currentPage - 1]?.question_type],
           {
             onNext: handleNextPage,
-            quizQuestionsList: selectQuizQuestion ,
+            quizQuestionsList: selectQuizQuestion,
             keepScore: keepScore,
           }
         )}

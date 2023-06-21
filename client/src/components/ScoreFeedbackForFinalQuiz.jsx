@@ -14,7 +14,8 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
   };
 
   const takeTheQuizAgain = () => {
-    navigate(`/lectures/artists/final_quiz`);
+    window.location.href = "/lectures/artists/final_quiz";
+    window.location.reload();
   };
 
   const shareWithFriends = () => {
@@ -34,9 +35,15 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
         <p className="scoreFeedback">Amazing! You are an expert! </p>
       )}
       {score === 7 && <p className="scoreFeedback">Impressive! Great Job!</p>}
-      {score === 6 && <p className="scoreFeedback">Well done! Keep going!</p>}
+      {score === 6 && (
+        <p className="scoreFeedback">
+          Well done! You&apos;re on your way to mastering the world of art!
+        </p>
+      )}
       {score === 5 && (
-        <p className="scoreFeedback">Well done! You are doing great!</p>
+        <p className="scoreFeedback">
+          Well done! You&apos;re on your way to mastering the world of art!
+        </p>
       )}
       {score === 4 && (
         <p className="scoreFeedback">
@@ -48,7 +55,7 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
       )}
       {score === 2 && (
         <p className="scoreFeedback">
-          Nice effort! Your efforts are paying off!
+          Nice effort! Keep exploring our lectures.
         </p>
       )}
       {score === 1 && (
@@ -94,7 +101,7 @@ export default function ScoreFeedbackForFinalQuiz({ score }) {
               color="info"
               onClick={() => exploreAllArtists()}
             >
-              Explore other artists
+              Explore our art lectures
             </Chip>
           </div>
           <div className="chip">
