@@ -100,7 +100,7 @@ export function ArtistsQuizFinal() {
           }
         )}
 
-      {currentPage === 9 && <ScoreFeedbackForFinalQuiz score={score} />}
+      {currentPage === 8 && <ScoreFeedbackForFinalQuiz score={score} />}
     </>
   );
 }
