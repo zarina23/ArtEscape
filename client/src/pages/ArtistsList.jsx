@@ -42,12 +42,13 @@ export function ArtistsList() {
           color="inherit"
           paragraph
         >
-          <h3 className="artistQuizHeader">
-            Your Learning Journey: Discover and Explore the World of Artists
+          <h3 className="artistQuizHeader artistListheader">
+            Your Learning Journey: <br />
+            Discover and Explore the World of Artists
           </h3>
         </Typography>
         <Tooltip
-          title="Feeling ready to test your knowledge?"
+          title="Feeling confident? Challenge yourself!"
           placement="top-end"
           arrow
         >
@@ -56,7 +57,7 @@ export function ArtistsList() {
             variant="contained"
             onClick={handleQuizClick}
           >
-            Test your knowledge of artists
+            Test your knowledge
           </Button>
         </Tooltip>
       </Box>
@@ -67,7 +68,7 @@ export function ArtistsList() {
       </div>
 
       <Tooltip
-        title="Feeling ready to test your knowledge?"
+        title="Feeling confident? Challenge yourself!"
         placement="top-end"
         arrow
       >
@@ -76,7 +77,7 @@ export function ArtistsList() {
           variant="contained"
           onClick={handleQuizClick}
         >
-          Test your knowledge of artists
+          Test your knowledge
         </Button>
       </Tooltip>
     </Box>
