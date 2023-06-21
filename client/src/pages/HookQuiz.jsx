@@ -81,7 +81,7 @@ export function HookQuiz() {
     questionText_answersText: ArtistQuizQ3,
   };
 
-  const selectQuiz = useMemo(
+  const selectQuizQuestion = useMemo(
     () => [shuffledQuizQuestionsList[currentPage - 1]],
     [currentPage, shuffledQuizQuestionsList]
   );
@@ -97,7 +97,7 @@ export function HookQuiz() {
           components[shuffledQuizQuestionsList[currentPage - 1]?.question_type],
           {
             onNext: handleNextPage,
-            quizQuestionsList: selectQuiz ,
+            quizQuestionsList: selectQuizQuestion ,
             keepScore: keepScore,
           }
         )}

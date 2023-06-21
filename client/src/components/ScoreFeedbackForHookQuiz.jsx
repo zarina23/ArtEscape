@@ -14,8 +14,11 @@ function ScoreFeedbackForHookQuiz({ score }) {
     navigate(`/`);
   };
 
+  // Function to handle navigation and refresh
   const takeTheQuizAgain = () => {
-    navigate(`/hook_quiz`);
+    window.location.href = "/hook_quiz";
+    window.location.reload();
+
   };
 
   const shareWithFriends = () => {
@@ -87,7 +90,7 @@ function ScoreFeedbackForHookQuiz({ score }) {
               color="info"
               onClick={() => exploreAllArtists()}
             >
-              Explore other artists
+              Explore our art lectures
             </Chip>
           </div>
           <div className="chip">
