@@ -1,3 +1,4 @@
+/* Table of Paintings */
 DROP TABLE if exists paintingsData;
 CREATE TABLE paintingsData (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -11,6 +12,7 @@ CREATE TABLE paintingsData (
 	PRIMARY KEY (id)
 );
 
+/* Table of Artists */
 DROP TABLE if exists artistsData;
 CREATE TABLE artistsData (
     id INT NOT NULL AUTO_INCREMENT,
@@ -24,6 +26,7 @@ CREATE TABLE artistsData (
     bio            TEXT,
 		PRIMARY KEY (id)
 );
+ALTER TABLE paintingsData ADD CONSTRAINT paintingsData_fk0 FOREIGN KEY (artistId) REFERENCES artistsData(id);
 
 INSERT INTO artistsData (artistKey, artistName, profileImage, coverImage, style, nationality, firstParagraph, bio) 
 VALUES
@@ -99,7 +102,6 @@ VALUES
 <p>In 1914, after the beginning of World War I, Kandinsky returned to Moscow, where he did not find much inspiration in the art world. In 1921, he returned to Munich, where he taught at the Bauhaus school of architecture, until it was closed by the Nazis in 1933. He was an active art theorist, publishing a number of books on art theory, and developing a complex and deeply emotional theory about the ability of colors and shapes to represent sound and evince human emotion. He eventually traveled to the United States to lecture on the topic.</p>
 <p>After the Bauhaus was closed, Kandinsky moved to Paris, where he was mostly isolated from the other Impressionist or Cubist painters. He later became a French citizen, and lived the rest of his days there. His legacy lives on in the newly created Kandinsky Award, which rewards a promising young Russian artist a 55,000 euro prize, and attempts to elevate the status of contemporary Russian art.</p>');
 
-ALTER TABLE paintingsData ADD CONSTRAINT paintingsData_fk0 FOREIGN KEY (artistId) REFERENCES artistsData(id);
 
 INSERT INTO paintingsData (title, artistName, artistId, width, height, image, year) 
 VALUES 
@@ -223,7 +225,7 @@ VALUES
 ('Accent on rose', 'Wassily Kandinsky', 10, 515, 650, 'https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg', 1926 ),
 ('Succession', 'Wassily Kandinsky', 10, 1800, 1450, 'https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg', 1935 );
 
-
+/* Table of Questions */
 DROP TABLE if exists questions;
 CREATE TABLE questions (
     id INT NOT NULL AUTO_INCREMENT,
@@ -242,6 +244,8 @@ CREATE TABLE questions (
     option3_image_url TEXT,
     PRIMARY KEY (id)
 );
+
+ALTER TABLE questions ADD CONSTRAINT questions_fk0 FOREIGN KEY (artist_Id) REFERENCES artistsData(id);
 
 INSERT INTO questions (quiz_type, artist_id, question_type, question_text, question_image_url, option0_text, option1_text, option2_text, option3_text, option0_image_url, option1_image_url, option2_image_url, option3_image_url)
 VALUES
