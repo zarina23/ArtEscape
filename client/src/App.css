@@ -96,3 +96,36 @@ h4 {
   display: flex;
   /* flex-direction: row; BY DEFAULT */
 }
+
+.welcomeH2 {
+  font-style: normal;
+  font-family: "Roboto";
+  padding: 10px;
+}
+
+.actionText {
+  font-family: "Roboto";
+  font-weight: lighter !important;
+}
+
+.actionBoxes {
+  width: 250px;
+}
+
+/* iPad view */
+@media all and (max-width: 840px) {
+  .actionsContainer {
+    flex-direction: column;
+  }
+
+  .actionBoxes {
+    margin-top: 5% !important;
+  }
+}
+
+/* iPhone view */
+@media all and (max-width: 540px) {
+  .actionBoxes {
+    margin-top: 1% !important;
+  }
+}
