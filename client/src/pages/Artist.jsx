@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import PropTypes from "prop-types";
@@ -15,6 +15,18 @@ import EachArtistGallery from "../components/EachArtistGallery";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
+import CssBaseline from "@mui/material/CssBaseline";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import RestoreIcon from "@mui/icons-material/Restore";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ArchiveIcon from "@mui/icons-material/Archive";
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from "react-device-detect";
 
 export function Artist() {
   const { id } = useParams();
@@ -24,6 +36,8 @@ export function Artist() {
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
+  const ref = useRef(null);
+  const [value2, setValue2] = useState(0);
 
   const Item = styled(Box)(({ theme }) => ({
     padding: theme.spacing(0.8),
@@ -31,8 +45,12 @@ export function Artist() {
     fontFamily: "Source Serif 4",
   }));
 
+  // useEffect(() => {
+  //   ref.current.ownerDocument.body.scrollTop = 0;
+  // }, [value]);
+
   useEffect(() => {
-    const getPaintings = async () => {
+    const getPaintings = async (id) => {
       try {
         const response = await fetch(`/api/paintings/${id}`, {
           method: "GET",
@@ -59,7 +77,7 @@ export function Artist() {
     };
 
     getArtist(id);
-    getPaintings();
+    getPaintings(id);
   }, [id]);
 
   function TabPanel(props) {
@@ -172,11 +190,31 @@ export function Artist() {
           >
             <Box
               sx={{
-                maxWidth: "850px",
+                maxWidth: "750px",
                 width: "100%",
               }}
             >
-              <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Box
+                sx={{
+                  borderBottom: 1,
+                  borderColor: "divider",
+                  textAlign: "center",
+                }}
+              >
+                <Button
+                  sx={{
+                    width: "130px",
+                    mt: 1,
+                    mb: 3,
+                    ml: 2,
+                    mr: 2,
+                    textAlign: "center",
+                  }}
+                  variant="contained"
+                  onClick={handleQuizClick}
+                >
+                  Go To Quiz
+                </Button>
                 <Tabs
                   value={value}
                   onChange={handleChange}
@@ -184,30 +222,6 @@ export function Artist() {
                 >
                   <Tab label="BIO" {...a11yProps(0)} />
                   <Tab label="PAINTINGS" {...a11yProps(1)} />
-                  <Button
-                    sx={{
-                      width: "130px",
-                      mt: 2,
-                      mb: 2,
-                      ml: 50,
-                    }}
-                    variant="outlined"
-                    onClick={handleBackClick}
-                  >
-                    Back
-                  </Button>
-                  <Button
-                    sx={{
-                      width: "130px",
-                      mt: 2,
-                      mb: 2,
-                      ml: 2,
-                    }}
-                    variant="contained"
-                    onClick={handleQuizClick}
-                  >
-                    {`go to quiz`}
-                  </Button>
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
@@ -260,6 +274,20 @@ export function Artist() {
               <TabPanel value={value} index={1}>
                 <EachArtistGallery paintingsToBeDisplayed={paintings} />
               </TabPanel>
+              <Box sx={{ pb: 7 }} ref={ref}>
+                <CssBaseline />
+                <Paper
+                  sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+                  elevation={3}
+                ></Paper>
+                <Button
+                  variant="contained"
+                  sx={{ float: "right", mt: 1, mr: 2 }}
+                  onClick={handleBackClick}
+                >
+                  Go Back To Artists
+                </Button>
+              </Box>
             </Box>
           </Box>
         </div>
