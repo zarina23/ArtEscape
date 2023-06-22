@@ -16,17 +16,6 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import CssBaseline from "@mui/material/CssBaseline";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from "react-device-detect";
 
 export function Artist() {
   const { id } = useParams();

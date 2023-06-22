@@ -4,91 +4,132 @@ import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-const HeroFrame = styled(Box)(({ theme }) => ({
+const HeroFrame = styled(Box)(({}) => ({
   backgroundImage:
-    "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('src/images/succession-1935.jpg!Large.jpg'), url('src/images/hilma-af-klint-svanen.jpg!Large.jpg')",
+    "linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('src/images/hilma-af-klint-svanen.jpg!Large.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
-  minHeight: "70vh",
+  minHeight: "100vh",
   display: "flex",
+  flexDirection: "column",
   justifyContent: "right",
   alignItems: "center",
   backgroundRepeat: "no-repeat",
-  backgroundAttachment: "fixed",
 }));
 
 const TextContainer = styled(Box)(({ theme }) => ({
   backgroundColor: "rgba(255, 255, 255, 0.8)",
   padding: theme.spacing(3),
   borderRadius: theme.spacing(1),
-  maxWidth: 400,
+  maxWidth: 700,
   margin: theme.spacing(2),
+  marginTop: 70,
   boxShadow: "0 0 0px rgba(0, 1, 0.5, 0)",
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  fontFamily: "Source Serif 4",
-}));
-
-// const Button = styled(Button)(({ theme }) => ({
-
-// }));
-
-const Spacer = styled(Box)(({ theme }) => ({
-  backgroundColor: "beige",
-  height: theme.spacing(-2),
+  flexDirection: "column",
+  justifyContent: "space-between",
+  // alignItems: "center",
 }));
 
 export function Welcome() {
   const navigate = useNavigate();
 
   const takeHookQuiz = () => {
-    navigate("hook_quiz");
+    navigate("/hook_quiz");
   };
 
   const goToGallery = () => {
-    navigate("gallery");
+    navigate("/gallery");
+  };
+
+  const goToLectures = () => {
+    navigate("/lectures/artists");
   };
 
   return (
     <div>
+      {/* parent */}
       <HeroFrame>
+        {/* child one */}
         <TextContainer>
-          <Typography variant="h4" align="center" gutterBottom>
+          <Typography variant="h2" align="center" className="welcomeH2 header">
             Welcome to ArtEscape
           </Typography>
-          <Typography variant="h4" align="center" gutterBottom>
-            Expand your art knowledge and navigate through the most beautiful
-            paintings in the art history
+          <Typography variant="h5" align="center" className="welcomeH2">
+            Embark on a journey of artistic discovery. Expand your art
+            knowledge, play, and navigate through the most beautiful paintings
+            in art history.
           </Typography>
         </TextContainer>
-        <TextContainer>
-          <Typography variant="h6" align="center" gutterBottom>
-            Take a first quick quiz and test your knowledge in art
-          </Typography>
-          <Box sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}>
-            <Button
-              variant="contained"
-              size="large"
-              onClick={takeHookQuiz}
-              sx={{ marginRight: 2 }}
+
+        {/* child two */}
+        <div className="actionsContainer">
+          <TextContainer className="actionBoxes">
+            <Typography
+              className="actionText"
+              variant="h6"
+              align="center"
+              gutterBottom
             >
-              Start Quiz Now
-            </Button>
-          </Box>
-        </TextContainer>
-        <TextContainer>
-          <Typography variant="h6" align="center" gutterBottom>
-            Go straight to the gallery and simply enjoy art!
-          </Typography>
-          <Box sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}>
-            <Button variant="contained" size="large" onClick={goToGallery}>
-              Paintings Gallery
-            </Button>
-          </Box>
-        </TextContainer>
+              Fancy playing? Start by taking a quiz and test your knowledge in
+              art
+            </Typography>
+            <Box
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
+            >
+              <Button
+                variant="contained"
+                size="large"
+                onClick={takeHookQuiz}
+                sx={{ marginRight: 0 }}
+              >
+                Start Quiz Now
+              </Button>
+            </Box>
+          </TextContainer>
+
+          <TextContainer className="actionBoxes">
+            <Typography
+              className="actionText"
+              variant="h6"
+              align="center"
+              gutterBottom
+            >
+              Want to learn first? Follow the educational path offered in our
+              lectures
+            </Typography>
+            <Box
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
+            >
+              <Button variant="contained" size="large" onClick={goToLectures}>
+                Artists Lectures
+              </Button>
+            </Box>
+          </TextContainer>
+
+          <TextContainer className="actionBoxes">
+            <Typography
+              className="actionText"
+              variant="h6"
+              align="center"
+              gutterBottom
+            >
+              Here to enjoy art? Visit our virtual gallery from the comfort of
+              your web browser
+            </Typography>
+            <Box
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
+            >
+              <Button variant="contained" size="large" onClick={goToGallery}>
+                Paintings Gallery
+              </Button>
+            </Box>
+          </TextContainer>
+        </div>
+        {/* end of parent container */}
       </HeroFrame>
-      <Spacer />
+
+      {/* <Spacer />
       <TextContainer>
         <Typography variant="h4" align="center" gutterBottom>
           Take a first quick quiz and test your knowledge in art!
@@ -105,7 +146,7 @@ export function Welcome() {
         </Box>
       </TextContainer>
       <div>
-      <TextContainer>
+        <TextContainer>
           <Typography variant="h4" align="left" gutterBottom>
             Go straight to the gallery and simply enjoy art!
           </Typography>
@@ -115,8 +156,7 @@ export function Welcome() {
             </Button>
           </Box>
         </TextContainer>
-        </div>
-
+      </div> */}
       {/* componente espacio para el footer */}
     </div>
   );
