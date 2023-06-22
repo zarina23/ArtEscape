@@ -47,6 +47,7 @@ h4 {
   padding: 20px 30px 70px 30px;
   text-align: left;
   box-shadow: 1px 1px 1px gray;
+  margin-top: 25px;
 }
 
 .main-gallery {
@@ -88,4 +89,18 @@ h4 {
 
 .gallery .yarl__toolbar {
   width: 0px;
+}
+
+/* iPad view */
+@media all and (max-width: 840px) {
+  .getStarted {
+    margin-top: 100px !important;
+  }
+}
+
+/* iPhone view */
+@media all and (max-width: 500px) {
+  .getStarted {
+    margin-top: 40px !important;
+  }
 }

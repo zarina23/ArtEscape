@@ -67,6 +67,7 @@ export function Home() {
                 }}
               >
                 <Button
+                  className="getStarted"
                   onClick={handleClick}
                   variant="contained"
                   sx={{ mt: 3, mb: 2, width: 250 }}
