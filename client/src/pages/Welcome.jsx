@@ -42,18 +42,23 @@ export function Welcome() {
     navigate("/gallery");
   };
 
+  const goToLectures = () => {
+    navigate("/lectures/artists");
+  };
+
   return (
     <div>
       {/* parent */}
       <HeroFrame>
         {/* child one */}
         <TextContainer>
-          <Typography variant="h2" align="center" className="welcomeH2">
+          <Typography variant="h2" align="center" className="welcomeH2 header">
             Welcome to ArtEscape
           </Typography>
           <Typography variant="h5" align="center" className="welcomeH2">
-            Expand your art knowledge and navigate through the most beautiful
-            paintings in the art history
+            Embark on a journey of artistic discovery. Expand your art
+            knowledge, play, and navigate through the most beautiful paintings
+            in art history.
           </Typography>
         </TextContainer>
 
@@ -66,16 +71,17 @@ export function Welcome() {
               align="center"
               gutterBottom
             >
-              Take a first quick quiz and test your knowledge in art
+              Fancy playing? Start by taking a quiz and test your knowledge in
+              art
             </Typography>
             <Box
-              sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
             >
               <Button
                 variant="contained"
                 size="large"
                 onClick={takeHookQuiz}
-                sx={{ marginRight: 2 }}
+                sx={{ marginRight: 0 }}
               >
                 Start Quiz Now
               </Button>
@@ -89,13 +95,14 @@ export function Welcome() {
               align="center"
               gutterBottom
             >
-              Look at the lectures
+              Want to learn first? Follow the educational path offered in our
+              lectures
             </Typography>
             <Box
-              sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
             >
-              <Button variant="contained" size="large" onClick={goToGallery}>
-                Paintings Gallery
+              <Button variant="contained" size="large" onClick={goToLectures}>
+                Artists Lectures
               </Button>
             </Box>
           </TextContainer>
@@ -107,10 +114,11 @@ export function Welcome() {
               align="center"
               gutterBottom
             >
-              Go straight to the gallery and simply enjoy art!
+              Here to enjoy art? Visit our virtual gallery from the comfort of
+              your web browser
             </Typography>
             <Box
-              sx={{ display: "flex", justifyContent: "center", marginTop: 3 }}
+              sx={{ display: "flex", justifyContent: "center", marginTop: 0 }}
             >
               <Button variant="contained" size="large" onClick={goToGallery}>
                 Paintings Gallery

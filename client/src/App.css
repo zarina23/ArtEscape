@@ -128,4 +128,8 @@ h4 {
   .actionBoxes {
     margin-top: 1% !important;
   }
+
+  .header {
+    font-size: 48px !important;
+  }
 }
