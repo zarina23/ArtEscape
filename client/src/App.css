@@ -54,8 +54,16 @@ h4 {
 }
 
 .main-gallery .yarl__slide_title {
+  margin-top: 60px;
+  text-align: center;
   white-space: pre-wrap;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
+  white-space: pre-wrap;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-gallery .yarl__toolbar {
+  width: 0px;
 }
 
 .gallery {
@@ -64,14 +72,20 @@ h4 {
 
 /* Overwrite the yet-another-react-lightbox caption title */
 .gallery .yarl__slide_title {
+  margin-top: 60px;
+  text-align: center;
   white-space: pre-wrap;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .gallery .yarl__container {
   background-color: rgba(0, 0, 0, 0.92);
 }
 
-.gallery..yarl__slide_captions_container {
-  background: rgba(0, 0, 0.1);
+.gallery .yarl__slide_captions_container {
+  background: rgba(0, 0, 0.05);
+}
+
+.gallery .yarl__toolbar {
+  width: 0px;
 }

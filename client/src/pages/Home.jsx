@@ -19,7 +19,6 @@ function Copyright(props) {
       {"Copyright © ArtEscape"}
 
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -34,13 +33,19 @@ export function Home() {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
-        <Grid container component="main" sx={{ height: "100vh" }}>
+        <Grid
+          container
+          component="main"
+          sx={{ height: "100vh", justifyContent: "center" }}
+        >
           <CssBaseline />
           <Grid
             item
-            xs={false}
-            sm={4}
-            md={7}
+            xs={12}
+            sm={12}
+            md={12}
+            component={Paper}
+            elevation={6}
             sx={{
               backgroundImage: "url(../images/artEscape.png)",
               backgroundRepeat: "no-repeat",
@@ -51,30 +56,16 @@ export function Home() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-          />
-          <Grid
-            item
-            xs={12}
-            sm={8}
-            md={5}
-            component={Paper}
-            elevation={6}
-            square
           >
             <Container component="main" maxWidth="xs">
-              <CssBaseline />
               <Box
                 sx={{
-                  marginTop: 30,
+                  marginTop: 72,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                 }}
               >
-                {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar> */}
-                <Typography component="h1" variant="h5">
-                  ArtEscape
-                </Typography>
                 <Button
                   onClick={handleClick}
                   variant="contained"
@@ -82,9 +73,8 @@ export function Home() {
                 >
                   GET STARTED
                 </Button>
-                <Grid container></Grid>
+                <Copyright sx={{ mt: 8, mb: 4 }} />
               </Box>
-              <Copyright sx={{ mt: 8, mb: 4 }} />
             </Container>
           </Grid>
         </Grid>
