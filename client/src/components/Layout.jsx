@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
 
 export function Layout() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export function Layout() {
   };
 
   const handleLecturesClick = () => {
-    navigate("/lectures");
+    navigate("/lectures/artists");
   };
 
   const handleQuizClick = () => {
@@ -45,9 +46,11 @@ export function Layout() {
             <Button onClick={handleLecturesClick} color="inherit">
               Lectures
             </Button>
-            <Button onClick={handleQuizClick} color="inherit">
-              Quiz
-            </Button>
+            <Tooltip title="Take a random quiz" arrow>
+              <Button onClick={handleQuizClick} color="inherit">
+                Play
+              </Button>
+            </Tooltip>
           </Toolbar>
         </AppBar>
       </Box>

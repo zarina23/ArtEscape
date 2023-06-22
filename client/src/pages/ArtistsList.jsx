@@ -31,8 +31,6 @@ export function ArtistsList() {
     navigate("/lectures/artists/final_quiz");
   };
 
-  const handleButtonHover = () => {};
-
   return (
     <Box sx={{ textAlign: "center" }}>
       <Box sx={{ padding: 1 }}>
