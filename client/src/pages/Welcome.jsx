@@ -43,11 +43,11 @@ export function Welcome() {
   const navigate = useNavigate();
 
   const takeHookQuiz = () => {
-    navigate("hook_quiz");
+    navigate("/hook_quiz");
   };
 
   const goToGallery = () => {
-    navigate("gallery");
+    navigate("/gallery");
   };
 
   return (
