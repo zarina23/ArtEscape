@@ -19,23 +19,7 @@ function ScoreFeedbackForArtistQuiz({ artist, score, id }) {
   };
 
   const shareWithFriends = () => {
-    // alert("Hang in there! This feature is in development :art:");
-    if (navigator.share) {
-      navigator
-        .share({
-          title: "Quiz Results",
-          text: `I scored ${score}/3 in the ${artist?.artistName} quiz!`,
-          url: window.location.href,
-        })
-        .then(() => {
-          console.log("Quiz results shared successfully!");
-        })
-        .catch((error) => {
-          console.error("Error sharing quiz results:", error);
-        });
-    } else {
-      alert("Web Share API is not supported in your browser.");
-    }
+    alert("Hang in there! This feature is in development 🎨");
   };
 
   //next

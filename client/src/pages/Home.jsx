@@ -28,7 +28,7 @@ const defaultTheme = createTheme();
 export function Home() {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/lectures");
+    navigate("/welcome");
   };
   return (
     <>

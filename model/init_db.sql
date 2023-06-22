@@ -44,12 +44,12 @@ VALUES
     ('individual_artist', 2, 'questionText_answersText', 'What was one of the most important narratives in the work of Frida, which she was actively known for?', NULL, 'Political activism and Mexican indigenous values', 'Anatomy of the human body and philosophy', 'Romantic relationship with Diego Rivera', 'Nature symbols and animals', NULL, NULL, NULL, NULL),
 		
 		('individual_artist', 3, 'questionImage_answersText', 'What is the name of this painting?', 'https://uploads6.wikiart.org/images/hilma-af-klint/the-ten-largest-1907.jpg', 'The Ten Largest', 'Circles', 'White circles', 'Blue and yellow circles', NULL, NULL, NULL, NULL),
-
     ('individual_artist', 3, 'questionText_answersImage', 'Which one of this paintings is called What A Human Being Is by af Klimt?', NULL, NULL, NULL, NULL, NULL, 'https://uploads3.wikiart.org/images/hilma-af-klint/what-a-human-being-is-1910.jpg', 'https://studyfinds.org/wp-content/uploads/2020/12/AdobeStock_267410313-604x385.jpeg', 'https://i.etsystatic.com/36644323/r/il/4db5c9/4296968593/il_794xN.4296968593_5iyf.jpg', 'https://dqm0pnlwcddhp.cloudfront.net/db/text_with_image_blocks/image_svs/1392/original/bo400.jpg?1572008627'),
     ('individual_artist', 3, 'questionText_answersText', 'What kind of work characterizes af Klint and The Five?', NULL, 'Inventive geometric visual language capable of conceptualising invisible forces both of the inner and outer worlds', 'A chain of fast food restaurants', 'A talk show on Fox News Channel', 'A mystery thriller miniseries', NULL, NULL, NULL, NULL),
 		
 		('individual_artist', 4, 'questionImage_answersText', 'What is the name of this famous painting by Ivan Aivazovsky?', 'https://uploads1.wikiart.org/images/ivan-aivazovsky/shipwreck-1854.jpg', 'Shipwreck', 'Tempest Shipwreck of the foreign ship', 'Thunderstorm', 'Storm at Sea', NULL, NULL, NULL, NULL),
     ('individual_artist', 4, 'questionText_answersImage', 'Ivan Aivazovsky is most remembered for his beautifully melodramatic renditions of the seascapes. Which one of these paintings is his work?', NULL, NULL, NULL, NULL, NULL,'https://uploads8.wikiart.org/00129/images/ivan-aivazovsky/the-ninth-wave.jpg!Large.jpg', 'https://uploads4.wikiart.org/00290/images/william-turner/joseph-mallord-william-turner-fishermen-at-sea-google-art-project-1.jpg', 'https://practicalpages.files.wordpress.com/2010/02/starry-night-van-gogh.jpg?w=640', 'https://uploads8.wikiart.org/images/edvard-munch/moon-light-1895.jpg!Large.jpg'),
+
     ('individual_artist', 4, 'questionText_answersText', 'Today, the paintings of Aivazovsky have been auctioned off for millions of dollars and have been printed on postage stamps for Russia, Ukraine, and Armenia. Throughout his lifetime, with how many paintings did Aivazovsky contribute to the art world?', NULL, 'Oven 6,000', 'Approximately 2,450', 'Less than 1,000', 'Only 50', NULL, NULL, NULL, NULL),
 
     ('individual_artist', 5, 'questionImage_answersText', 'What is the name of the painting that Leonardo Da Vinci was persuaded to paint not once, but twice for the Confraternity of the Immaculate Conception in Milan?', 'https://uploads2.wikiart.org/00339/images/leonardo-da-vinci/virgin-of-the-rocks-between-1483-and-1486.jpg', 'The Virgin of The Rocks', 'The Madonna of the Carnation', 'The Virgin and Child with Saint Anne and Saint John the Baptist', 'Leda', NULL, NULL, NULL, NULL),
@@ -57,6 +57,7 @@ VALUES
     ('individual_artist', 5, 'questionText_answersText', 'The interests of Leonardo da Vinci were largely focused on scientific studies. Which one of his greatest interests is evidenced in his work The Vitruvian Man?', NULL, 'Anatomy', 'Genetics', 'Zoology', 'Diagnosis', NULL, NULL, NULL, NULL),
 		
 		('individual_artist', 6, 'questionImage_answersText', 'What is the name of this painting?', 'https://uploads6.wikiart.org/images/mary-cassatt/the-flirtation-a-balcony-in-seville-1872.jpg!Large.jpg', 'The Flirtation A Balcony in Seville', 'Los chismosos', 'The man with the hat', 'Summer days', NULL, NULL, NULL, NULL),
+
     ('individual_artist', 6, 'questionText_answersImage', 'Which of the following paintings is At the Theater by Cassatt?', NULL, NULL, NULL, NULL, NULL, 'https://uploads3.wikiart.org/images/mary-cassatt/at-the-theater-1879.jpg!Large.jpg', 'https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/3/beauty-and-the-beast-falling-in-love-michael-coco.jpg', 'https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2014/08/19/Style/Images/sundayimage001.jpg?t=20170517', 'https://www.artstor.org/wp-content/uploads/2019/12/CARNEGIE_4020004-490x600.jpg'),
     ('individual_artist', 6, 'questionText_answersText', 'Which art movement best describes the art movement of Cassatt?', NULL, 'Impressionism', 'Baroque', 'Art Nouveau', 'Surrealism', NULL, NULL, NULL, NULL),
 
@@ -390,3 +391,4 @@ VALUES
 ('Several Circles', 'Wassily Kandinsky', 10, 1063, 1046, 'https://uploads0.wikiart.org/images/wassily-kandinsky/several-circles-1926.jpg!Large.jpg', 1926 ),
 ('Accent on rose', 'Wassily Kandinsky', 10, 515, 650, 'https://uploads8.wikiart.org/images/wassily-kandinsky/accent-on-rose-1926.jpg!Large.jpg', 1926 ),
 ('Succession', 'Wassily Kandinsky', 10, 1800, 1450, 'https://uploads4.wikiart.org/images/wassily-kandinsky/succession-1935.jpg!Large.jpg', 1935 );
+

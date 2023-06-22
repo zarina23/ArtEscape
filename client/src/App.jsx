@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { HookQuiz } from "./pages/HookQuiz";
-import { Lectures } from "./pages/Lectures";
+import { Welcome } from "./pages/Welcome";
 import { ArtistsList } from "./pages/ArtistsList";
 import { Artist } from "./pages/Artist";
 import { ArtistQuiz } from "./pages/ArtistQuiz";
@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="gallery" element={<Gallery />} />
           <Route path="hook_quiz" element={<HookQuiz />} />
-          <Route path="lectures" element={<Lectures />} />
+          <Route path="welcome" element={<Welcome />} />
           <Route path="lectures/artists" element={<ArtistsList />} />
           <Route path="lectures/artists/:id" element={<Artist />} />
           <Route path="lectures/artists/:id/quiz" element={<ArtistQuiz />} />

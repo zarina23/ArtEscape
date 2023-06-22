@@ -3,6 +3,20 @@ var router = express.Router();
 const axios = require("axios");
 const db = require("../model/helper");
 
+
+// Route for hook quiz
+router.get("/", async function (req, res, next) {
+  // call to DB table questions
+  try {
+    const results = await db(
+      `SELECT * FROM questions;`
+    );
+    res.send(results.data);
+  } catch (err) {
+    res.status(500).send({ message: err });
+  }
+});
+
 // Route for final quiz
 router.get("/final_quiz", async function (req, res, next) {
   // call to DB table questions

@@ -1,4 +1,4 @@
-import { useEffect, useState, createElement } from "react";
+import { useEffect, useState, createElement, useMemo } from "react";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
@@ -80,48 +80,27 @@ export function ArtistsQuizFinal() {
     questionText_answersText: ArtistQuizQ3,
   };
 
+  const selectQuizQuestion = useMemo(
+    () => [shuffledQuizQuestionsList[currentPage - 1]],
+    [currentPage, shuffledQuizQuestionsList]
+  );
+
   return (
     <>
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
-      {/* {currentPage === 1 &&
-        (questionOne?.[0]?.question_type === "questionImage_answersText" ? (
-          <ArtistQuizQ1
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersImage" ? (
-          <ArtistQuizQ2
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersText" ? (
-          <ArtistQuizQ3
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : null)} */}
-
-      {/* {currentPage === 1 &&
-        shuffledQuizQuestionsList?.[0] &&
-        createElement(components[shuffledQuizQuestionsList[0]?.question_type], {
-          onNext: handleNextPage,
-          quizQuestionsList: [shuffledQuizQuestionsList[0]],
-        })} */}
-
-      {/* {currentPage === 1 && */}
-      {currentPage < 8 &&
+      {currentPage < 9 &&
         shuffledQuizQuestionsList?.[0] &&
         createElement(
           components[shuffledQuizQuestionsList[currentPage - 1]?.question_type],
           {
             onNext: handleNextPage,
-            quizQuestionsList: [shuffledQuizQuestionsList[currentPage - 1]],
+            quizQuestionsList: selectQuizQuestion,
             keepScore: keepScore,
           }
         )}
 
-      {currentPage === 8 && <ScoreFeedbackForFinalQuiz score={score} />}
+      {currentPage === 9 && <ScoreFeedbackForFinalQuiz score={score} />}
     </>
   );
 }
