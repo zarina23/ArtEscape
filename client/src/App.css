@@ -91,13 +91,32 @@ h4 {
   width: 0px;
 }
 
+.getStarted {
+  margin-top: 50px !important;
+}
+
+.bodyGetStarted {
+  background-image: url(/images/artEscape.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: center;
+}
+
+.containerBtnGetStarted {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+}
+
 /* Rules for Home Page */
 /* iPad view */
 @media all and (max-width: 840px) {
   .getStarted {
     margin-top: 100px !important;
   }
-} 
+}
 
 /* iPhone view */
 @media all and (max-width: 500px) {

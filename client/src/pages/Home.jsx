@@ -31,15 +31,14 @@ export function Home() {
     navigate("/welcome");
   };
   return (
-    <>
+    <div className="bodyGetStarted">
       <ThemeProvider theme={defaultTheme}>
         <Grid
           container
           component="main"
           sx={{ height: "100vh", justifyContent: "center" }}
         >
-          <CssBaseline />
-          <Grid
+          {/* <Grid
             item
             xs={12}
             sm={12}
@@ -55,31 +54,33 @@ export function Home() {
                   : t.palette.grey[900],
               backgroundSize: "cover",
               backgroundPosition: "center",
-            }}
-          >
-            <Container component="main" maxWidth="xs">
-              <Box
+            }} */}
+          {/* > */}
+          {/* <Box
                 sx={{
-                  marginTop: 72,
+                  marginTop: 50,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                 }}
-              >
-                <Button
-                  className="getStarted"
-                  onClick={handleClick}
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2, width: 250 }}
-                >
-                  GET STARTED
-                </Button>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
-              </Box>
-            </Container>
-          </Grid>
+              > */}
+
+          <section className="containerBtnGetStarted">
+            <Button
+              className="getStarted"
+              onClick={handleClick}
+              variant="contained"
+              // sx={{ mt: 3, mb: 2, width: 250 }}
+            >
+              GET STARTED
+            </Button>
+            <Copyright sx={{ mt: 8, mb: 4 }} />
+          </section>
+
+          {/* </Box> */}
+          {/* </Grid> */}
         </Grid>
       </ThemeProvider>
-    </>
+    </div>
   );
 }
