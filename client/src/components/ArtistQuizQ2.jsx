@@ -1,14 +1,6 @@
 import { useState, useEffect } from "react";
 import "./stylesheets/ArtistQuiz.css";
-// import { useTheme } from "@mui/material/styles";
-// import Box from "@mui/material/Box";
-// import MobileStepper from "@mui/material/MobileStepper";
-// import Paper from "@mui/material/Paper";
-// import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-// import { containerClasses } from "@mui/material";
 
 function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
   //We need to get the question from the quizQuestionsList which question_type is "questionText_answersImage"
@@ -16,13 +8,15 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
   const [questionItemObject, setQuestionItemObject] = useState({});
   const [answerOptionsList, setAnswerOptionsList] = useState([]);
   const [shuffledAnswerOptionList, setShuffledAnswerOptionList] = useState([]);
-  // const [isUserAnswerCorrect, setIsUserAnswerCorrect] = useState(false);
   // setUserSelectedAnswer is called when user selects an answer BUT DOES NOT yet submit it
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
 
+  //need to set didCheck back to false because it stays true if the same component is passed twice in a row
+  //we want to set it to false when NEW props are passed, i.e. new question is shown
   useEffect(() => {
     setDidCheck(false);
+    setQuestionItemObject(filteredQuestion?.[0]);
   }, [quizQuestionsList]);
 
   const filteredQuestion = quizQuestionsList.filter(
@@ -39,15 +33,9 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
         shuffledArray[i],
       ];
     }
-    // console.log(shuffledArray);
+    
     setShuffledAnswerOptionList(shuffledArray);
   }
-
-  useEffect(() => {
-    // console.log(filteredQuestion);
-
-    setQuestionItemObject(filteredQuestion[0]);
-  }, [filteredQuestion]);
 
   useEffect(() => {
     setAnswerOptionsList([
@@ -64,14 +52,9 @@ function ArtistQuizQ2({ quizQuestionsList, onNext, keepScore }) {
 
   //this function is called when user submits selected answer
   const handleCheck = () => {
-    // console.log(userSelectedAnswer);
     setDidCheck(true);
 
-
     const correctAnswer = filteredQuestion[0].option0_image_url;
-
-    console.log(correctAnswer);
-    console.log(userSelectedAnswer);
 
     //compare the correct answer to the option selected by user and update score
     if (userSelectedAnswer === correctAnswer) {

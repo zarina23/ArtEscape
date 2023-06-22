@@ -12,8 +12,11 @@ function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
   const [userSelectedAnswer, setUserSelectedAnswer] = useState("");
   const [didCheck, setDidCheck] = useState(false);
 
+  //need to set didCheck back to false because it stays true if the same component is passed twice in a row
+  //we want to set it to false when NEW props are passed, i.e. new question is shown
   useEffect(() => {
     setDidCheck(false);
+    setQuestionItemObject(filteredQuestion?.[0]);
   }, [quizQuestionsList]);
 
   const filteredQuestion = quizQuestionsList?.filter(
@@ -36,12 +39,6 @@ function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
   }
 
   useEffect(() => {
-    // console.log(filteredQuestion);
-
-    setQuestionItemObject(filteredQuestion?.[0]);
-  }, [filteredQuestion]);
-
-  useEffect(() => {
     setAnswerOptionsList([
       { optionAnswer: questionItemObject?.option0_text },
       { optionAnswer: questionItemObject?.option1_text },
@@ -56,6 +53,7 @@ function ArtistQuizQ1({ quizQuestionsList, onNext, keepScore }) {
 
   //this function is called when user submits selected answer
   const handleCheck = () => {
+    
     setDidCheck(true);
 
     const correctAnswer = filteredQuestion[0].option0_text;

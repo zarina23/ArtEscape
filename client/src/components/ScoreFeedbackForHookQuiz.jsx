@@ -14,8 +14,10 @@ function ScoreFeedbackForHookQuiz({ score }) {
     navigate(`/`);
   };
 
+  // Function to handle navigation and refresh
   const takeTheQuizAgain = () => {
-    navigate(`/hook_quiz`);
+    window.location.href = "/hook_quiz";
+    window.location.reload();
   };
 
   const shareWithFriends = () => {
@@ -33,17 +35,21 @@ function ScoreFeedbackForHookQuiz({ score }) {
       {score === 5 && (
         <p className="scoreFeedback">Amazing! You are an expert!</p>
       )}
-      {score === 4 && <p className="scoreFeedback">Impressive!</p>}
-      {score === 3 && (
-        <p className="scoreFeedback">Well done! You are doing great!</p>
+      {score === 4 && (
+        <p className="scoreFeedback">Impressive! You are doing great!</p>
       )}
-      {score === 2 && (
+      {score === 3 && (
         <p className="scoreFeedback">
-          Well done! You will be an expert in no time!
+          Well done! You&apos;re on your way to mastering the world of art!
         </p>
       )}
-      {score === 1 && (
+      {score === 2 && (
         <p className="scoreFeedback">Nice effort! Keep up the good work!</p>
+      )}
+      {score === 1 && (
+        <p className="scoreFeedback">
+          Nice effort! Keep exploring our lectures.
+        </p>
       )}
       {score === 0 && (
         <p className="scoreFeedback">
@@ -83,7 +89,7 @@ function ScoreFeedbackForHookQuiz({ score }) {
               color="info"
               onClick={() => exploreAllArtists()}
             >
-              Explore other artists
+              Explore our art lectures
             </Chip>
           </div>
           <div className="chip">

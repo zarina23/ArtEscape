@@ -1,4 +1,4 @@
-import { useEffect, useState, createElement } from "react";
+import { useEffect, useState, createElement, useMemo } from "react";
 import ArtistQuizQ1 from "../components/ArtistQuizQ1";
 import ArtistQuizQ2 from "../components/ArtistQuizQ2";
 import ArtistQuizQ3 from "../components/ArtistQuizQ3";
@@ -7,7 +7,6 @@ import ScoreFeedbackForFinalQuiz from "../components/ScoreFeedbackForFinalQuiz";
 
 export function ArtistsQuizFinal() {
   const [currentPage, setCurrentPage] = useState(1);
-
   const [quizQuestionsList, setQuizQuestionsList] = useState([]);
   const [shuffledQuizQuestionsList, setShuffledQuizQuestionsList] = useState(
     []
@@ -15,7 +14,7 @@ export function ArtistsQuizFinal() {
   const [questionOne, setQuestionOne] = useState([]);
   const [score, setScore] = useState(0);
 
-  //load ALL questions from database
+  //load ALL 'artists_final' questions from database
   useEffect(() => {
     getHookQuizQuestionsList();
   }, []);
@@ -34,12 +33,12 @@ export function ArtistsQuizFinal() {
   //API call to fetch all question from database
   const getHookQuizQuestionsList = async () => {
     try {
-      const response = await fetch(`/api/final_quiz`, {
+      const response = await fetch(`/api/quiz/final_quiz`, {
         method: "GET",
       });
       const data = await response.json();
+      console.log(data);
       setQuizQuestionsList(data);
-
       if (!response.ok) throw new Error(data.message);
     } catch (err) {
       console.log(err.message);
@@ -72,7 +71,7 @@ export function ArtistsQuizFinal() {
   }, [shuffledQuizQuestionsList]);
 
   useEffect(() => {
-    console.log(questionOne);
+    // console.log(questionOne);
   }, [questionOne]);
 
   const components = {
@@ -81,48 +80,27 @@ export function ArtistsQuizFinal() {
     questionText_answersText: ArtistQuizQ3,
   };
 
+  const selectQuizQuestion = useMemo(
+    () => [shuffledQuizQuestionsList[currentPage - 1]],
+    [currentPage, shuffledQuizQuestionsList]
+  );
+
   return (
     <>
       <h1 className="artistQuizHeader">Test Your Art Knowledge</h1>
 
-      {/* {currentPage === 1 &&
-        (questionOne?.[0]?.question_type === "questionImage_answersText" ? (
-          <ArtistQuizQ1
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersImage" ? (
-          <ArtistQuizQ2
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : questionOne?.[0]?.question_type === "questionText_answersText" ? (
-          <ArtistQuizQ3
-            onNext={handleNextPage}
-            quizQuestionsList={questionOne}
-          />
-        ) : null)} */}
-
-      {/* {currentPage === 1 &&
-        shuffledQuizQuestionsList?.[0] &&
-        createElement(components[shuffledQuizQuestionsList[0]?.question_type], {
-          onNext: handleNextPage,
-          quizQuestionsList: [shuffledQuizQuestionsList[0]],
-        })} */}
-
-      {/* {currentPage === 1 && */}
-      {currentPage < 8 &&
+      {currentPage < 9 &&
         shuffledQuizQuestionsList?.[0] &&
         createElement(
           components[shuffledQuizQuestionsList[currentPage - 1]?.question_type],
           {
             onNext: handleNextPage,
-            quizQuestionsList: [shuffledQuizQuestionsList[currentPage - 1]],
+            quizQuestionsList: selectQuizQuestion,
             keepScore: keepScore,
           }
         )}
 
-      {currentPage === 8 && <ScoreFeedbackForFinalQuiz score={score} />}
+      {currentPage === 9 && <ScoreFeedbackForFinalQuiz score={score} />}
     </>
   );
 }
