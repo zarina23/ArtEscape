@@ -26,17 +26,12 @@ export function Artist() {
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
   const ref = useRef(null);
-  const [value2, setValue2] = useState(0);
 
   const Item = styled(Box)(({ theme }) => ({
     padding: theme.spacing(0.8),
     textAlign: "center",
     fontFamily: "Source Serif 4",
   }));
-
-  // useEffect(() => {
-  //   ref.current.ownerDocument.body.scrollTop = 0;
-  // }, [value]);
 
   useEffect(() => {
     const getPaintings = async (id) => {
@@ -154,7 +149,7 @@ export function Artist() {
                 maxWidth: 800,
               }}
             >
-              <Typography component="h1" variant="h3" color="inherit">
+              <Typography component="h3" variant="h3" color="inherit">
                 {artist.artistName}
               </Typography>
             </Box>
@@ -245,7 +240,6 @@ export function Artist() {
                     <Item>{artist.style}</Item>
                   </Grid>
                 </Grid>
-                <br />
                 <div className="bio">
                   <div>
                     {showMore
@@ -271,7 +265,7 @@ export function Artist() {
                 ></Paper>
                 <Button
                   variant="contained"
-                  sx={{ float: "right", mt: 1, mr: 2 }}
+                  sx={{ float: "right", mt: 2, mr: 2 }}
                   onClick={handleBackClick}
                 >
                   Go Back To Artists

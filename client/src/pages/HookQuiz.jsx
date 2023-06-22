@@ -28,7 +28,6 @@ export function HookQuiz() {
   const keepScore = (additionalScore) => {
     const updatedScore = score + additionalScore;
     setScore(updatedScore);
-    console.log(updatedScore);
   };
 
   //API call to fetch all question from database
@@ -61,7 +60,6 @@ export function HookQuiz() {
         shuffledArray[i],
       ];
     }
-    console.log(shuffledArray);
     setShuffledQuizQuestionsList(shuffledArray);
   }
 
@@ -71,9 +69,7 @@ export function HookQuiz() {
     setQuestionOne(arrayOne);
   }, [shuffledQuizQuestionsList]);
 
-  useEffect(() => {
-    console.log(questionOne);
-  }, [questionOne]);
+  useEffect(() => {}, [questionOne]);
 
   const components = {
     questionImage_answersText: ArtistQuizQ1,
